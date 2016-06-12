@@ -1,0 +1,248 @@
+From 61f969b47da2a5262d8f5b375af6abe84d36e3cb Mon Sep 17 00:00:00 2001
+From: Bryan Gardiner <bog@khumba.net>
+Date: Thu, 13 Nov 2014 13:01:42 -0800
+Subject: [PATCH] Enable passwordless power commands via a power_auth config
+ option.
+
+---
+ PAM.cpp   | 12 +++++++++---
+ PAM.h     |  6 +++++-
+ README    |  1 +
+ app.cpp   | 28 ++++++++++++++++++++++++++--
+ app.h     | 16 ++++++++++++++++
+ cfg.cpp   |  5 +++++
+ cfg.h     |  2 ++
+ slim.1    |  4 ++--
+ slim.conf |  4 ++++
+ 9 files changed, 70 insertions(+), 8 deletions(-)
+
+diff --git a/PAM.cpp b/PAM.cpp
+index 198eae0..56d6453 100644
+--- a/PAM.cpp
++++ b/PAM.cpp
+@@ -37,9 +37,10 @@ namespace PAM {
+ 		return result;
+ 	}
+ 
+-	Authenticator::Authenticator(conversation* conv, void* data):
++	Authenticator::Authenticator(conversation* conv, bool* conv_err_is_success, void* data):
+ 		pam_handle(0),
+-		last_result(PAM_SUCCESS)
++		last_result(PAM_SUCCESS),
++		conv_err_is_success(conv_err_is_success)
+ 	{
+ 		pam_conversation.conv=conv;
+ 		pam_conversation.appdata_ptr=data;
+@@ -116,7 +117,12 @@ namespace PAM {
+ #endif
+ 
+ 	void Authenticator::authenticate(void){
+-		switch((last_result=pam_authenticate(pam_handle, 0))){
++		*conv_err_is_success=false;
++		last_result=pam_authenticate(pam_handle, 0);
++		if (last_result == PAM_CONV_ERR && *conv_err_is_success) {
++			last_result=PAM_SUCCESS;
++		}
++		switch(last_result){
+ 			default:
+ 			case PAM_ABORT:
+ 			case PAM_AUTHINFO_UNAVAIL:
+diff --git a/PAM.h b/PAM.h
+index 5e2c860..60e75ed 100644
+--- a/PAM.h
++++ b/PAM.h
+@@ -48,6 +48,7 @@ namespace PAM {
+ 		struct pam_conv pam_conversation;
+ 		pam_handle_t* pam_handle;
+ 		int last_result;
++		bool* conv_err_is_success;
+ 
+ 		int _end(void);
+ 	public:
+@@ -70,7 +71,10 @@ namespace PAM {
+ 		};
+ 
+ 	public:
+-		Authenticator(conversation* conv, void* data=0);
++		/* *conv_err_is_success is set to false when a PAM conversation starts.
++		   The conversation callback may set it to true to make this class
++		   interpret PAM_CONV_ERR as PAM_SUCCESS. */
++		Authenticator(conversation* conv, bool* conv_err_is_success, void* data=0);
+ 		~Authenticator(void);
+ 		
+ 		void start(const std::string& service);
+diff --git a/README b/README
+index 7df4547..ce0f20c 100644
+--- a/README
++++ b/README
+@@ -34,6 +34,7 @@ USAGE
+     - exit: exit SLiM
+     - halt: halt the system
+     - reboot: reboot the system
++    - suspend: suspend the system to RAM
+     
+     pressing the F11 key executes a user-specified
+     command (see the configuration file), the default
+diff --git a/app.cpp b/app.cpp
+index eb7e05f..0793d50 100644
+--- a/app.cpp
++++ b/app.cpp
+@@ -38,7 +38,10 @@ using namespace std;
+ int conv(int num_msg, const struct pam_message **msg,
+ 		 struct pam_response **resp, void *appdata_ptr){
+ 	*resp = (struct pam_response *) calloc(num_msg, sizeof(struct pam_response));
+-	Panel* panel = *static_cast<Panel**>(appdata_ptr);
++	Conv_Data *conv_data = static_cast<Conv_Data*>(appdata_ptr);
++	Panel *panel = *conv_data->panel;
++	Cfg *cfg = *conv_data->cfg;
++	bool *conv_err_is_success = conv_data->conv_err_is_success;
+ 	int result = PAM_SUCCESS;
+ 	for (int i=0; i<num_msg; i++){
+ 		(*resp)[i].resp=0;
+@@ -73,6 +76,19 @@ int conv(int num_msg, const struct pam_message **msg,
+ 						result=PAM_CONV_ERR;
+ 						break;
+ 
++					case Panel::Suspend:
++					case Panel::Halt:
++					case Panel::Reboot:
++						/* If power commands don't require auth, then fail
++						   the PAM conversation but treat it as though it
++						   succeeded. */
++						if (!cfg->powerCommandsRequireAuth()) {
++							result=PAM_CONV_ERR;
++							*conv_err_is_success=true;
++							break;
++						}
++						/* Fall through when power commands require auth. */
++
+ 					default:
+ 						panel->EventHandler(Panel::Get_Passwd);
+ 						(*resp)[i].resp=strdup(panel->GetPasswd().c_str());
+@@ -125,7 +141,8 @@ void User1Signal(int sig) {
+ 
+ #ifdef USE_PAM
+ App::App(int argc, char** argv)
+-  : pam(conv, static_cast<void*>(&LoginPanel)),
++  : pam_conv_data(&LoginPanel, &cfg, &pam_conv_err_is_success),
++    pam(conv, &pam_conv_err_is_success, static_cast<void*>(&pam_conv_data)),
+ #else
+ App::App(int argc, char** argv)
+   :
+@@ -443,6 +460,13 @@ bool App::AuthenticateUser(bool focuspass){
+ 	if (!focuspass){
+ 		LoginPanel->EventHandler(Panel::Get_Name);
+ 		switch(LoginPanel->getAction()){
++			case Panel::Suspend:
++			case Panel::Halt:
++			case Panel::Reboot:
++				if (!cfg->powerCommandsRequireAuth()) {
++					return true;
++				}
++				break;
+ 			case Panel::Exit:
+ 			case Panel::Console:
+ 				logStream << APPNAME << ": Got a special command (" << LoginPanel->GetName() << ")" << endl;
+diff --git a/app.h b/app.h
+index 0bbd7ac..e5de648 100644
+--- a/app.h
++++ b/app.h
+@@ -32,6 +32,20 @@
+ #include "Ck.h"
+ #endif
+ 
++#ifdef USE_PAM
++/* Auxiliary data passed into a PAM conversation callback. */
++struct Conv_Data {
++	Conv_Data(Panel **panel, Cfg **cfg, bool *conv_err_is_success):
++		panel(panel),
++		cfg(cfg),
++		conv_err_is_success(conv_err_is_success) {}
++
++	Panel **panel;
++	Cfg **cfg;
++	bool *conv_err_is_success;
++};
++#endif
++
+ class App {
+ public:
+ 	App(int argc, char **argv);
+@@ -85,6 +99,8 @@ private:
+ 	bool serverStarted;
+ 
+ #ifdef USE_PAM
++	bool pam_conv_err_is_success;
++	Conv_Data pam_conv_data;
+ 	PAM::Authenticator pam;
+ #endif
+ #ifdef USE_CONSOLEKIT
+diff --git a/cfg.cpp b/cfg.cpp
+index 02379f2..960f459 100644
+--- a/cfg.cpp
++++ b/cfg.cpp
+@@ -43,6 +43,7 @@ Cfg::Cfg()
+ 	options.insert(option("sessionstop_cmd",""));
+ 	options.insert(option("console_cmd","/usr/bin/xterm -C -fg white -bg black +sb -g %dx%d+%d+%d -fn %dx%d -T ""Console login"" -e /bin/sh -c ""/bin/cat /etc/issue; exec /bin/login"""));
+ 	options.insert(option("screenshot_cmd","import -window root /slim.png"));
++	options.insert(option("power_auth", "yes"));
+ 	options.insert(option("welcome_msg","Welcome to %host"));
+ 	options.insert(option("session_msg","Session:"));
+ 	options.insert(option("default_user",""));
+@@ -242,6 +243,10 @@ string Cfg::getWelcomeMessage(){
+ 	return s;
+ }
+ 
++bool Cfg::powerCommandsRequireAuth() {
++	return getOption("power_auth") != "no";
++}
++
+ int Cfg::string2int(const char* string, bool* ok) {
+ 	char* err = 0;
+ 	int l = (int)strtol(string, &err, 10);
+diff --git a/cfg.h b/cfg.h
+index 678d00d..927c452 100644
+--- a/cfg.h
++++ b/cfg.h
+@@ -35,6 +35,8 @@ public:
+ 	int getIntOption(std::string option);
+ 	std::string getWelcomeMessage();
+ 
++	bool powerCommandsRequireAuth();
++
+ 	static int absolutepos(const std::string &position, int max, int width);
+ 	static int string2int(const char *string, bool *ok = 0);
+ 	static void split(std::vector<std::string> &v, const std::string &str, 
+diff --git a/slim.1 b/slim.1
+index 76e4a30..c17e524 100644
+--- a/slim.1
++++ b/slim.1
+@@ -72,8 +72,8 @@ suspend
+ power-suspend the machine
+ .PP
+ See the configuration file for customizing the above commands.
+-The 'halt' and 'reboot' commands need the root password, this may
+-change in future releases.
++The 'halt', 'reboot', and 'suspend' commands need the root password,
++unless the 'power_auth' option is set to 'no'.
+ .PP
+ Shortcuts:
+ .TP
+diff --git a/slim.conf b/slim.conf
+index a8e2e1c..730dba3 100644
+--- a/slim.conf
++++ b/slim.conf
+@@ -10,6 +10,10 @@ reboot_cmd          /sbin/shutdown -r now
+ console_cmd         /usr/bin/xterm -C -fg white -bg black +sb -T "Console login" -e /bin/sh -c "/bin/cat /etc/issue; exec /bin/login"
+ #suspend_cmd        /usr/sbin/suspend
+ 
++# Whether the halt, reboot, and suspend commands require the root password.
++# Valid values: yes|no
++power_auth          yes
++
+ # Full path to the xauth binary
+ xauth_path         /usr/bin/xauth 
+ 
+-- 
+2.0.5
+
