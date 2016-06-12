@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>bog@khumba.net</email>
+		<name>Bryan Gardiner</name>
+	</maintainer>
+	<longdescription>
+		Khph is a tool for managing collections of files from the command line.  It
+		allows you to tag files via symlinks, and query your collection with a simple
+		query language.
+	</longdescription>
+	<upstream>
+		<remote-id type="gitlab">khumba/khph</remote-id>
+	</upstream>
+</pkgmetadata>

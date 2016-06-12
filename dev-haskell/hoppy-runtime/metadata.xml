@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>bog@khumba.net</email>
+		<name>Bryan Gardiner</name>
+	</maintainer>
+	<longdescription>
+		Hoppy generates Haskell bindings to C++ libraries.
+		
+		This package provides common runtime functionality used by generated
+		bindings.
+	</longdescription>
+	<upstream>
+		<remote-id type="gitlab">khumba/hoppy</remote-id>
+	</upstream>
+</pkgmetadata>
