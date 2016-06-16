@@ -13,7 +13,7 @@ DESCRIPTION="C++ FFI generator - Code generator"
 HOMEPAGE="http://khumba.net/projects/hoppy"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
-LICENSE="AGPL-3"
+LICENSE="AGPL-3+"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""

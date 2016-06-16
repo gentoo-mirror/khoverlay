@@ -13,7 +13,7 @@ DESCRIPTION="A monadic take on a 2,500-year-old board game - GTK+ UI"
 HOMEPAGE="http://khumba.net/projects/goatee"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
-LICENSE="AGPL-3"
+LICENSE="AGPL-3+"
 SLOT="0/${PV}"
 KEYWORDS="~amd64 ~x86"
 IUSE=""

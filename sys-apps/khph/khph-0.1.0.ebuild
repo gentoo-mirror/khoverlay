@@ -13,7 +13,7 @@ DESCRIPTION="Command-line file tagging and organization tool"
 HOMEPAGE="http://khumba.net/projects/khph"
 SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
-LICENSE="AGPL-3"
+LICENSE="AGPL-3+"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""

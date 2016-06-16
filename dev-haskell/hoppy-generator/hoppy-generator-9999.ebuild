@@ -14,7 +14,7 @@ HOMEPAGE="http://khumba.net/projects/hoppy"
 EGIT_REPO_URI="https://gitlab.com/khumba/hoppy.git"
 S="${WORKDIR}/${P}/generator"
 
-LICENSE="AGPL-3"
+LICENSE="AGPL-3+"
 SLOT="0/${PV}"
 KEYWORDS=""
 IUSE=""

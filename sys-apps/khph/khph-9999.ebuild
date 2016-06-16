@@ -13,7 +13,7 @@ DESCRIPTION="Command-line file tagging and organization tool"
 HOMEPAGE="http://khumba.net/projects/khph"
 EGIT_REPO_URI="https://gitlab.com/khumba/khph.git"
 
-LICENSE="AGPL-3"
+LICENSE="AGPL-3+"
 SLOT="0"
 KEYWORDS=""
 IUSE=""
