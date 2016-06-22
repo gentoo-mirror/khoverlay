@@ -20,7 +20,7 @@ KEYWORDS=""
 IUSE=""
 
 RDEPEND=">=dev-haskell/haskell-src-1.0:=[profile?] <dev-haskell/haskell-src-1.1:=[profile?]
-	=dev-haskell/hoppy-generator-9999:=[profile?]
+	>=dev-haskell/hoppy-generator-9999:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
