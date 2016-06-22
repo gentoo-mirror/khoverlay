@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>bog@khumba.net</email>
+		<name>Bryan Gardiner</name>
+	</maintainer>
+	<upstream>
+		<remote-id type="gitlab">khumba/qtah</remote-id>
+	</upstream>
+</pkgmetadata>
