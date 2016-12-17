@@ -20,10 +20,10 @@ KEYWORDS=""
 IUSE="qt4 qt5"
 REQUIRED_USE="^^ ( qt4 qt5 )"
 
-RDEPEND=">=dev-haskell/binary-0.7:= <dev-haskell/binary-0.8:=
-	>=dev-haskell/hoppy-runtime-0.2:= <dev-haskell/hoppy-runtime-0.3:=
+RDEPEND=">=dev-haskell/binary-0.7:= <dev-haskell/binary-0.9:=
+	>=dev-haskell/hoppy-runtime-0.3:= <dev-haskell/hoppy-runtime-0.4:=
 	>=dev-haskell/qtah-9999:=[qt4=,qt5=]
-	>=dev-lang/ghc-7.6.1:=
+	>=dev-lang/ghc-7.8.4:=
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-1.16.0

@@ -21,7 +21,7 @@ IUSE="qt4 qt5"
 REQUIRED_USE="^^ ( qt4 qt5 )"
 
 RDEPEND=">=dev-haskell/qtah-generator-9999:=[profile?]
-	>=dev-lang/ghc-7.4.1:=
+	>=dev-lang/ghc-7.8.4:=
 	qt4? (
 		dev-qt/qtcore:4
 		dev-qt/qtgui:4
