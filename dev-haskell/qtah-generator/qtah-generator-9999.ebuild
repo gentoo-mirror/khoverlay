@@ -20,7 +20,7 @@ KEYWORDS=""
 IUSE=""
 
 RDEPEND=">=dev-haskell/haskell-src-1.0:=[profile?] <dev-haskell/haskell-src-1.1:=[profile?]
-	>=dev-haskell/hoppy-generator-0.3:=[profile?] <dev-haskell/hoppy-generator-0.4:=[profile?]
+	>=dev-haskell/hoppy-generator-0.3.3:=[profile?] <dev-haskell/hoppy-generator-0.4:=[profile?]
 	>=dev-haskell/hoppy-std-0.3:=[profile?] <dev-haskell/hoppy-std-0.4:=[profile?]
 	>=dev-haskell/mtl-2.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-lang/ghc-7.8.2:=

@@ -20,15 +20,14 @@ KEYWORDS=""
 IUSE="qt4 qt5"
 REQUIRED_USE="^^ ( qt4 qt5 )"
 
-RDEPEND=">=dev-haskell/binary-0.7:=[profile?] <dev-haskell/binary-0.9:=[profile?]
-	>=dev-haskell/hoppy-runtime-0.3:=[profile?] <dev-haskell/hoppy-runtime-0.4:=[profile?]
+RDEPEND=">=dev-haskell/hoppy-runtime-0.3:=[profile?] <dev-haskell/hoppy-runtime-0.4:=[profile?]
 	>=dev-haskell/qtah-cpp-9999:=[profile?,qt4=,qt5=]
 	>=dev-haskell/qtah-generator-9999:=[profile?]
 	>=dev-lang/ghc-7.8.4:=
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.16.0
-	test? ( >=dev-haskell/hunit-1.2 <dev-haskell/hunit-1.4 )
+	>=dev-haskell/cabal-1.18.1.3
+	test? ( >=dev-haskell/hunit-1.2 <dev-haskell/hunit-1.6 )
 "
 
 src_configure() {

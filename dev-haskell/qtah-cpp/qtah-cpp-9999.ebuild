@@ -33,7 +33,7 @@ RDEPEND=">=dev-haskell/qtah-generator-9999:=[profile?]
 	)
 "
 DEPEND="${RDEPEND}
-	>=dev-haskell/cabal-1.10
+	>=dev-haskell/cabal-1.20
 "
 
 src_configure() {
