@@ -1,6 +1,5 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
@@ -20,8 +19,8 @@ KEYWORDS=""
 IUSE=""
 
 RDEPEND=">=dev-haskell/haskell-src-1.0:=[profile?] <dev-haskell/haskell-src-1.1:=[profile?]
-	>=dev-haskell/hoppy-generator-0.3.3:=[profile?] <dev-haskell/hoppy-generator-0.4:=[profile?]
-	>=dev-haskell/hoppy-std-0.3:=[profile?] <dev-haskell/hoppy-std-0.4:=[profile?]
+	>=dev-haskell/hoppy-generator-0.4:=[profile?]
+	>=dev-haskell/hoppy-std-0.4:=[profile?]
 	>=dev-haskell/mtl-2.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
 "

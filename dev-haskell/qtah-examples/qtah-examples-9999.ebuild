@@ -1,6 +1,5 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
 EAPI=6
 
@@ -20,7 +19,7 @@ KEYWORDS=""
 IUSE="qt4 qt5"
 REQUIRED_USE="^^ ( qt4 qt5 )"
 
-RDEPEND=">=dev-haskell/hoppy-runtime-0.3:= <dev-haskell/hoppy-runtime-0.4:=
+RDEPEND=">=dev-haskell/hoppy-runtime-0.4:=
 	>=dev-haskell/qtah-9999:=[qt4=,qt5=]
 	>=dev-lang/ghc-7.8.4:=
 "
