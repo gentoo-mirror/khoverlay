@@ -3,7 +3,7 @@
 This repository is a [Gentoo overlay](https://wiki.gentoo.org/wiki/Overlay) for
 my packages.  To add this overlay via Layman, run as root:
 
-    # layman -o https://gitlab.com/khumba/khoverlay/raw/master/repositories.xml -f -a khoverlay
+    # layman -a khoverlay
 
 Or you can clone the repository and create
 `/etc/portage/repos.conf/khoverlay.conf` with the following contents:
