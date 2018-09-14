@@ -18,7 +18,7 @@ SLOT="0/${PV}"
 KEYWORDS=""
 IUSE=""
 
-RDEPEND=">=dev-haskell/cabal-1.20:=[profile?] <dev-haskell/cabal-2.1:=[profile?]
+RDEPEND=">=dev-haskell/cabal-1.20:=[profile?] <dev-haskell/cabal-2.3:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
