@@ -1,6 +1,13 @@
 # Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
+# sc-controller got a second "0.4.5" release, incorprating a few changes
+# between f595328 (where the v0.4.5 tag is), and d90157e (where the
+# GitHub v0.4.5 release currently is -- it pointed to the previous
+# commit briefly).  This -r1 revbump signifies the second release.
+#
+# See: https://github.com/kozec/sc-controller/releases
+
 EAPI=6
 
 PYTHON_COMPAT=( python2_7 )
