@@ -1,7 +1,8 @@
 # Khumba's Overlay
 
 This repository is a [Gentoo overlay](https://wiki.gentoo.org/wiki/Overlay) for
-my packages.  To add this overlay via Layman, run as root:
+my packages, as well as the other packages that I use or patch.  To add this
+overlay via Layman, run as root:
 
     # layman -a khoverlay
 
