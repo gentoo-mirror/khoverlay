@@ -18,9 +18,9 @@ SLOT="0"
 
 IUSE=""
 
-DEPEND="x11-base/xorg-server[udev]
-		>=x11-misc/util-macros-1.8
-		x11-misc/xwiimote"
+DEPEND="games-util/xwiimote
+	x11-base/xorg-server[udev]
+	>=x11-misc/util-macros-1.8"
 
 RDEPEND="${DEPEND}"
 
