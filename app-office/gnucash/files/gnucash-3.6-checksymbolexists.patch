@@ -1,0 +1,10 @@
+--- a/gnucash/register/register-gnome/CMakeLists.txt	2020-04-02 18:48:20.154633794 -0700
++++ b/gnucash/register/register-gnome/CMakeLists.txt	2020-04-02 18:48:27.901634164 -0700
+@@ -1,5 +1,7 @@
+ add_subdirectory(test)
+ 
++include(CheckSymbolExists)
++
+ #GTK before 3.14 didn't have GDK_MODIFIER_INTENT_DEFAULT_MOD_MASK
+ check_symbol_exists(GDK_MODIFIER_INTENT_DEFAULT_MOD_MASK gdk/gdktypes.h have_mod_mask)
+ if (NOT have_mod_mask)
