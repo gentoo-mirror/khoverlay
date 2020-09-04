@@ -1,0 +1,9 @@
+DEFINED_PHASES=install
+DESCRIPTION=Wallpaper collection shipped with System76 products
+EAPI=7
+HOMEPAGE=https://system76.com/swag/desktop-wallpapers https://launchpad.net/system76-wallpapers
+KEYWORDS=~amd64 ~x86
+LICENSE=CC-BY-SA-1.0
+SLOT=0
+SRC_URI=https://github.com/pop-os/system76-wallpapers/archive/d6171e2708cb91fc3f5a7e6749cbfb27a547ca9f.tar.gz -> system76-wallpapers-20180509.tar.gz
+_md5_=79e15999174d0ed33bc5ced814a8b3ab
