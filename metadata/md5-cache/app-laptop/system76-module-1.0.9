@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile install postinst postrm preinst setup
+DEPEND=kernel_linux? ( sys-apps/kmod[tools] ) sys-apps/sed kernel_linux? ( virtual/linux-sources virtual/libelf )
+DESCRIPTION=System76 Driver
+EAPI=7
+HOMEPAGE=https://github.com/pop-os/system76-dkms
+IUSE=kernel_linux kernel_linux kernel_linux
+KEYWORDS=~amd64
+LICENSE=GPL-2+
+RDEPEND=kernel_linux? ( sys-apps/kmod[tools] )
+SLOT=0
+SRC_URI=https://github.com/pop-os/system76-dkms/archive/1.0.9.tar.gz -> system76-dkms-1.0.9.tar.gz
+_eclasses_=eutils	fcb2aa98e1948b835b5ae66ca52868c5	linux-info	c90a203b1c14cfa77bd3e37a0e96c955	linux-mod	63c06dfa12648f13855f5f4348af824c	multilib	98584e405e2b0264d37e8f728327fed1	toolchain-funcs	605c126bed8d87e4378d5ff1645330cb
+_md5_=62995fd0695d8a93306e8677ea6f56f4
