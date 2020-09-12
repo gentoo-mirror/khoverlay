@@ -1,0 +1,2 @@
+move app-laptop/system76-acpi-driver app-laptop/system76-acpi-module
+move app-laptop/system76-io-driver app-laptop/system76-io-module

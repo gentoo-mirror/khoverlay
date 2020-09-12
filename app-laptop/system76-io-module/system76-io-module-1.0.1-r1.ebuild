@@ -5,7 +5,7 @@ EAPI=7
 
 inherit linux-mod
 
-REPO_NAME="${PN%-driver}-dkms"
+REPO_NAME="${PN%-module}-dkms"
 REPO_NV="${REPO_NAME}-${PV}"
 
 DESCRIPTION="System76 I/O Board Driver"

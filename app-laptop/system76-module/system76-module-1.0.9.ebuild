@@ -3,16 +3,16 @@
 
 EAPI=7
 
-inherit linux-mod
+inherit linux-info linux-mod
 
-REPO_NAME="${PN%-driver}-dkms"
+REPO_NAME="${PN%-module}-dkms"
 REPO_NV="${REPO_NAME}-${PV}"
 
-DESCRIPTION="System76 ACPI Driver"
+DESCRIPTION="System76 Driver"
 HOMEPAGE="https://github.com/pop-os/${REPO_NAME}"
 SRC_URI="https://github.com/pop-os/${REPO_NAME}/archive/${PV}.tar.gz -> ${REPO_NV}.tar.gz"
 
-LICENSE="GPL-2"
+LICENSE="GPL-2+"
 SLOT="0"
 KEYWORDS="~amd64"
 
@@ -21,7 +21,11 @@ DEPEND="${RDEPEND}"
 
 S="${WORKDIR}/${REPO_NV}"
 
-MODULE_NAMES="system76_acpi(misc:${S})"
+CONFIG_CHECK="
+	ACPI_WMI
+"
+
+MODULE_NAMES="system76(misc:${S})"
 BUILD_TARGETS="clean all"
 BUILD_PARAMS="KERNEL_DIR=${KERNEL_DIR}"
 
