@@ -1,5 +1,5 @@
 # Bryan Gardiner <bog@khumba.net> (2020-09-11)
-# sc-controller versions 0.4.5 and earlier require Python 2, and
+# sc-controller versions prior to 0.4.8 require Python 2, and
 # dependencies on Gentoo have had Python 2 support removed.
 # Please use games-util/sc-controller-9999 instead.
-<games-util/sc-controller-9999
+<games-util/sc-controller-0.4.8
