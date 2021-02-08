@@ -30,6 +30,7 @@ RDEPEND=">=dev-haskell/qtah-generator-9999:=[profile?]
 		dev-qt/qtgui:5
 		dev-qt/qtwidgets:5
 	)
+	!dev-haskell/qtah-cpp-qt5
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.0

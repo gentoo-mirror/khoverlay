@@ -23,6 +23,7 @@ RDEPEND=">=dev-haskell/hoppy-runtime-0.8:=[profile?]
 	>=dev-haskell/qtah-cpp-9999:=[profile?,qt4=,qt5=]
 	>=dev-haskell/qtah-generator-9999:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
+	!dev-haskell/qtah-qt5
 "
 DEPEND="${RDEPEND}
 	>=dev-haskell/cabal-2.0
