@@ -1,0 +1,71 @@
+diff -ru enigma-1.30/configure.ac enigma-1.30.b/configure.ac
+--- enigma-1.30/configure.ac	2020-12-22 16:15:30.000000000 -0800
++++ enigma-1.30.b/configure.ac	2021-03-03 17:49:35.013242521 -0800
+@@ -286,7 +286,6 @@
+ 	CXXFLAGS="$CXXFLAGS -O2 -ffast-math -fomit-frame-pointer"
+ 	AC_MSG_RESULT(yes)
+ else
+-	CXXFLAGS="$CXXFLAGS -g"
+ 	AC_MSG_RESULT(no)
+ fi
+ 
+diff -ru enigma-1.30/etc/enigma.desktop enigma-1.30.b/etc/enigma.desktop
+--- enigma-1.30/etc/enigma.desktop	2020-12-22 16:15:30.000000000 -0800
++++ enigma-1.30.b/etc/enigma.desktop	2021-03-03 17:50:48.639908016 -0800
+@@ -1,5 +1,5 @@
+ [Desktop Entry]
+-Version=1.30
++Version=1.0
+ Name=Enigma
+ Name[be]=Enigma
+ Name[cs]=Enigma
+@@ -44,5 +44,5 @@
+ StartupNotify=false
+ Icon=enigma
+ Type=Application
+-Categories=Application;Game;PuzzleGame;
++Categories=Game;LogicGame;
+ 
+diff -ru enigma-1.30/etc/Makefile.am enigma-1.30.b/etc/Makefile.am
+--- enigma-1.30/etc/Makefile.am	2020-12-22 16:15:30.000000000 -0800
++++ enigma-1.30.b/etc/Makefile.am	2021-03-03 18:12:31.809887292 -0800
+@@ -1,18 +1,18 @@
+ # if !MINGW32
+ # Comply with xdg icon theme specification
+-icondir = $(prefix)/share/icons/hicolor/48x48/apps
++icondir = /usr/share/icons/hicolor/48x48/apps
+ icon_DATA = enigma.png
+ 
+ # Backwards-compatible global search location for images
+-pixmapdir = $(prefix)/share/pixmaps
++pixmapdir = /usr/share/pixmaps
+ pixmap_DATA = enigma.png
+ 
+ # Install .desktop file in xdg standard location
+-desktopdir = $(prefix)/share/applications
++desktopdir = /usr/share/applications
+ desktop_DATA = enigma.desktop
+ 
+ # Install AppData file
+-appdatadir = $(prefix)/share/appdata
++appdatadir = /usr/share/metainfo
+ dist_appdata_DATA = enigma.appdata.xml
+ # endif !MINGW32
+ 
+diff -ru enigma-1.30/Makefile.am enigma-1.30.b/Makefile.am
+--- enigma-1.30/Makefile.am	2020-12-22 16:15:30.000000000 -0800
++++ enigma-1.30.b/Makefile.am	2021-03-03 18:10:21.456556039 -0800
+@@ -3,12 +3,9 @@
+ #   tools -> lib-src/lua
+ #   src   -> tools, lib-src
+ #
+-SUBDIRS = m4 lib-src tools intl src data doc po etc
++SUBDIRS = m4 lib-src tools intl src data po etc
+ EXTRA_DIST = enigma CHANGES ACKNOWLEDGEMENTS
+ 
+-docdir = @datadir@/doc/enigma
+-doc_DATA = README CHANGES COPYING ACKNOWLEDGEMENTS
+-
+ ACLOCAL_AMFLAGS = -I m4
+ 
+ .PHONY: tolua
