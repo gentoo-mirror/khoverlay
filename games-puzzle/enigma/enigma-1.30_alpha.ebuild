@@ -61,10 +61,10 @@ src_install() {
 	HTML_DOCS="doc/*" DOCS="ACKNOWLEDGEMENTS AUTHORS CHANGES README doc/HACKING" \
 		default
 	dosym \
-		/usr/share/fonts/dejavu/DejaVuSansCondensed.ttf \
+		../../fonts/dejavu/DejaVuSansCondensed.ttf \
 		/usr/share/${PN}/fonts/DejaVuSansCondensed.ttf
 	dosym \
-		/usr/share/fonts/dejavu/DejaVuSans.ttf \
+		../../fonts/dejavu/DejaVuSans.ttf \
 		/usr/share/${PN}/fonts/vera_sans.ttf
 	doman doc/enigma.6
 }
