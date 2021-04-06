@@ -1,6 +1,6 @@
 app-laptop/system76-acpi-module 1.0.1-r1 1.0.2: System76 ACPI Driver
 app-laptop/system76-io-module 1.0.1-r1: System76 I/O Board Driver
-app-laptop/system76-module 1.0.9: System76 Driver
+app-laptop/system76-module 1.0.9 1.0.12: System76 Driver
 dev-games/goatee 0.3.1.1 0.3.1.3: A monadic take on a 2,500-year-old board game - library
 dev-haskell/hoppy-docs 0.2.0 0.3.0 0.3.1 0.3.2 0.4.0 0.5.0 0.7.0 0.8.0 9999: C++ FFI generator - Documentation
 dev-haskell/hoppy-generator 0.1.0 0.2.0 0.3.0 0.3.2 0.3.3 0.4.0 0.5.0 0.5.1 0.5.2 0.7.0 0.7.1 0.8.0 9999: C++ FFI generator - Code generator
@@ -18,6 +18,6 @@ games-strategy/liquidwar 5.6.5: Unique multiplayer wargame
 games-util/xwiimote 9999: Nintendo Wii Remote Linux Device Driver Tools
 media-gfx/fontmatrix 9999: Cross-platform font management application
 sys-apps/khph 0.1.0 9999: Command-line file tagging and organization tool
-sys-apps/system76-driver 20.04.14: Universal driver for System76 computers
+sys-apps/system76-driver 20.04.14-r1 20.04.30: Universal driver for System76 computers
 x11-drivers/xf86-input-xwiimote 9999: X.Org Wii Remote Input Driver
 x11-themes/system76-wallpapers 20180509: Wallpaper collection shipped with System76 products

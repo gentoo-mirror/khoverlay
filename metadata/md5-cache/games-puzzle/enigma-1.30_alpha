@@ -12,4 +12,4 @@ RDEPEND=media-libs/sdl2-ttf media-libs/libsdl2[video] media-libs/sdl2-mixer medi
 SLOT=0
 SRC_URI=https://github.com/Enigma-Game/Enigma/releases/download/1.30-alpha/enigma-1.30-alpha.tar.gz
 _eclasses_=toolchain-funcs	24921b57d6561d87cbef4916a296ada4	multilib	d410501a125f99ffb560b0c523cd3d1e	libtool	f143db5a74ccd9ca28c1234deffede96	autotools	6ff8412ccf96444868b310b0a28973ba	xdg-utils	ff2ff954e6b17929574eee4efc5152ba
-_md5_=c73a4672b22b8d19cdc5452778370b7d
+_md5_=f46c8df450e9b4de0394d89464168c48
