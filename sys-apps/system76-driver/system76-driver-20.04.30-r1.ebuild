@@ -74,6 +74,8 @@ src_install() {
 	# Let me know if you need this.
 
 	systemd_dounit "${S}/debian/system76-driver.service"
+
+	newinitd "${FILESDIR}/${PN}.openrc" "${PN}"
 }
 
 pkg_postinst() {
@@ -86,7 +88,11 @@ pkg_postinst() {
 	elog "    # system76-driver-cli"
 	elog ""
 	elog "You may want to enable the System76 daemon to enable further hardware"
-	elog "support and fixes."
+	elog "support and fixes.  For systemd users:"
 	elog ""
 	elog "    # systemctl enable --now system76-driver.service"
+	elog ""
+	elog "An experimental OpenRC runscript is also provided:"
+	elog ""
+	elog "    # rc-update add system76-driver default"
 }
