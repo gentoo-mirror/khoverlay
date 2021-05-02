@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>bog@khumba.net</email>
+    <name>Bryan Gardiner</name>
+  </maintainer>
+  <use>
+    <flag name="gtk">Install themes for GTK+ 2 and 3, plus various desktop
+    environments (GNOME, Cinnamon, XFCE4)</flag>
+    <flag name="login-sound">Install an XDG autostart script for playing a sound
+    on login</flag>
+    <flag name="plymouth">Install a Plymouth theme</flag>
+    <flag name="sound">Install sound themes</flag>
+  </use>
+</pkgmetadata>
