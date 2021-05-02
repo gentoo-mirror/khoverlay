@@ -2,3 +2,7 @@
 # Please add your descriptions to your package's metadata.xml ONLY.
 # * generated automatically using pmaint *
 
+x11-themes/chicago95:gtk - Install themes for GTK+ 2 and 3, plus various desktop environments (GNOME, Cinnamon, XFCE4)
+x11-themes/chicago95:login-sound - Install an XDG autostart script for playing a sound on login
+x11-themes/chicago95:plymouth - Install a Plymouth theme
+x11-themes/chicago95:sound - Install sound themes
