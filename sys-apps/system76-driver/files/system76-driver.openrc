@@ -1,6 +1,5 @@
 #!/sbin/openrc-run
 
-name="System76 Driver"
 description="System76 airplane-mode hotkey and LED support"
 command=/usr/bin/system76-daemon
 command_background=true
