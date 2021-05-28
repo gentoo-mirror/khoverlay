@@ -1,0 +1,45 @@
+# Copyright 2021 Bryan Gardiner <bog@khumba.net>
+# Distributed under the terms of the GNU General Public License v2
+
+EAPI=7
+
+MY_PN=BYTEPATH
+GIT_REV=51ee3086ae3369a2c80e4e47d4b62d480af4fe89
+
+DESCRIPTION="Replayable arcade shooter with a focus on build theorycrafting"
+HOMEPAGE="https://store.steampowered.com/app/760330/BYTEPATH/"
+SRC_URI="https://github.com/a327ex/${MY_PN}/archive/${GIT_REV}.tar.gz -> ${P}.tar.gz"
+
+LICENSE="MIT CC0-1.0 CC-BY-3.0 ZLIB"  # TODO Adjust.
+SLOT="0"
+KEYWORDS="~amd64 ~x86"
+
+DEPEND=""
+RDEPEND="${DEPEND}
+	games-engines/love:0.10[luajit]
+"
+
+S="${WORKDIR}/${MY_PN}-${GIT_REV}"
+
+PATCHES=(
+	"${FILESDIR}/${PN}-0_pre20200814-remove-steam.patch"
+)
+
+src_prepare() {
+	default
+
+	# Remove bundled engine and tutorials.
+	rm -r love tutorial || die "Couldn't remove bundled engine and tutorial."
+}
+
+src_install() {
+	insinto "/usr/share/${PN}"
+	doins -r .
+	newbin "${FILESDIR}/${PN}-0_pre20200814-launcher.sh" "${PN}"
+}
+
+pkg_postinst() {
+	elog "If you enjoy this game, consider supporting its creator:"
+	elog
+	elog "    https://store.steampowered.com/app/760330/BYTEPATH/"
+}
