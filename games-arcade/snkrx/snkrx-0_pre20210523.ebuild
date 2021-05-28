@@ -36,7 +36,7 @@ src_prepare() {
 	default
 
 	# Remove bundled love, we add our own :).
-	rm -r engine/love
+	rm -r engine/love || die "Couldn't remove bundled engine."
 }
 
 src_install() {
