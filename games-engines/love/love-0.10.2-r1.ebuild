@@ -1,27 +1,20 @@
 # Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
-# Restored from the ::gentoo git archive.  This ebuild was dropped from
-# the main tree on 2020-10-13 (1b04c6c5e35b50d39299c1c4d900be691bd493ca).
+# Restored from games-engines/love-0.10.2::gentoo in the archive.  This
+# ebuild was dropped from the main tree on 2020-10-13
+# (1b04c6c5e35b50d39299c1c4d900be691bd493ca).
 
 EAPI=6
 inherit gnome2-utils xdg-utils
 
-if [[ ${PV} == 9999* ]]; then
-	inherit mercurial
-	EHG_REPO_URI="https://bitbucket.org/rude/${PN}"
-	SRC_URI=""
-	KEYWORDS=""
-else
-	SRC_URI="https://www.bitbucket.org/rude/${PN}/downloads/${P}-linux-src.tar.gz"
-	KEYWORDS="~amd64 ~arm ~x86"
-fi
-
 DESCRIPTION="A framework for 2D games in Lua"
 HOMEPAGE="http://love2d.org/"
+SRC_URI="https://github.com/love2d/${PN}/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="ZLIB"
 SLOT="0.10"
+KEYWORDS="~amd64 ~arm ~x86"
 IUSE="+luajit"
 
 RDEPEND="sys-libs/zlib
@@ -43,9 +36,7 @@ DOCS=( "readme.md" "changes.txt" )
 
 src_prepare() {
 	default
-	if [[ ${PV} == 9999* ]]; then
-		./platform/unix/automagic || die
-	fi
+	./platform/unix/automagic || die
 }
 
 src_configure() {
