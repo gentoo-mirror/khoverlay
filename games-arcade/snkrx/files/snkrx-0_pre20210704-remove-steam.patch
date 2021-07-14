@@ -1,0 +1,307 @@
+From c5bc1591d327bfe47bce74a1c0876a10c3a78442 Mon Sep 17 00:00:00 2001
+From: Bryan Gardiner <bog@khumba.net>
+Date: Sun, 23 May 2021 18:16:37 -0700
+Subject: [PATCH] Remove Steam integration.
+
+---
+ arena.lua                | 51 ----------------------------------------
+ buy_screen.lua           |  3 ---
+ engine/external/init.lua |  1 -
+ engine/init.lua          |  3 ---
+ main.lua                 |  9 -------
+ mainmenu.lua             |  4 ----
+ 6 files changed, 71 deletions(-)
+
+diff --git a/arena.lua b/arena.lua
+index f152396..e9ba604 100644
+--- a/arena.lua
++++ b/arena.lua
+@@ -26,9 +26,6 @@ function Arena:on_enter(from, level, loop, units, passives, shop_level, shop_xp,
+ 
+   trigger:tween(2, main_song_instance, {volume = 0.5, pitch = 1}, math.linear)
+ 
+-  steam.friends.setRichPresence('steam_display', '#StatusFull')
+-  steam.friends.setRichPresence('text', 'Arena - Level ' .. self.level)
+-
+   self.floor = Group()
+   self.main = Group():set_as_physics_world(32, 0, 0, {'player', 'enemy', 'projectile', 'enemy_projectile', 'force_field', 'ghost'})
+   self.post_main = Group()
+@@ -151,28 +148,18 @@ function Arena:on_enter(from, level, loop, units, passives, shop_level, shop_xp,
+         if self.level == 6 then
+           state.achievement_speed_booster = true
+           system.save_state()
+-          steam.userStats.setAchievement('SPEED_BOOSTER')
+-          steam.userStats.storeStats()
+         elseif self.level == 12 then
+           state.achievement_exploder = true
+           system.save_state()
+-          steam.userStats.setAchievement('EXPLODER')
+-          steam.userStats.storeStats()
+         elseif self.level == 18 then
+           state.achievement_swarmer = true
+           system.save_state()
+-          steam.userStats.setAchievement('SWARMER')
+-          steam.userStats.storeStats()
+         elseif self.level == 24 then
+           state.achievement_forcer = true
+           system.save_state()
+-          steam.userStats.setAchievement('FORCER')
+-          steam.userStats.storeStats()
+         elseif self.level == 25 then
+           state.achievement_cluster = true
+           system.save_state()
+-          steam.userStats.setAchievement('CLUSTER')
+-          steam.userStats.storeStats()
+         end
+       end)
+     end)
+@@ -527,120 +514,86 @@ function Arena:quit()
+       if current_new_game_plus == 2 then
+         state.achievement_new_game_1 = true
+         system.save_state()
+-        steam.userStats.setAchievement('NEW_GAME_1')
+-        steam.userStats.storeStats()
+       end
+ 
+       if current_new_game_plus == 6 then
+         state.achievement_new_game_5 = true
+         system.save_state()
+-        steam.userStats.setAchievement('GAME_COMPLETE')
+-        steam.userStats.storeStats()
+       end
+ 
+       if self.ranger_level >= 2 then
+         state.achievement_rangers_win = true
+         system.save_state()
+-        steam.userStats.setAchievement('RANGERS_WIN')
+-        steam.userStats.storeStats()
+       end
+ 
+       if self.warrior_level >= 2 then
+         state.achievement_warriors_win = true
+         system.save_state()
+-        steam.userStats.setAchievement('WARRIORS_WIN')
+-        steam.userStats.storeStats()
+       end
+ 
+       if self.mage_level >= 2 then
+         state.achievement_mages_win = true
+         system.save_state()
+-        steam.userStats.setAchievement('MAGES_WIN')
+-        steam.userStats.storeStats()
+       end
+ 
+       if self.rogue_level >= 2 then
+         state.achievement_rogues_win = true
+         system.save_state()
+-        steam.userStats.setAchievement('ROGUES_WIN')
+-        steam.userStats.storeStats()
+       end
+ 
+       if self.healer_level >= 2 then
+         state.achievement_healers_win = true
+         system.save_state()
+-        steam.userStats.setAchievement('HEALERS_WIN')
+-        steam.userStats.storeStats()
+       end
+ 
+       if self.enchanter_level >= 2 then
+         state.achievement_enchanters_win = true
+         system.save_state()
+-        steam.userStats.setAchievement('ENCHANTERS_WIN')
+-        steam.userStats.storeStats()
+       end
+ 
+       if self.nuker_level >= 2 then
+         state.achievement_nukers_win = true
+         system.save_state()
+-        steam.userStats.setAchievement('NUKERS_WIN')
+-        steam.userStats.storeStats()
+       end
+ 
+       if self.conjurer_level >= 2 then
+         state.achievement_conjurers_win = true
+         system.save_state()
+-        steam.userStats.setAchievement('CONJURERS_WIN')
+-        steam.userStats.storeStats()
+       end
+ 
+       if self.psyker_level >= 2 then
+         state.achievement_psykers_win = true
+         system.save_state()
+-        steam.userStats.setAchievement('PSYKERS_WIN')
+-        steam.userStats.storeStats()
+       end
+ 
+       if self.curser_level >= 2 then
+         state.achievement_cursers_win = true
+         system.save_state()
+-        steam.userStats.setAchievement('CURSERS_WIN')
+-        steam.userStats.storeStats()
+       end
+ 
+       if self.forcer_level >= 2 then
+         state.achievement_forcers_win = true
+         system.save_state()
+-        steam.userStats.setAchievement('FORCERS_WIN')
+-        steam.userStats.storeStats()
+       end
+ 
+       if self.swarmer_level >= 2 then
+         state.achievement_swarmers_win = true
+         system.save_state()
+-        steam.userStats.setAchievement('SWARMERS_WIN')
+-        steam.userStats.storeStats()
+       end
+ 
+       if self.voider_level >= 2 then
+         state.achievement_voiders_win = true
+         system.save_state()
+-        steam.userStats.setAchievement('VOIDERS_WIN')
+-        steam.userStats.storeStats()
+       end
+ 
+       if self.sorcerer_level >= 3 then
+         state.achievement_sorcerers_win = true
+         system.save_state()
+-        steam.userStats.setAchievement('SORCERERS_WIN')
+-        steam.userStats.storeStats()
+       end
+ 
+       if self.mercenary_level >= 2 then
+         state.achievement_mercenaries_win = true
+         system.save_state()
+-        steam.userStats.setAchievement('MERCENARIES_WIN')
+-        steam.userStats.storeStats()
+       end
+ 
+       local all_units_level_2 = true
+@@ -653,8 +606,6 @@ function Arena:quit()
+       if all_units_level_2 then
+         state.achievement_level_2_win = true
+         system.save_state()
+-        steam.userStats.setAchievement('LEVEL_2_WIN')
+-        steam.userStats.storeStats()
+       end
+ 
+       local units = self.player:get_all_units()
+@@ -668,8 +619,6 @@ function Arena:quit()
+       if all_units_level_3 then
+         state.achievement_level_3_win = true
+         system.save_state()
+-        steam.userStats.setAchievement('LEVEL_3_WIN')
+-        steam.userStats.storeStats()
+       end
+     end
+ 
+diff --git a/buy_screen.lua b/buy_screen.lua
+index c6eb805..26551c7 100644
+--- a/buy_screen.lua
++++ b/buy_screen.lua
+@@ -49,9 +49,6 @@ function BuyScreen:on_enter(from, level, loop, units, passives, shop_level, shop
+ 
+   input:set_mouse_visible(true)
+ 
+-  steam.friends.setRichPresence('steam_display', '#StatusFull')
+-  steam.friends.setRichPresence('text', 'Shop - Level ' .. self.level)
+-
+   self.main = Group()
+   self.effects = Group()
+   self.ui = Group()
+diff --git a/engine/external/init.lua b/engine/external/init.lua
+index 3949107..bcd80de 100644
+--- a/engine/external/init.lua
++++ b/engine/external/init.lua
+@@ -4,5 +4,4 @@ if not path:find("init") then
+   mlib = require(path .. ".mlib")
+   -- if not web then clipper = require(path .. ".clipper") end
+   ripple = require(path .. ".ripple")
+-  steam = require 'luasteam'
+ end
+diff --git a/engine/init.lua b/engine/init.lua
+index 44189cf..a627ea0 100644
+--- a/engine/init.lua
++++ b/engine/init.lua
+@@ -46,7 +46,6 @@ end
+ function engine_run(config)
+   if not web then
+     love.filesystem.setIdentity(config.game_name)
+-    steam.init()
+     system.load_state()
+ 
+     local _, _, flags = love.window.getMode()
+@@ -122,7 +121,6 @@ function engine_run(config)
+         if name == "quit" then
+           if not love.quit or not love.quit() then
+             system.save_state()
+-            steam.shutdown()
+             return a or 0
+           end
+         elseif name == "keypressed" then input.keyboard_state[a] = true; input.last_key_pressed = a
+@@ -139,7 +137,6 @@ function engine_run(config)
+ 
+     if love.timer then dt = love.timer.step() end
+ 
+-    steam.runCallbacks()
+     accumulator = accumulator + dt
+     while accumulator >= fixed_dt do
+       frame = frame + 1
+diff --git a/main.lua b/main.lua
+index 09f7928..54c4eaa 100644
+--- a/main.lua
++++ b/main.lua
+@@ -1700,7 +1700,6 @@ function init()
+     'magnetism', 'insurance', 'dividends', 'haste', 'rearm', 'ceremonial_dagger', 'burning_strike', 'lucky_strike', 'healing_strike', 'psycholeak', 'divine_blessing', 'hardening',
+   }
+ 
+-  steam.userStats.requestCurrentStats()
+   new_game_plus = state.new_game_plus or 0
+   if not state.new_game_plus then state.new_game_plus = new_game_plus end
+   current_new_game_plus = state.current_new_game_plus or new_game_plus
+@@ -1833,13 +1832,6 @@ function update(dt)
+     state.sx, state.sy = sx, sy
+     state.fullscreen = false
+   end
+-
+-  --[[
+-  if input.f11.pressed then
+-    steam.userStats.resetAllStats(true)
+-    steam.userStats.storeStats()
+-  end
+-  ]]--
+ end
+ 
+ 
+@@ -2094,7 +2086,6 @@ function open_options(self)
+ 
+     self.quit_button = Button{group = self.ui, x = gw/2, y = gh - 25, force_update = true, button_text = 'quit', fg_color = 'bg10', bg_color = 'bg', action = function()
+       system.save_state()
+-      steam.shutdown()
+       love.event.quit()
+     end}
+   end, 'pause')
+diff --git a/mainmenu.lua b/mainmenu.lua
+index 8d8af79..b0987a2 100644
+--- a/mainmenu.lua
++++ b/mainmenu.lua
+@@ -11,9 +11,6 @@ function MainMenu:on_enter(from)
+   slow_amount = 1
+   trigger:tween(2, main_song_instance, {volume = 0.5, pitch = 1}, math.linear)
+ 
+-  steam.friends.setRichPresence('steam_display', '#StatusFull')
+-  steam.friends.setRichPresence('text', 'Main Menu')
+-
+   self.floor = Group()
+   self.main = Group():set_as_physics_world(32, 0, 0, {'player', 'enemy', 'projectile', 'enemy_projectile', 'force_field', 'ghost'})
+   self.post_main = Group()
+@@ -115,7 +112,6 @@ function MainMenu:on_enter(from)
+   end}
+   self.quit_button = Button{group = self.main_ui, x = 37, y = gh/2 + 34, force_update = true, button_text = 'quit', fg_color = 'bg10', bg_color = 'bg', action = function(b)
+     system.save_state()
+-    steam.shutdown()
+     love.event.quit()
+   end}
+   self.t:every(2, function() self.soundtrack_button.spring:pull(0.025, 200, 10) end)
+-- 
+2.31.1
+
