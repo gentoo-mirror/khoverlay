@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=BYTEPATH
+Comment=Arcade shooter with a focus on build theorycrafting
+Categories=Game;ArcadeGame;
+Exec=bytepath
+Icon=bytepath
