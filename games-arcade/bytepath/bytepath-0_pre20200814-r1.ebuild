@@ -3,6 +3,8 @@
 
 EAPI=7
 
+inherit xdg
+
 MY_PN=BYTEPATH
 GIT_REV=51ee3086ae3369a2c80e4e47d4b62d480af4fe89
 
@@ -26,7 +28,7 @@ PATCHES=(
 )
 
 src_prepare() {
-	default
+	xdg_src_prepare
 
 	# Remove bundled engine and tutorials.
 	rm -r love tutorial || die "Couldn't remove bundled engine and tutorial."
@@ -35,10 +37,19 @@ src_prepare() {
 src_install() {
 	insinto "/usr/share/${PN}"
 	doins -r .
+
+	insinto "/usr/share/pixmaps"
+	doins "${FILESDIR}/${PN}.png"
+
+	insinto "/usr/share/applications"
+	doins "${FILESDIR}/${PN}.desktop"
+
 	newbin "${FILESDIR}/${PN}-0_pre20200814-launcher.sh" "${PN}"
 }
 
 pkg_postinst() {
+	xdg_pkg_postinst
+
 	elog "If you enjoy this game, consider supporting its creator:"
 	elog
 	elog "    https://store.steampowered.com/app/760330/BYTEPATH/"
