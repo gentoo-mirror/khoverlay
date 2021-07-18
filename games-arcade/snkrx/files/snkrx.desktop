@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=SNKRX
+Comment=Arcade shooter where you control a snake of heroes
+Categories=Game;ArcadeGame;
+Exec=snkrx
+Icon=snkrx
