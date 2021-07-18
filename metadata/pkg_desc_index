@@ -19,7 +19,7 @@ games-engines/love 0.10.2-r1: A framework for 2D games in Lua
 games-puzzle/enigma 1.30_alpha: Puzzle game similar to Oxyd
 games-strategy/liquidwar 5.6.5: Unique multiplayer wargame
 games-util/xwiimote 9999: Nintendo Wii Remote Linux Device Driver Tools
-media-gfx/color-picker 1.0.1: A powerful screen color picker
+media-gfx/color-picker 1.0.1 1.0.2: A powerful screen color picker
 media-gfx/fontmatrix 9999: Cross-platform font management application
 sys-apps/khph 0.1.0 9999: Command-line file tagging and organization tool
 sys-apps/system76-driver 20.04.14-r1 20.04.31-r1: Universal driver for System76 computers
