@@ -1,10 +1,13 @@
-DEFINED_PHASES=install postinst prepare
+DEFINED_PHASES=install postinst postrm preinst prepare
+DEPEND=dev-util/desktop-file-utils x11-misc/shared-mime-info
 DESCRIPTION=Replayable arcade shooter with a focus on build theorycrafting
 EAPI=7
 HOMEPAGE=https://store.steampowered.com/app/760330/BYTEPATH/
+INHERIT=xdg
 KEYWORDS=~amd64 ~x86
 LICENSE=MIT CC0-1.0 CC-BY-3.0 ZLIB
 RDEPEND=games-engines/love:0.10[luajit]
 SLOT=0
 SRC_URI=https://github.com/a327ex/BYTEPATH/archive/51ee3086ae3369a2c80e4e47d4b62d480af4fe89.tar.gz -> bytepath-0_pre20200814.tar.gz
-_md5_=5b0f23616273ad1eea4066ad2b217b92
+_eclasses_=xdg-utils	27f9a2f19502b925ac117bd657aa2979	xdg	c7ba313ea1eaf266f95cc6235f7d6a07
+_md5_=69436e8546b28d182b40fa949da4e8dd
