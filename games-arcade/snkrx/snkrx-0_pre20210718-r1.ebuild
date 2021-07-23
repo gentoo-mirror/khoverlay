@@ -9,7 +9,7 @@ LUA_COMPAT=( lua5-{2..3} )
 inherit lua-single xdg
 
 MY_PN=SNKRX
-GIT_REV=39abf59ab3fbd54dd9e5ffce793a84f53f4b877e
+GIT_REV=986db10053e25e0f892b4b60122faaf2cba97872
 
 DESCRIPTION="Arcade shooter where you control a snake of heroes"
 HOMEPAGE="https://store.steampowered.com/app/915310/SNKRX/"
