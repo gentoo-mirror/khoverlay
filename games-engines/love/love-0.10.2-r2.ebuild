@@ -5,7 +5,7 @@
 # ebuild was dropped from the main tree on 2020-10-13
 # (1b04c6c5e35b50d39299c1c4d900be691bd493ca).
 
-EAPI=6
+EAPI=7
 inherit gnome2-utils xdg-utils
 
 DESCRIPTION="A framework for 2D games in Lua"
@@ -52,7 +52,8 @@ src_install() {
 		mv "${ED}/usr/bin/${PN}" "${ED}/usr/bin/${PN}-${SLOT}" || die
 		mv "${ED}"/usr/share/applications/love{,"-$SLOT"}.desktop || die
 		sed -i -e "/^Name=/s/$/ ($SLOT)/" -e "s|/usr/bin/love|/usr/bin/love-$SLOT|" "${ED}/usr/share/applications/love-$SLOT.desktop" || die
-		rm -r "${ED}"/usr/{lib64/liblove.so,share/{mime/,pixmaps/,icons/,man/}} || die
+		rm -r "${ED}"/usr/"$(get_libdir)"/liblove.so || die
+		rm -r "${ED}"/usr/share/{mime/,pixmaps/,icons/,man/} || die
 	fi
 }
 
