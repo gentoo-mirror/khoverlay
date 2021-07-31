@@ -35,6 +35,8 @@ PATCHES=(
 DOCS=(
 	README.md
 	LICENSE
+	devlog.md
+	todo
 )
 
 src_prepare() {
