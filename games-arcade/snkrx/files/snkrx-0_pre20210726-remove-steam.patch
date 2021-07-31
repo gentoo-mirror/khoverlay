@@ -1,4 +1,4 @@
-From c5bc1591d327bfe47bce74a1c0876a10c3a78442 Mon Sep 17 00:00:00 2001
+From 08292dc2184177bea27b265605d00e8aea39470b Mon Sep 17 00:00:00 2001
 From: Bryan Gardiner <bog@khumba.net>
 Date: Sun, 23 May 2021 18:16:37 -0700
 Subject: [PATCH] Remove Steam integration.
@@ -13,7 +13,7 @@ Subject: [PATCH] Remove Steam integration.
  6 files changed, 71 deletions(-)
 
 diff --git a/arena.lua b/arena.lua
-index f152396..e9ba604 100644
+index c09d0cb..28c621f 100644
 --- a/arena.lua
 +++ b/arena.lua
 @@ -26,9 +26,6 @@ function Arena:on_enter(from, level, loop, units, passives, shop_level, shop_xp,
@@ -26,7 +26,7 @@ index f152396..e9ba604 100644
    self.floor = Group()
    self.main = Group():set_as_physics_world(32, 0, 0, {'player', 'enemy', 'projectile', 'enemy_projectile', 'force_field', 'ghost'})
    self.post_main = Group()
-@@ -151,28 +148,18 @@ function Arena:on_enter(from, level, loop, units, passives, shop_level, shop_xp,
+@@ -149,28 +146,18 @@ function Arena:on_enter(from, level, loop, units, passives, shop_level, shop_xp,
          if self.level == 6 then
            state.achievement_speed_booster = true
            system.save_state()
@@ -55,7 +55,7 @@ index f152396..e9ba604 100644
          end
        end)
      end)
-@@ -527,120 +514,86 @@ function Arena:quit()
+@@ -522,120 +509,86 @@ function Arena:quit()
        if current_new_game_plus == 2 then
          state.achievement_new_game_1 = true
          system.save_state()
@@ -176,7 +176,7 @@ index f152396..e9ba604 100644
        end
  
        local all_units_level_2 = true
-@@ -653,8 +606,6 @@ function Arena:quit()
+@@ -648,8 +601,6 @@ function Arena:quit()
        if all_units_level_2 then
          state.achievement_level_2_win = true
          system.save_state()
@@ -185,7 +185,7 @@ index f152396..e9ba604 100644
        end
  
        local units = self.player:get_all_units()
-@@ -668,8 +619,6 @@ function Arena:quit()
+@@ -663,8 +614,6 @@ function Arena:quit()
        if all_units_level_3 then
          state.achievement_level_3_win = true
          system.save_state()
@@ -195,10 +195,10 @@ index f152396..e9ba604 100644
      end
  
 diff --git a/buy_screen.lua b/buy_screen.lua
-index c6eb805..26551c7 100644
+index dc6dfa6..c5f7d57 100644
 --- a/buy_screen.lua
 +++ b/buy_screen.lua
-@@ -49,9 +49,6 @@ function BuyScreen:on_enter(from, level, loop, units, passives, shop_level, shop
+@@ -50,9 +50,6 @@ function BuyScreen:on_enter(from, level, loop, units, passives, shop_level, shop
  
    input:set_mouse_visible(true)
  
@@ -219,7 +219,7 @@ index 3949107..bcd80de 100644
 -  steam = require 'luasteam'
  end
 diff --git a/engine/init.lua b/engine/init.lua
-index 44189cf..a627ea0 100644
+index d77c2af..4871e8c 100644
 --- a/engine/init.lua
 +++ b/engine/init.lua
 @@ -46,7 +46,6 @@ end
@@ -237,8 +237,8 @@ index 44189cf..a627ea0 100644
 -            steam.shutdown()
              return a or 0
            end
-         elseif name == "keypressed" then input.keyboard_state[a] = true; input.last_key_pressed = a
-@@ -139,7 +137,6 @@ function engine_run(config)
+         elseif name == "focus" then
+@@ -146,7 +144,6 @@ function engine_run(config)
  
      if love.timer then dt = love.timer.step() end
  
@@ -247,10 +247,10 @@ index 44189cf..a627ea0 100644
      while accumulator >= fixed_dt do
        frame = frame + 1
 diff --git a/main.lua b/main.lua
-index 09f7928..54c4eaa 100644
+index 65a6cc9..c7285be 100644
 --- a/main.lua
 +++ b/main.lua
-@@ -1700,7 +1700,6 @@ function init()
+@@ -1696,7 +1696,6 @@ function init()
      'magnetism', 'insurance', 'dividends', 'haste', 'rearm', 'ceremonial_dagger', 'burning_strike', 'lucky_strike', 'healing_strike', 'psycholeak', 'divine_blessing', 'hardening',
    }
  
@@ -258,7 +258,7 @@ index 09f7928..54c4eaa 100644
    new_game_plus = state.new_game_plus or 0
    if not state.new_game_plus then state.new_game_plus = new_game_plus end
    current_new_game_plus = state.current_new_game_plus or new_game_plus
-@@ -1833,13 +1832,6 @@ function update(dt)
+@@ -1823,13 +1822,6 @@ function update(dt)
      state.sx, state.sy = sx, sy
      state.fullscreen = false
    end
@@ -272,7 +272,7 @@ index 09f7928..54c4eaa 100644
  end
  
  
-@@ -2094,7 +2086,6 @@ function open_options(self)
+@@ -2095,7 +2087,6 @@ function open_options(self)
  
      self.quit_button = Button{group = self.ui, x = gw/2, y = gh - 25, force_update = true, button_text = 'quit', fg_color = 'bg10', bg_color = 'bg', action = function()
        system.save_state()
@@ -281,7 +281,7 @@ index 09f7928..54c4eaa 100644
      end}
    end, 'pause')
 diff --git a/mainmenu.lua b/mainmenu.lua
-index 8d8af79..b0987a2 100644
+index 8aee8b2..9a6bb3f 100644
 --- a/mainmenu.lua
 +++ b/mainmenu.lua
 @@ -11,9 +11,6 @@ function MainMenu:on_enter(from)
@@ -294,7 +294,7 @@ index 8d8af79..b0987a2 100644
    self.floor = Group()
    self.main = Group():set_as_physics_world(32, 0, 0, {'player', 'enemy', 'projectile', 'enemy_projectile', 'force_field', 'ghost'})
    self.post_main = Group()
-@@ -115,7 +112,6 @@ function MainMenu:on_enter(from)
+@@ -118,7 +115,6 @@ function MainMenu:on_enter(from)
    end}
    self.quit_button = Button{group = self.main_ui, x = 37, y = gh/2 + 34, force_update = true, button_text = 'quit', fg_color = 'bg10', bg_color = 'bg', action = function(b)
      system.save_state()

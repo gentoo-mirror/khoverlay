@@ -9,7 +9,7 @@ LUA_COMPAT=( lua5-{2..3} )
 inherit lua-single xdg
 
 MY_PN=SNKRX
-GIT_REV=986db10053e25e0f892b4b60122faaf2cba97872
+GIT_REV=1fff7cdefd10af5273d3efc5b678d7fb8d126110
 
 DESCRIPTION="Arcade shooter where you control a snake of heroes"
 HOMEPAGE="https://store.steampowered.com/app/915310/SNKRX/"
@@ -29,12 +29,14 @@ RDEPEND="${DEPEND}
 S="${WORKDIR}/${MY_PN}-${GIT_REV}"
 
 PATCHES=(
-	"${FILESDIR}/${PN}-0_pre20210704-remove-steam.patch"
+	"${FILESDIR}/${PN}-0_pre20210726-remove-steam.patch"
 )
 
 DOCS=(
 	README.md
 	LICENSE
+	devlog.md
+	todo
 )
 
 src_prepare() {
