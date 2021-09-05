@@ -3,3 +3,10 @@
 # dependencies on Gentoo have had Python 2 support removed.
 # Please use games-util/sc-controller-9999 instead.
 <games-util/sc-controller-0.4.8
+
+# Bryan Gardiner <bog@khumba.net> (2021-09-04)
+# Fontmatrix depends on dev-qt/qtwebkit, which has been masked for
+# removal in the main Gentoo tree since 2021-08-02.  Fontmatrix is in
+# maintenance mode and upstream appears to have no plans to port to
+# qtwebengine, so I'm masking it for removal.
+media-gfx/fontmatrix
