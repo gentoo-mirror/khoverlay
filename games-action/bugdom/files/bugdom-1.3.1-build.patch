@@ -1,0 +1,66 @@
+From 6ddafc49666a6bf8b4d9a51cd7f0973e5e45ddbf Mon Sep 17 00:00:00 2001
+From: Bryan Gardiner <bog@khumba.net>
+Date: Fri, 11 Jun 2021 16:52:46 -0700
+Subject: [PATCH] Patch to use system-wide directories.
+
+---
+ CMakeLists.txt |  6 ++----
+ src/Main.cpp   | 18 +-----------------
+ 2 files changed, 3 insertions(+), 21 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 639c859..ceafb8e 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -39,8 +39,6 @@ set(POMME_NO_GRAPHICS true)
+ # DEPENDENCIES
+ #------------------------------------------------------------------------------
+ 
+-add_subdirectory(extern/Pomme)
+-
+ find_package(SDL2 REQUIRED COMPONENTS main)
+ find_package(OpenGL REQUIRED)
+ 
+@@ -103,8 +101,8 @@ endif()
+ target_include_directories(${GAME_TARGET} PRIVATE
+ 	${SDL2_INCLUDE_DIRS}
+ 	${OPENGL_INCLUDE_DIR}
+-	extern/Pomme/src
+-	extern/Pomme/src/QD3D
++	/usr/include/Pomme
++	/usr/include/Pomme/QD3D
+ 	${GAME_SRCDIR}
+ 	${GAME_SRCDIR}/Headers
+ )
+diff --git a/src/Main.cpp b/src/Main.cpp
+index d59905c..68cb3cb 100644
+--- a/src/Main.cpp
++++ b/src/Main.cpp
+@@ -37,23 +37,7 @@ extern "C"
+ 
+ static fs::path FindGameData()
+ {
+-	fs::path dataPath;
+-
+-#if __APPLE__
+-	char pathbuf[PROC_PIDPATHINFO_MAXSIZE];
+-
+-	pid_t pid = getpid();
+-	int ret = proc_pidpath(pid, pathbuf, sizeof(pathbuf));
+-	if (ret <= 0)
+-	{
+-		throw std::runtime_error(std::string(__func__) + ": proc_pidpath failed: " + std::string(strerror(errno)));
+-	}
+-
+-	dataPath = pathbuf;
+-	dataPath = dataPath.parent_path().parent_path() / "Resources";
+-#else
+-	dataPath = "Data";
+-#endif
++	fs::path dataPath("/usr/share/Bugdom");
+ 
+ 	dataPath = dataPath.lexically_normal();
+ 
+-- 
+2.32.0
+

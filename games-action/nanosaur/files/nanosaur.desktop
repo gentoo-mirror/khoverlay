@@ -1,0 +1,7 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Nanosaur
+Comment=Battle T-rexes and rescue dino eggs before the asteroid hits
+Categories=Game;ActionGame;
+Exec=Nanosaur

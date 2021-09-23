@@ -1,0 +1,11 @@
+# Adapted for bugdom-1.3.0_p20210608 from 1.3.1's desktop file.
+# - Removed the Icon line as isn't not present in this version.
+
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Bugdom
+Comment=Save Bugdom from Thorax's evil Fire Ants
+Exec=Bugdom
+Terminal=false
+Categories=Game;
