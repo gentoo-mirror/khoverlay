@@ -23,6 +23,7 @@ media-gfx/color-picker 1.0.1 1.0.2: A powerful screen color picker
 media-gfx/fontmatrix 9999: Cross-platform font management application
 sys-apps/khph 0.1.0 9999: Command-line file tagging and organization tool
 sys-apps/system76-driver 20.04.14-r2 20.04.31-r2 20.04.42: Universal driver for System76 computers
+sys-fs/fedora-media-writer 4.2.2: GUI for writing Fedora (and other OS) images to portable drives
 x11-drivers/xf86-input-xwiimote 9999: X.Org Wii Remote Input Driver
 x11-themes/chicago95 2.0.1: Linux rendition of everyone's favourite 1995 Microsoft OS
 x11-themes/system76-wallpapers 20180509: Wallpaper collection shipped with System76 products
