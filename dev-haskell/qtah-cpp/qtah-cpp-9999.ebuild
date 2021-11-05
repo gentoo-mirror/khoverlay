@@ -16,20 +16,12 @@ S="${WORKDIR}/${P}/${PN}"
 LICENSE="LGPL-3+"
 SLOT="0/${PV}"
 KEYWORDS=""
-IUSE="qt4 qt5"
-REQUIRED_USE="^^ ( qt4 qt5 )"
 
 RDEPEND=">=dev-haskell/qtah-generator-9999:=[profile?]
 	>=dev-lang/ghc-7.8.2:=
-	qt4? (
-		dev-qt/qtcore:4
-		dev-qt/qtgui:4
-	)
-	qt5? (
-		dev-qt/qtcore:5
-		dev-qt/qtgui:5
-		dev-qt/qtwidgets:5
-	)
+	dev-qt/qtcore:5
+	dev-qt/qtgui:5
+	dev-qt/qtwidgets:5
 	!dev-haskell/qtah-cpp-qt5
 "
 DEPEND="${RDEPEND}
@@ -37,7 +29,5 @@ DEPEND="${RDEPEND}
 "
 
 src_configure() {
-	   haskell-cabal_src_configure \
-			   $(cabal_flag qt4) \
-			   $(cabal_flag qt5)
+	haskell-cabal_src_configure --flags=qt5
 }
