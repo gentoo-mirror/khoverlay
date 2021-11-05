@@ -16,11 +16,9 @@ S="${WORKDIR}/${P}/${PN}"
 LICENSE="LGPL-3+"
 SLOT="0"
 KEYWORDS=""
-IUSE="qt4 qt5"
-REQUIRED_USE="^^ ( qt4 qt5 )"
 
 RDEPEND=">=dev-haskell/hoppy-runtime-0.8:=
-	>=dev-haskell/qtah-9999:=[qt4=,qt5=]
+	>=dev-haskell/qtah-9999:=
 	>=dev-lang/ghc-7.8.2:=
 "
 DEPEND="${RDEPEND}
@@ -28,7 +26,5 @@ DEPEND="${RDEPEND}
 "
 
 src_configure() {
-	haskell-cabal_src_configure \
-		$(cabal_flag qt4) \
-		$(cabal_flag qt5)
+	haskell-cabal_src_configure
 }
