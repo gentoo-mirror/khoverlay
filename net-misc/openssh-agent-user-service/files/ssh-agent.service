@@ -1,0 +1,9 @@
+[Unit]
+Description=SSH agent for user sessions
+
+[Service]
+Type=forking
+ExecStart=/usr/bin/ssh-agent -a /run/user/%U/ssh-agent
+
+[Install]
+WantedBy=default.target
