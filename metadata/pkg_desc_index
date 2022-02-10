@@ -30,5 +30,6 @@ sys-apps/khph 0.1.0 9999: Command-line file tagging and organization tool
 sys-apps/system76-driver 20.04.14-r2 20.04.31-r2 20.04.42 20.04.46: Universal driver for System76 computers
 sys-fs/fedora-media-writer 4.2.2: GUI for writing Fedora (and other OS) images to portable drives
 x11-drivers/xf86-input-xwiimote 9999: X.Org Wii Remote Input Driver
+x11-libs/gtk3-classic-patches 3.24.30.2 3.24.31.2: gtk3-classic patches for /etc/portage/patches
 x11-themes/chicago95 2.0.1: Linux rendition of everyone's favourite 1995 Microsoft OS
 x11-themes/system76-wallpapers 20180509: Wallpaper collection shipped with System76 products
