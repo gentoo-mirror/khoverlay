@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>bog@khumba.net</email>
+    <name>Bryan Gardiner</name>
+  </maintainer>
+
+  <longdescription>
+    gtk3-classic is a set of patches that revert many of the look-and-feel
+    changes made during GTK 3's development, restoring it to a more classic
+    desktop experience a la GTK 2.
+
+    This package only installs patches into /etc/portage/patches.  It is up to
+    the administrator to ensure that x11-libs/gtk+:3 is rebuilt after installing
+    the corresponding version of this package.  If both packages are included in
+    one emerge run, this package encourages Portage to build x11-libs/gtk+:3
+    after, using PDEPEND.
+
+    These ebuilds are slotted so that multiple patch sets can be installed at
+    once.  To do this, disable the 'gtk' USE flag on this package so that
+    multiple versions of x11-libs/gtk+ aren't pulled into the dependency tree.
+
+    Some select changes, see the homepage for the full list:
+
+    - Client-side decorations are disabled by default on X11.
+    - Typeahead is restored in the file chooser, no recursive search.
+    - Dialog buttons are again right-aligned.
+    - Backdrop CSS state (inactive window shading) is disabled by default.
+    - File dialog context popup menu has the traditional look.
+    - Scrollbars are visible by default.
+  </longdescription>
+
+  <use>
+    <flag name="gtk">
+      Adds a dependency on the matching version of GTK, ensuring that the
+      correct version of gtk3-classic is installed.
+    </flag>
+  </use>
+</pkgmetadata>
