@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>bog@khumba.net</email>
+    <name>Bryan Gardiner</name>
+  </maintainer>
+
+  <longdescription>
+    Hyper Light Drifter is a cryptic and surreal adventure game by Heart
+    Machine.
+
+    This ebuild does not contain the game.  It can be obtained from elsewhere,
+    for example from Humble Bundle.  This ebuild pulls in the 32-bit
+    dependencies necessary to play the game, since its Linux release, at least
+    from Humble Bundle, ships without libraries.
+  </longdescription>
+</pkgmetadata>
