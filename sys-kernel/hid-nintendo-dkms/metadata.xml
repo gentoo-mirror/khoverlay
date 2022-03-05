@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>bog@khumba.net</email>
+    <name>Bryan Gardiner</name>
+  </maintainer>
+
+  <longdescription>
+    This hid-nintendo kernel driver adds support for Nintendo Switch
+    Joy-Con and Pro Controllers, connected over USB or Bluetooth.
+    Joy-Cons be used either separately or in combined mode.
+
+    This driver will be included in a future release of Linux 5.16[1].
+    This package consists of just the driver, extracted for use with
+    older kernels.
+
+    You probably also want games-util/joycond, a daemon which implements
+    Joy-Con pairing.
+
+    [1] https://lore.kernel.org/all/nycvar.YFH.7.76.2110191054080.12554@cbobk.fhfr.pm/
+  </longdescription>
+
+  <use>
+    <flag name="joycond">
+      Pull in games-util/joycond daemon for Joy-Con pairing
+    </flag>
+  </use>
+</pkgmetadata>
