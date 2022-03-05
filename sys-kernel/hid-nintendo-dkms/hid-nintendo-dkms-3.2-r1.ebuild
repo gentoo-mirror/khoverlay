@@ -24,6 +24,8 @@ BUILD_TARGETS="clean modules"
 BUILD_PARAMS="-C ${KERNEL_DIR} M=${S}/src"
 
 pkg_postinst() {
+	linux-mod_pkg_postinst
+
 	elog "Please make sure that joycond is running, for proper Joy-Con pairing support."
 	elog "With OpenRC:"
 	elog
