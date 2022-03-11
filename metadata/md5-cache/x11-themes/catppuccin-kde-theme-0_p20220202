@@ -1,0 +1,11 @@
+DEFINED_PHASES=install
+DESCRIPTION=Catppuccin theme for KDE Plasma
+EAPI=8
+HOMEPAGE=https://github.com/catppuccin/kde
+IUSE=+icons
+KEYWORDS=~amd64 ~x86
+LICENSE=MIT
+RDEPEND=icons? ( x11-themes/papirus-icon-theme )
+SLOT=0
+SRC_URI=https://github.com/catppuccin/kde/archive/527517147bc5686be58276874ed8e29d338352b5.tar.gz -> catppuccin-kde-theme-0_p20220202.tar.gz
+_md5_=10174e898a5c7c2919e3fc44015cf8e6

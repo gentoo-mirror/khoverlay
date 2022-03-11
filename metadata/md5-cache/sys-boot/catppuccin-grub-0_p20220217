@@ -1,0 +1,10 @@
+DEFINED_PHASES=install postinst
+DESCRIPTION=Catppuccin theme for GRUB
+EAPI=8
+HOMEPAGE=https://github.com/catppuccin/grub
+KEYWORDS=~amd64 ~x86
+LICENSE=MIT
+RDEPEND=sys-boot/grub
+SLOT=0
+SRC_URI=https://github.com/catppuccin/grub/archive/07af16ddc63de0a420445d590f85c96cec893350.tar.gz -> catppuccin-grub-0_p20220217.tar.gz
+_md5_=becc7235fe3130911ff074d738400323
