@@ -1,9 +1,9 @@
-# Copyright 2021 Bryan Gardiner <bog@khumba.net>
+# Copyright 2021-2022 Bryan Gardiner <bog@khumba.net>
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
-GIT_REV=c7a3ebbeb4fd246e5e8017e62e4f4884c3259f79
+GIT_REV=b8d8e1a3fec106058d1cf74d35e9aa47ae64ae71
 
 DESCRIPTION="Summarizes statuses of multiple local repositories"
 HOMEPAGE="https://github.com/MirkoLedda/${PN}"
