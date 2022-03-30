@@ -1,10 +1,10 @@
 DEFINED_PHASES=install
 DESCRIPTION=Summarizes statuses of multiple local repositories
-EAPI=7
+EAPI=8
 HOMEPAGE=https://github.com/MirkoLedda/git-summary
 KEYWORDS=~amd64 ~x86
 LICENSE=MIT
 RDEPEND=sys-apps/gawk
 SLOT=0
-SRC_URI=https://github.com/MirkoLedda/git-summary/archive/c7a3ebbeb4fd246e5e8017e62e4f4884c3259f79.tar.gz -> git-summary-0_pre20210707.tar.gz
-_md5_=807a5e25f10d4f700f694d2d9535e49e
+SRC_URI=https://github.com/MirkoLedda/git-summary/archive/b8d8e1a3fec106058d1cf74d35e9aa47ae64ae71.tar.gz -> git-summary-0_pre20211222.tar.gz
+_md5_=9eabb0eb1829949d20791f12076429ec
