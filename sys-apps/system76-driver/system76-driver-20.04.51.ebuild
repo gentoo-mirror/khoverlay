@@ -1,4 +1,4 @@
-# Copyright 2020-2021 Bryan Gardiner <bog@khumba.net>
+# Copyright 2020-2022 Bryan Gardiner <bog@khumba.net>
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -15,19 +15,26 @@ SRC_URI="https://github.com/pop-os/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="GPL-2+"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="+modules video_cards_nvidia"
+IUSE="lm-sensors +modules video_cards_nvidia"
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 # We skip the Debian package's hard dependency on system76-wallpapers.
 # It's only used for gsettings overrides, which we don't install anyway.
 # x11-themes/system76-wallpapers can be installed separately if desired.
+#
+# We also skip depending on python-systemd.  Upstream declares a
+# dependency on python3-systemd in debian/control, but looking at the
+# code, actual use of the package appears to have been added with the
+# dependency in 18.04.23, and then removed without dropping the
+# dependency in 18.10.3.
 RDEPEND="
 	${PYTHON_DEPS}
 	$(python_gen_cond_dep 'dev-python/dbus-python[${PYTHON_USEDEP}]')
 	$(python_gen_cond_dep 'dev-python/python-evdev[${PYTHON_USEDEP}]')
 	$(python_gen_cond_dep 'dev-python/pygobject:3[${PYTHON_USEDEP}]')
 	$(python_gen_cond_dep 'dev-python/distro[${PYTHON_USEDEP}]')
-	$(python_gen_cond_dep 'dev-python/python-systemd[${PYTHON_USEDEP}]')
+	net-wireless/wireless-tools
+	lm-sensors? ( sys-apps/lm-sensors )
 	sys-process/at
 	x11-apps/xbacklight
 	modules? (
@@ -40,7 +47,7 @@ RDEPEND="
 DEPEND="${RDEPEND}"
 
 PATCHES=(
-	"${FILESDIR}/system76-driver-20.04.13-gentoo-patches-20200911.patch"
+	"${FILESDIR}/system76-driver-20.04.30-gentoo.patch"
 )
 
 src_install() {
@@ -67,6 +74,8 @@ src_install() {
 	# Let me know if you need this.
 
 	systemd_dounit "${S}/debian/system76-driver.service"
+
+	newinitd "${FILESDIR}/${PN}.openrc" "${PN}"
 }
 
 pkg_postinst() {
@@ -79,7 +88,11 @@ pkg_postinst() {
 	elog "    # system76-driver-cli"
 	elog ""
 	elog "You may want to enable the System76 daemon to enable further hardware"
-	elog "support and fixes."
+	elog "support and fixes.  For systemd users:"
 	elog ""
 	elog "    # systemctl enable --now system76-driver.service"
+	elog ""
+	elog "An experimental OpenRC runscript is also provided:"
+	elog ""
+	elog "    # rc-update add system76-driver default"
 }
