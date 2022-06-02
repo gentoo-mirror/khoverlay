@@ -1,0 +1,41 @@
+From 769aaf84743d1721c81560089ba20a8d1f25d9b1 Mon Sep 17 00:00:00 2001
+From: Bryan Gardiner <bog@khumba.net>
+Date: Fri, 11 Jun 2021 17:49:09 -0700
+Subject: [PATCH] Patch to use system-wide directories.
+
+---
+ src/Main.cpp | 18 +-----------------
+ 1 file changed, 1 insertion(+), 17 deletions(-)
+
+diff --git a/src/Main.cpp b/src/Main.cpp
+index 37e2986..f2f51c5 100644
+--- a/src/Main.cpp
++++ b/src/Main.cpp
+@@ -33,23 +33,7 @@ extern "C"
+ 
+ static fs::path FindGameData()
+ {
+-	fs::path dataPath;
+-
+-#if __APPLE__
+-	char pathbuf[PROC_PIDPATHINFO_MAXSIZE];
+-
+-	pid_t pid = getpid();
+-	int ret = proc_pidpath(pid, pathbuf, sizeof(pathbuf));
+-	if (ret <= 0)
+-	{
+-		throw std::runtime_error(std::string(__func__) + ": proc_pidpath failed: " + std::string(strerror(errno)));
+-	}
+-
+-	dataPath = pathbuf;
+-	dataPath = dataPath.parent_path().parent_path() / "Resources";
+-#else
+-	dataPath = "Data";
+-#endif
++	fs::path dataPath("/usr/share/Nanosaur");
+ 
+ 	dataPath = dataPath.lexically_normal();
+ 
+-- 
+2.35.1
+
