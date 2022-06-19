@@ -1,7 +1,7 @@
-# Copyright 2021 Bryan Gardiner <bog@khumba.net>
+# Copyright 2021-2022 Bryan Gardiner <bog@khumba.net>
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
 inherit xdg
 
@@ -28,10 +28,10 @@ PATCHES=(
 )
 
 src_prepare() {
-	xdg_src_prepare
-
 	# Remove bundled engine and tutorials.
 	rm -r love tutorial || die "Couldn't remove bundled engine and tutorial."
+
+	default
 }
 
 src_install() {
@@ -45,12 +45,4 @@ src_install() {
 	doins "${FILESDIR}/${PN}.desktop"
 
 	newbin "${FILESDIR}/${PN}-0_pre20200814-launcher.sh" "${PN}"
-}
-
-pkg_postinst() {
-	xdg_pkg_postinst
-
-	elog "If you enjoy this game, consider supporting its creator:"
-	elog
-	elog "    https://store.steampowered.com/app/760330/BYTEPATH/"
 }
