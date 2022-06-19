@@ -1,7 +1,7 @@
-# Copyright 2021 Bryan Gardiner <bog@khumba.net>
+# Copyright 2021-2022 Bryan Gardiner <bog@khumba.net>
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
 # At least 5.2 is required due to use of 'goto'.
 LUA_COMPAT=( lua5-{2..3} )
@@ -40,15 +40,14 @@ DOCS=(
 )
 
 src_prepare() {
-	xdg_src_prepare
-
 	# Remove bundled love, we add our own :).
 	rm -r engine/love || die "Couldn't remove bundled engine."
+	rm .ctrlp .gitignore || die "Couldn't remove extraneous files."
+
+	default
 }
 
 src_install() {
-	rm .ctrlp .gitignore || die "Couldn't remove extraneous files."
-
 	einstalldocs
 	rm "${DOCS[@]}" || die "Couldn't clean up docs."
 
@@ -67,10 +66,6 @@ src_install() {
 pkg_postinst() {
 	xdg_pkg_postinst
 
-	elog "If you enjoy this game, consider supporting its creator:"
-	elog
-	elog "    https://store.steampowered.com/app/915310/SNKRX/"
-	elog
 	ewarn "This ebuild patches out Steam integration from the game,"
 	ewarn "so achievements are not available."
 }
