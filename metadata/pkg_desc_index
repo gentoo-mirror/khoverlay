@@ -21,7 +21,7 @@ games-action/bugdom 1.3.0_p20210608 1.3.1 1.3.1-r1: Save the Bugdom from the evi
 games-action/hyperlightdrifter-deps 1: Metapackage for HyperLightDrift dependencies (game not included)
 games-action/nanosaur 1.4.2_p20210829 1.4.2_p20210829-r1 1.4.3: Battle dinosaurs and rescue their eggs before the asteroid hits
 games-arcade/bytepath 0_pre20200814-r2: Replayable arcade shooter with a focus on build theorycrafting
-games-arcade/snkrx 0_pre20210523-r3 0_pre20210726-r1 0_pre20220611: Arcade shooter where you control a snake of heroes
+games-arcade/snkrx 0_pre20210523-r4 0_pre20220611-r1: Arcade shooter where you control a snake of heroes
 games-board/goatee-gtk 0.3.1.1 0.3.1.3: A monadic take on a 2,500-year-old board game - GTK+ UI
 games-engines/love 0.10.2-r2: A framework for 2D games in Lua
 games-puzzle/enigma 1.30_alpha: Puzzle game similar to Oxyd
