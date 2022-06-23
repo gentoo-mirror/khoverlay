@@ -4,7 +4,7 @@
 EAPI=8
 
 # At least 5.2 is required due to use of 'goto'.
-LUA_COMPAT=( lua5-{2..3} )
+LUA_COMPAT=( lua5-{2..3} luajit )
 
 inherit lua-single xdg
 

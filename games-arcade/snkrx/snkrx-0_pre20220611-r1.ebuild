@@ -4,12 +4,12 @@
 EAPI=8
 
 # At least 5.2 is required due to use of 'goto'.
-LUA_COMPAT=( lua5-{2..3} )
+LUA_COMPAT=( lua5-{2..3} luajit )
 
 inherit lua-single xdg
 
 MY_PN=SNKRX
-GIT_REV=1fff7cdefd10af5273d3efc5b678d7fb8d126110
+GIT_REV=6b93a64d694d59472375467648868ae4521d6706
 
 DESCRIPTION="Arcade shooter where you control a snake of heroes"
 HOMEPAGE="https://store.steampowered.com/app/915310/SNKRX/"
