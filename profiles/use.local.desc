@@ -5,6 +5,13 @@
 app-office/gnucash:aqbanking - Connect to some internet banks via AqBanking
 app-office/gnucash:quotes - Enable Online Stock Quote retrieval
 app-office/gnucash:register2 - Use the new register (Experimental)
+dev-games/godot:bullet - Enable support for sci-physics/bullet
+dev-games/godot:deprecated - Enable deprecated features
+dev-games/godot:enet - Enable support for net-libs/enet
+dev-games/godot:freetype - Enable support for media-libs/freetype
+dev-games/godot:lto - Enable support for link time optimization
+dev-games/godot:mbedtls - Enable support for net-libs/mbedtls
+dev-games/godot:raycast - Enable raycast module using media-libs/embree
 sys-kernel/hid-nintendo-dkms:joycond - Pull in games-util/joycond daemon for Joy-Con pairing
 x11-libs/gtk3-classic-patches:gtk - Adds a dependency on the matching version of GTK, ensuring that the correct version of gtk3-classic is installed.
 x11-themes/chicago95:gtk - Install themes for GTK+ 2 and 3, plus various desktop environments (GNOME, Cinnamon, XFCE4)
