@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>bog@khumba.net</email>
+    <name>Bryan Gardiner</name>
+  </maintainer>
+
+  <longdescription>
+    Daemon and system setup tool for hardware compatibility with
+    System76 computers.  System76 hardware requires various tweaks to
+    system configuration depending on the specific machine model.  This
+    package provides a tool for performing initial configuration, with
+    both a GUI and CLI interface.  Other tweaks are applied by a daemon
+    that is launched on system boot.  Confusingly, both the daemon's
+    service and the setup tool's executable name are both called
+    system76-driver.
+
+    Upstream only supports systemd, but this ebuild includes an
+    experimental OpenRC init script too.
+
+    This ebuild also functions as a metapackage, pulling in other
+    packages that are needed for System76 hardware, such as kernel
+    modules.
+  </longdescription>
+
+  <use>
+    <flag name="modules">Pull in packages for System76 kernel modules</flag>
+    <flag name="suspend-workarounds">
+      Restart various hardware (Bluetooth, Thunderbolt, wireless) after
+      suspending, to work around hardware bugs, as System76 recommends
+      (requires systemd)
+    </flag>
+  </use>
+</pkgmetadata>
