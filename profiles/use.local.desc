@@ -12,6 +12,8 @@ dev-games/godot:freetype - Enable support for media-libs/freetype
 dev-games/godot:lto - Enable support for link time optimization
 dev-games/godot:mbedtls - Enable support for net-libs/mbedtls
 dev-games/godot:raycast - Enable raycast module using media-libs/embree
+sys-apps/system76-driver:modules - Pull in packages for System76 kernel modules
+sys-apps/system76-driver:suspend-workarounds - Restart various hardware (Bluetooth, Thunderbolt, wireless) after suspending, to work around hardware bugs, as System76 recommends (requires systemd)
 sys-kernel/hid-nintendo-dkms:joycond - Pull in games-util/joycond daemon for Joy-Con pairing
 x11-libs/gtk3-classic-patches:gtk - Adds a dependency on the matching version of GTK, ensuring that the correct version of gtk3-classic is installed.
 x11-themes/chicago95:gtk - Install themes for GTK+ 2 and 3, plus various desktop environments (GNOME, Cinnamon, XFCE4)
