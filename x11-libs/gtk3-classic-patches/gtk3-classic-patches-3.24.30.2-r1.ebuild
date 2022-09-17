@@ -11,11 +11,11 @@ HOMEPAGE="https://github.com/lah7/gtk3-classic/"
 SRC_URI="https://github.com/lah7/gtk3-classic/archive/refs/tags/${CLASSIC_VER}.tar.gz -> gtk3-classic-${CLASSIC_VER}.tar.gz"
 
 LICENSE="LGPL-2+"
-SLOT="${GTK_VER}"
+SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="gtk"
 
-RDEPEND=""
+RDEPEND="!<x11-libs/gtk3-classic-patches-3.24.30.2-r1"
 DEPEND=""
 PDEPEND="gtk? ( ~x11-libs/gtk+-${GTK_VER} )"
 

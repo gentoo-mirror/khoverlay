@@ -17,9 +17,9 @@
     one emerge run, this package encourages Portage to build x11-libs/gtk+:3
     after, using PDEPEND.
 
-    These ebuilds are slotted so that multiple patch sets can be installed at
-    once.  To do this, disable the 'gtk' USE flag on this package so that
-    multiple versions of x11-libs/gtk+ aren't pulled into the dependency tree.
+    If desired, the 'gtk' USE flag on this package can be disabled to
+    skip pulling in x11-libs/gtk+:3, for example to update to the latest
+    gtk+:3 before gtk3-classic-patches is updated.
 
     Some select changes, see the homepage for the full list:
 
