@@ -1,0 +1,41 @@
+From 7b1c49cf65a7d367867f13369943f39bdfb2db54 Mon Sep 17 00:00:00 2001
+From: Bryan Gardiner <bog@khumba.net>
+Date: Fri, 11 Jun 2021 16:52:46 -0700
+Subject: [PATCH] Patch to use system-wide directories.
+
+---
+ src/Main.cpp | 18 +-----------------
+ 1 file changed, 1 insertion(+), 17 deletions(-)
+
+diff --git a/src/Main.cpp b/src/Main.cpp
+index 61deed4..210e7dc 100644
+--- a/src/Main.cpp
++++ b/src/Main.cpp
+@@ -39,23 +39,7 @@ extern "C"
+ 
+ static fs::path FindGameData()
+ {
+-	fs::path dataPath;
+-
+-#if __APPLE__
+-	char pathbuf[PROC_PIDPATHINFO_MAXSIZE];
+-
+-	pid_t pid = getpid();
+-	int ret = proc_pidpath(pid, pathbuf, sizeof(pathbuf));
+-	if (ret <= 0)
+-	{
+-		throw std::runtime_error(std::string(__func__) + ": proc_pidpath failed: " + std::string(strerror(errno)));
+-	}
+-
+-	dataPath = pathbuf;
+-	dataPath = dataPath.parent_path().parent_path() / "Resources";
+-#else
+-	dataPath = "Data";
+-#endif
++	fs::path dataPath("/usr/share/Bugdom");
+ 
+ 	dataPath = dataPath.lexically_normal();
+ 
+-- 
+2.35.1
+
