@@ -11,5 +11,5 @@ RDEPEND=lua_single_target_luajit? ( dev-lang/luajit:= ) lua_single_target_lua5-3
 REQUIRED_USE=^^ ( lua_single_target_luajit lua_single_target_lua5-3 )
 SLOT=0
 SRC_URI=https://github.com/a327ex/SNKRX/archive/6b93a64d694d59472375467648868ae4521d6706.tar.gz -> snkrx-0_pre20220611.tar.gz
-_eclasses_=toolchain-funcs	1542e649be915f43f6908a9e93909961	multilib	5ca4e49abed8e3a2f7b56920eadee157	lua-utils	e69ff116248d78546ae1a234c086fe80	lua-single	f2c2fb82c912dd65d53bdae3613a331f	xdg-utils	fffb53a53cf17c9c0c998a3c0a590c7e	xdg	6024fbc93167fad782e2032933654857
+_eclasses_=toolchain-funcs	1542e649be915f43f6908a9e93909961	multilib	5ca4e49abed8e3a2f7b56920eadee157	lua-utils	e69ff116248d78546ae1a234c086fe80	lua-single	f2c2fb82c912dd65d53bdae3613a331f	xdg-utils	ac0e315a3688929e34ac75b139e7349a	xdg	6024fbc93167fad782e2032933654857
 _md5_=467de26566c003206b4933aa9c30c7b5
