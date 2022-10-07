@@ -1,4 +1,4 @@
-# Copyright 2021 Bryan Gardiner <bog@khumba.net>
+# Copyright 2021-2022 Bryan Gardiner <bog@khumba.net>
 # Distributed under the terms of the GNU General Public License v2
 
 # This ebuild bundles the specific version of Pomme that is recommended
@@ -15,7 +15,7 @@ BUGDOM_GIT_REV=d4b5e729cf6747f1b07ee2752c824ac882f5ce5b
 POMME_GIT_REV=b9ddab06cdc0b9e4a8085e50974213b6c9625436
 
 DESCRIPTION="Save the Bugdom from the evil Fire Ants"
-HOMEPAGE="https://github.com/jorio/${MY_PN}"
+HOMEPAGE="https://github.com/jorio/Bugdom/"
 SRC_URI="
 	https://github.com/jorio/${MY_PN}/archive/${BUGDOM_GIT_REV}.tar.gz -> ${P}.tar.gz
 	https://github.com/jorio/Pomme/archive/${POMME_GIT_REV}.tar.gz -> ${P}-Pomme.tar.gz
@@ -25,14 +25,10 @@ LICENSE="CC-BY-NC-SA-4.0"
 SLOT="0"
 KEYWORDS="~amd64"
 
-# We have switched to bundling Pomme.  If system-wide Pomme is
-# installed, Bugdom will link incorrectly, so Pomme has to be removed
-# first.
 RDEPEND="
 	dev-util/patchelf
 	media-libs/libsdl2
 	virtual/opengl
-	!!dev-games/pomme
 "
 DEPEND="
 	${RDEPEND}

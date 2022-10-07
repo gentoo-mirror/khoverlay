@@ -15,7 +15,7 @@ NANOSAUR_GIT_REV=25520d32d867e93d9523ab3b519ce21b9845fd07
 POMME_GIT_REV=0581b241624d16c453e0afab57a379b443229260
 
 DESCRIPTION="Battle dinosaurs and rescue their eggs before the asteroid hits"
-HOMEPAGE="https://github.com/jorio/${MY_PN}"
+HOMEPAGE="https://github.com/jorio/Nanosaur/"
 SRC_URI="
 	https://github.com/jorio/${MY_PN}/archive/${NANOSAUR_GIT_REV}.tar.gz -> ${P}.tar.gz
 	https://github.com/jorio/Pomme/archive/${POMME_GIT_REV}.tar.gz -> ${P}-Pomme.tar.gz
@@ -25,13 +25,9 @@ LICENSE="CC-BY-NC-SA-4.0"
 SLOT="0"
 KEYWORDS="~amd64"
 
-# We have switched to bundling Pomme.  If system-wide Pomme is
-# installed, Nanosaur will link incorrectly, so Pomme has to be removed
-# first.
 RDEPEND="
 	media-libs/libsdl2
 	virtual/opengl
-	!!dev-games/pomme
 "
 DEPEND="${RDEPEND}"
 
