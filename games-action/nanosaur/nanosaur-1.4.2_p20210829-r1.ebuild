@@ -1,4 +1,4 @@
-# Copyright 2021 Bryan Gardiner <bog@khumba.net>
+# Copyright 2021-2022 Bryan Gardiner <bog@khumba.net>
 # Distributed under the terms of the GNU General Public License v2
 
 # This ebuild bundles the specific version of Pomme that is recommended
@@ -15,7 +15,7 @@ NANOSAUR_GIT_REV=d19076b2783c80e7b67d046bf23e966b1140e41f
 POMME_GIT_REV=1495c647fd604084b3dd493544d7af4fda90457a
 
 DESCRIPTION="Battle dinosaurs and rescue their eggs before the asteroid hits"
-HOMEPAGE="https://github.com/jorio/${MY_PN}"
+HOMEPAGE="https://github.com/jorio/Nanosaur/"
 SRC_URI="
 	https://github.com/jorio/${MY_PN}/archive/${NANOSAUR_GIT_REV}.tar.gz -> ${P}.tar.gz
 	https://github.com/jorio/Pomme/archive/${POMME_GIT_REV}.tar.gz -> ${P}-Pomme.tar.gz
@@ -25,14 +25,10 @@ LICENSE="CC-BY-NC-SA-4.0"
 SLOT="0"
 KEYWORDS="~amd64"
 
-# We have switched to bundling Pomme.  If system-wide Pomme is
-# installed, Nanosaur will link incorrectly, so Pomme has to be removed
-# first.
 RDEPEND="
 	media-libs/libsdl2
 	virtual/glu
 	virtual/opengl
-	!!dev-games/pomme
 "
 DEPEND="${RDEPEND}"
 

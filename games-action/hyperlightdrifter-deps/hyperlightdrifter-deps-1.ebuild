@@ -7,7 +7,7 @@ DESCRIPTION="Metapackage for HyperLightDrift dependencies (game not included)"
 HOMEPAGE="https://www.heartmachine.com/hyper-light-drifter"
 SRC_URI=""
 
-LICENSE=""
+LICENSE="metapackage"
 SLOT="0"
 KEYWORDS="~amd64"
 
