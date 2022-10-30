@@ -83,8 +83,6 @@ RDEPEND="${RDEPEND}
 		media-fonts/font-bh-75dpi
 		media-fonts/font-bh-lucidatypewriter-100dpi
 		media-fonts/font-bh-lucidatypewriter-75dpi
-		media-fonts/font-bh-ttf
-		media-fonts/font-bh-type1
 		media-fonts/font-bitstream-100dpi
 		media-fonts/font-bitstream-75dpi
 		media-fonts/font-bitstream-speedo
@@ -109,6 +107,7 @@ RDEPEND="${RDEPEND}
 		media-fonts/font-util
 		media-fonts/font-winitzki-cyrillic
 		media-fonts/font-xfree86-type1
+		virtual/ttf-fonts
 
 		media-fonts/font-alias
 		media-fonts/font-util
