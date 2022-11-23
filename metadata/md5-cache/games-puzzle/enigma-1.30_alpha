@@ -11,5 +11,5 @@ LICENSE=GPL-2+
 RDEPEND=media-libs/sdl2-ttf media-libs/libsdl2[video] media-libs/sdl2-mixer media-libs/sdl2-image[jpeg,png] media-libs/libpng:0= sys-libs/zlib net-misc/curl || ( >=dev-libs/xerces-c-3[icu] >=dev-libs/xerces-c-3[-icu,-iconv] ) net-libs/enet:= nls? ( virtual/libintl ) media-fonts/dejavu x11-misc/xdg-utils
 SLOT=0
 SRC_URI=https://github.com/Enigma-Game/Enigma/releases/download/1.30-alpha/enigma-1.30-alpha.tar.gz
-_eclasses_=gnuconfig	b6b3e92f8b8c996400074b5f61a59256	toolchain-funcs	441f754fd75cd4fd1fa06fbc17da6144	multilib	5ca4e49abed8e3a2f7b56920eadee157	libtool	241a8f577b9781a42a7421e53448a44e	autotools	914b385ae0716861815cb660457b6cdc	xdg-utils	ac0e315a3688929e34ac75b139e7349a
+_eclasses_=gnuconfig	b6b3e92f8b8c996400074b5f61a59256	toolchain-funcs	441f754fd75cd4fd1fa06fbc17da6144	multilib	5ca4e49abed8e3a2f7b56920eadee157	libtool	241a8f577b9781a42a7421e53448a44e	autotools	6dcd6b6a486e79928e1243ff9ba41fcc	xdg-utils	ac0e315a3688929e34ac75b139e7349a
 _md5_=f46c8df450e9b4de0394d89464168c48
