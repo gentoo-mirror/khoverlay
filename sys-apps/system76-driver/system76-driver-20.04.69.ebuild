@@ -63,7 +63,7 @@ RDEPEND="
 DEPEND="${RDEPEND}"
 
 PATCHES=(
-	"${FILESDIR}/system76-driver-20.04.30-gentoo.patch"
+	"${FILESDIR}/system76-driver-20.04.69-gentoo.patch"
 )
 
 src_install() {
@@ -79,7 +79,10 @@ src_install() {
 	doins "${S}/system76-user-daemon.desktop"
 
 	if use suspend-workarounds; then
-		exeinto "$(_systemd_get_utildir)/system-sleep"
+		local utildir
+		utildir=$(systemd_get_utildir) || die "Couldn't read systemd utildir."
+		exeinto "${utildir}/system-sleep"
+
 		doexe "${S}/system76-thunderbolt-reload"
 		if use bluetooth; then
 			doexe "${S}/lib/systemd/system-sleep/system76-driver_bluetooth-suspend"

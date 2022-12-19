@@ -1,0 +1,53 @@
+From bc9b94cbabf2fbb119fc7facd684f2d265c84ce9 Mon Sep 17 00:00:00 2001
+From: Bryan Gardiner <bog@khumba.net>
+Date: Fri, 11 Sep 2020 18:52:15 -0700
+Subject: [PATCH] Patches for Gentoo.
+
+---
+ debian/system76-driver.service | 2 +-
+ system76-nm-restart            | 2 +-
+ system76-user-daemon.desktop   | 2 +-
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/debian/system76-driver.service b/debian/system76-driver.service
+index e0915dd..4890ac0 100644
+--- a/debian/system76-driver.service
++++ b/debian/system76-driver.service
+@@ -2,7 +2,7 @@
+ Description=System76 airplane-mode hotkey and LED support
+ 
+ [Service]
+-ExecStart=/usr/lib/system76-driver/system76-daemon
++ExecStart=/usr/bin/system76-daemon
+ Restart=on-failure
+ 
+ [Install]
+diff --git a/system76-nm-restart b/system76-nm-restart
+index 444b99d..54df9ce 100755
+--- a/system76-nm-restart
++++ b/system76-nm-restart
+@@ -33,7 +33,7 @@ set -e
+ if [ "$2" = "suspend" ] || [ "$2" = "hybrid-sleep" ]; then
+     case "$1" in
+         pre) true ;;
+-        post) sleep 1 && sudo systemctl restart NetworkManager ;;
++        post) sleep 1 && systemctl restart NetworkManager ;;
+     esac
+ fi
+ 
+diff --git a/system76-user-daemon.desktop b/system76-user-daemon.desktop
+index 5df120d..cad8b3f 100644
+--- a/system76-user-daemon.desktop
++++ b/system76-user-daemon.desktop
+@@ -3,7 +3,7 @@ Type=Application
+ Encoding=UTF-8
+ Name=System76 User Daemon
+ Comment=Make backlight work on GNOME with NVIDIA 9-Series hardware
+-Exec=/usr/lib/system76-driver/system76-user-daemon
++Exec=/usr/bin/system76-user-daemon
+ Terminal=false
+ Icon=folder
+ NoDisplay=true
+-- 
+2.37.4
+
