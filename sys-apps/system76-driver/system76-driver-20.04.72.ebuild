@@ -15,8 +15,19 @@ SRC_URI="https://github.com/pop-os/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="GPL-2+"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="lm-sensors +modules video_cards_nvidia"
-REQUIRED_USE="${PYTHON_REQUIRED_USE}"
+IUSE="
+	bluetooth
+	lm-sensors
+	+modules
+	networkmanager
+	+suspend-workarounds
+	systemd
+	video_cards_nvidia
+"
+REQUIRED_USE="
+	${PYTHON_REQUIRED_USE}
+	suspend-workarounds? ( systemd )
+"
 
 # We skip the Debian package's hard dependency on system76-wallpapers.
 # It's only used for gsettings overrides, which we don't install anyway.
@@ -42,12 +53,17 @@ RDEPEND="
 		app-laptop/system76-io-module
 		app-laptop/system76-module
 	)
+	suspend-workarounds? (
+		sys-apps/systemd
+		bluetooth? ( sys-apps/util-linux )
+		networkmanager? ( net-misc/networkmanager )
+	)
 	video_cards_nvidia? ( x11-drivers/nvidia-drivers )
 "
 DEPEND="${RDEPEND}"
 
 PATCHES=(
-	"${FILESDIR}/system76-driver-20.04.30-gentoo.patch"
+	"${FILESDIR}/system76-driver-20.04.69-gentoo.patch"
 )
 
 src_install() {
@@ -59,19 +75,22 @@ src_install() {
 	python_doscript "${S}/system76-user-daemon"
 	insinto /usr/share/polkit-1/actions
 	doins "${S}/com.system76.pkexec.system76-driver.policy"
-	insinto /lib/systemd/system-sleep
-	doins "${S}/system76-thunderbolt-reload"
 	insinto /etc/xdg/autostart
 	doins "${S}/system76-user-daemon.desktop"
 
-	# I don't install /lib/systemd/system-sleep/system76-nm-restart.
-	# This file restarts NetworkManager when resuming from sleep, citing
-	# reliability issues with Haswell (2013) but not with Skylake
-	# (2015).  This is a while ago and the script restarts NM
-	# unconditionally, without checking hardware versions, so let's not
-	# do this unless it's necessary.
-	#
-	# Let me know if you need this.
+	if use suspend-workarounds; then
+		local utildir
+		utildir=$(systemd_get_utildir) || die "Couldn't read systemd utildir."
+		exeinto "${utildir}/system-sleep"
+
+		doexe "${S}/system76-thunderbolt-reload"
+		if use bluetooth; then
+			doexe "${S}/lib/systemd/system-sleep/system76-driver_bluetooth-suspend"
+		fi
+		if use networkmanager; then
+			doexe "${S}/system76-nm-restart"
+		fi
+	fi
 
 	systemd_dounit "${S}/debian/system76-driver.service"
 
