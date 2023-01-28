@@ -1,4 +1,4 @@
-# Copyright 2021-2022 Bryan Gardiner <bog@khumba.net>
+# Copyright 2021-2023 Bryan Gardiner <bog@khumba.net>
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -18,7 +18,7 @@ KEYWORDS="~amd64 ~x86"
 
 DEPEND=""
 RDEPEND="${DEPEND}
-	games-engines/love:0.10[luajit]
+	games-engines/love:0.10[lua_single_target_luajit]
 "
 
 S="${WORKDIR}/${MY_PN}-${GIT_REV}"
