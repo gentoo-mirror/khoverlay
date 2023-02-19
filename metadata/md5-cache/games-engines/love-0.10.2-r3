@@ -11,5 +11,5 @@ RDEPEND=lua_single_target_luajit? ( dev-lang/luajit:= ) sys-libs/zlib dev-games/
 REQUIRED_USE=^^ ( lua_single_target_luajit )
 SLOT=0.10
 SRC_URI=https://github.com/love2d/love/archive/refs/tags/0.10.2.tar.gz -> love-0.10.2.tar.gz
-_eclasses_=toolchain-funcs	9a610728b9bcca1919234cceb35a1027	multilib	5ca4e49abed8e3a2f7b56920eadee157	lua-utils	e69ff116248d78546ae1a234c086fe80	lua-single	aee383a0de35701b9eb0b27077a1c143	xdg-utils	ac0e315a3688929e34ac75b139e7349a	gnome2-utils	3eaa1386ddbbbbb3951256d4b170fba3
+_eclasses_=toolchain-funcs	cf009a3ed4e5bef503e7a9f215791a78	multilib	5ca4e49abed8e3a2f7b56920eadee157	lua-utils	e69ff116248d78546ae1a234c086fe80	lua-single	aee383a0de35701b9eb0b27077a1c143	xdg-utils	ac0e315a3688929e34ac75b139e7349a	gnome2-utils	3eaa1386ddbbbbb3951256d4b170fba3
 _md5_=e3342796b2d3a48505bdcbe5bad38c60
