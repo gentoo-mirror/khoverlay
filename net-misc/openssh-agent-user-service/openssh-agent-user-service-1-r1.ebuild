@@ -1,4 +1,4 @@
-# Copyright 2021 Bryan Gardiner <bog@khumba.net>
+# Copyright 2021-2023 Bryan Gardiner <bog@khumba.net>
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -26,6 +26,10 @@ pkg_postinst() {
 	elog "Run the following as the user you wish to enable the agent for:"
 	elog ""
 	elog "    systemctl enable --user --now ssh-agent.service"
+	elog ""
+	elog "Or to enable for all users by default, run the following as root:"
+	elog ""
+	elog "    systemctl enable --global ssh-agent.service"
 	elog ""
 	elog "You will also need to set the following variable in your session,"
 	elog "for example in \$HOME/.profile:"
