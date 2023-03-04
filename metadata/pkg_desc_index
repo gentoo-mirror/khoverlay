@@ -14,9 +14,9 @@ dev-haskell/qtah-examples 0.1.1 0.2.1 0.3.0 0.4.0 0.5.0 0.6.0 0.7.0 0.8.0 9999: 
 dev-haskell/qtah-generator 0.1.2 0.2.1 0.3.0 0.4.0 0.5.0 0.6.0 0.7.0 0.7.1 0.8.0 9999: Generator for Qtah Qt bindings
 dev-haskell/qtah-qt5 0.1.1 0.2.0 0.3.0 0.4.0 0.5.0 0.5.1 0.6.0 0.7.0 0.8.0: Qt bindings for Haskell
 dev-vcs/git-summary 0_pre20211222: Summarizes statuses of multiple local repositories
-games-action/bugdom 1.3.2 1.3.3: Save the Bugdom from the evil Fire Ants
+games-action/bugdom 1.3.2 1.3.3-r1: Save the Bugdom from the evil Fire Ants
 games-action/hyperlightdrifter-deps 1: Metapackage for HyperLightDrift dependencies (game not included)
-games-action/nanosaur 1.4.2_p20210829-r1 1.4.3: Battle dinosaurs and rescue their eggs before the asteroid hits
+games-action/nanosaur 1.4.3 1.4.4: Battle dinosaurs and rescue their eggs before the asteroid hits
 games-arcade/bytepath 0_pre20200814-r3: Replayable arcade shooter with a focus on build theorycrafting
 games-arcade/snkrx 0_pre20210523-r4 0_pre20220611-r1: Arcade shooter where you control a snake of heroes
 games-board/goatee-gtk 0.3.1.1 0.3.1.3: A monadic take on a 2,500-year-old board game - GTK+ UI
