@@ -1,0 +1,11 @@
+DEFINED_PHASES=install postinst
+DESCRIPTION=gtk3-classic patches for /etc/portage/patches
+EAPI=8
+HOMEPAGE=https://github.com/lah7/gtk3-classic/
+IUSE=gtk
+KEYWORDS=~amd64 ~x86
+LICENSE=LGPL-2+
+PDEPEND=gtk? ( ~x11-libs/gtk+-3.24.37 )
+SLOT=0
+SRC_URI=https://github.com/lah7/gtk3-classic/archive/refs/tags/3.24.37.tar.gz -> gtk3-classic-3.24.37.tar.gz
+_md5_=a6d2ba8a8c93764b11befb6129ab76a3
