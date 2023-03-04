@@ -1,0 +1,66 @@
+From 66a1789d6488386775ff609232334b38c296c9db Mon Sep 17 00:00:00 2001
+From: Bryan Gardiner <bog@khumba.net>
+Date: Fri, 11 Jun 2021 16:52:46 -0700
+Subject: [PATCH] Patch to use system-wide directories.
+
+---
+ src/Boot.cpp | 36 ++----------------------------------
+ 1 file changed, 2 insertions(+), 34 deletions(-)
+
+diff --git a/src/Boot.cpp b/src/Boot.cpp
+index 656ae3e..8f4e0b0 100644
+--- a/src/Boot.cpp
++++ b/src/Boot.cpp
+@@ -38,39 +38,7 @@ extern "C"
+ 
+ static fs::path FindGameData(const char* executablePath)
+ {
+-	fs::path dataPath;
+-
+-	int attemptNum = 0;
+-
+-#if !(__APPLE__)
+-	attemptNum++;		// skip macOS special case #0
+-#endif
+-
+-	if (!executablePath)
+-		attemptNum = 2;
+-
+-tryAgain:
+-	switch (attemptNum)
+-	{
+-		case 0:			// special case for macOS app bundles
+-			dataPath = executablePath;
+-			dataPath = dataPath.parent_path().parent_path() / "Resources";
+-			break;
+-
+-		case 1:
+-			dataPath = executablePath;
+-			dataPath = dataPath.parent_path() / "Data";
+-			break;
+-
+-		case 2:
+-			dataPath = "Data";
+-			break;
+-
+-		default:
+-			throw std::runtime_error("Couldn't find the Data folder.");
+-	}
+-
+-	attemptNum++;
++	fs::path dataPath("/usr/share/Bugdom");
+ 
+ 	dataPath = dataPath.lexically_normal();
+ 
+@@ -80,7 +48,7 @@ tryAgain:
+ 	FSSpec dummySpec;
+ 	if (noErr != FSMakeFSSpec(gDataSpec.vRefNum, gDataSpec.parID, ":Skeletons:DoodleBug.3dmf", &dummySpec))
+ 	{
+-		goto tryAgain;
++		throw std::runtime_error("Error loading resources from the Data folder.");
+ 	}
+ 
+ 	return dataPath;
+-- 
+2.39.2
+

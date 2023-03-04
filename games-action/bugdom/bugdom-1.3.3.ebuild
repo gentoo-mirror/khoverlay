@@ -1,4 +1,4 @@
-# Copyright 2021-2022 Bryan Gardiner <bog@khumba.net>
+# Copyright 2021-2023 Bryan Gardiner <bog@khumba.net>
 # Distributed under the terms of the GNU General Public License v2
 
 # This ebuild bundles the specific version of Pomme that is recommended
@@ -11,13 +11,12 @@ EAPI=8
 inherit cmake xdg
 
 MY_PN=Bugdom
-BUGDOM_GIT_REV=d4b5e729cf6747f1b07ee2752c824ac882f5ce5b
-POMME_GIT_REV=b9ddab06cdc0b9e4a8085e50974213b6c9625436
+POMME_GIT_REV=ad9cc177d2187f67bd00cb6cf2b3045ef91c577b
 
 DESCRIPTION="Save the Bugdom from the evil Fire Ants"
 HOMEPAGE="https://github.com/jorio/Bugdom/"
 SRC_URI="
-	https://github.com/jorio/${MY_PN}/archive/${BUGDOM_GIT_REV}.tar.gz -> ${P}.tar.gz
+	https://github.com/jorio/${MY_PN}/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz
 	https://github.com/jorio/Pomme/archive/${POMME_GIT_REV}.tar.gz -> ${P}-Pomme.tar.gz
 "
 
@@ -36,12 +35,12 @@ DEPEND="
 "
 
 PATCHES=(
-	"${FILESDIR}/${PN}-1.3.1-r1-build.patch"
+	"${FILESDIR}/${PN}-1.3.3-build.patch"
 )
 
 DOCS=( README.md )
 
-S="${WORKDIR}/${MY_PN}-${BUGDOM_GIT_REV}"
+S="${WORKDIR}/${MY_PN}-${PV}"
 
 src_unpack() {
 	unpack "${P}.tar.gz"
