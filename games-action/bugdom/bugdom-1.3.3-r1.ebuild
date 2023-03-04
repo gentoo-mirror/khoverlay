@@ -46,8 +46,8 @@ src_unpack() {
 	unpack "${P}.tar.gz"
 	cd "${S}/extern/Pomme" || die "Couldn't change to extern/Pomme."
 	unpack "${P}-Pomme.tar.gz"
-	mv "Pomme-${POMME_GIT_REV}"/* ./
-	rmdir "Pomme-${POMME_GIT_REV}"
+	mv "Pomme-${POMME_GIT_REV}"/* ./ || die
+	rm -r "Pomme-${POMME_GIT_REV}" || die
 }
 
 src_compile() {
