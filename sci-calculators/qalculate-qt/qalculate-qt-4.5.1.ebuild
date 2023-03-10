@@ -16,7 +16,7 @@ KEYWORDS="~amd64 ~x86"
 RDEPEND="
 	dev-qt/qtnetwork:5
 	dev-qt/qtwidgets:5
-	>=sci-libs/libqalculate-${PV}:=
+	>=sci-libs/libqalculate-4.5.0:=
 "
 DEPEND="${RDEPEND}"
 
