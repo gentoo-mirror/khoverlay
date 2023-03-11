@@ -33,7 +33,6 @@ RDEPEND="${RDEPEND}
 	x11-apps/xdpyinfo
 	x11-apps/xdriinfo
 	x11-apps/xev
-	x11-apps/xf86dga
 	x11-apps/xgamma
 	x11-apps/xhost
 	x11-apps/xinput
