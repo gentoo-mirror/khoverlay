@@ -1,4 +1,4 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 2016-2023 Bryan Gardiner <bog@khumba.net>
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
@@ -11,7 +11,6 @@ inherit haskell-cabal
 
 DESCRIPTION="Command-line file tagging and organization tool"
 HOMEPAGE="http://khumba.net/projects/khph"
-SRC_URI="mirror://hackage/packages/archive/${PN}/${PV}/${P}.tar.gz"
 
 LICENSE="AGPL-3+"
 SLOT="0"
