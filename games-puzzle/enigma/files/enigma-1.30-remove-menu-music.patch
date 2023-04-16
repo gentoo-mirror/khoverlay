@@ -1,0 +1,12 @@
+Remove Pentagonal Dreams, which is not under a libre license.
+
+--- a/data/music/menu/Makefile.am	2021-06-18 13:04:14.000000000 -0700
++++ b/data/music/menu/Makefile.am	2023-04-16 13:11:58.923334537 -0700
+@@ -1,6 +1,5 @@
+ pkgdatadir = $(datadir)/@PACKAGE@/music/menu
+ pkgdata_DATA = esprit.ogg \
+-               enigma_rag.ogg \
+-               pentagonal_dreams.s3m
++               enigma_rag.ogg
+ 
+ EXTRA_DIST = $(pkgdata_DATA)
