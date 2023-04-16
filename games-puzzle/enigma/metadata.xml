@@ -8,4 +8,7 @@
 	<upstream>
 		<remote-id type="github">Enigma-Game/Enigma</remote-id>
 	</upstream>
+	<use>
+		<flag name="non-free">Install non-free menu music</flag>
+	</use>
 </pkgmetadata>
