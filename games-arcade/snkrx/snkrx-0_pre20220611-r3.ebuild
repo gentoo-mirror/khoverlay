@@ -24,7 +24,9 @@ inherit lua-single xdg
 
 DESCRIPTION="Arcade shooter where you control a snake of heroes"
 HOMEPAGE="https://store.steampowered.com/app/915310/SNKRX/"
-SRC_URI="https://apt.khumba.net/pool/main/s/snkrx/snkrx_0~pre20220611~dfsg.orig.tar.gz"
+SRC_URI="https://apt.khumba.net/pool/main/s/snkrx/snkrx_0~pre20220611~dfsg.orig.tar.gz
+	https://apt.khumba.net/pool/main/s/snkrx/snkrx_0~pre20220611~dfsg-0kh12.1.debian.tar.xz
+"
 
 LICENSE="MIT CC-BY-SA-3.0 ZLIB"
 SLOT="0"
@@ -58,6 +60,14 @@ src_prepare() {
 	rm -rf .ctrlp .gitignore builds build.sh run.sh || die "Couldn't remove extraneous files."
 
 	default
+}
+
+src_unpack() {
+	unpack "snkrx_0~pre20220611~dfsg.orig.tar.gz"
+	tar --strip-components=1 \
+		-C "${S}/assets/sounds" \
+		-xf "${DISTDIR}/snkrx_0~pre20220611~dfsg-0kh12.1.debian.tar.xz" \
+		debian/null.ogg || die "Couldn't extract null.ogg."
 }
 
 src_install() {
