@@ -84,7 +84,6 @@ RDEPEND="${RDEPEND}
 		media-fonts/font-bh-lucidatypewriter-75dpi
 		media-fonts/font-bitstream-100dpi
 		media-fonts/font-bitstream-75dpi
-		media-fonts/font-bitstream-speedo
 		media-fonts/font-bitstream-type1
 		media-fonts/font-cronyx-cyrillic
 		media-fonts/font-cursor-misc
