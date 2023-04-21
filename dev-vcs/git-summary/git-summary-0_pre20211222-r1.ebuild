@@ -1,4 +1,4 @@
-# Copyright 2021-2022 Bryan Gardiner <bog@khumba.net>
+# Copyright 2021-2023 Bryan Gardiner <bog@khumba.net>
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -23,4 +23,5 @@ DOCS=(README.md)
 src_install() {
 	einstalldocs
 	dobin git-summary
+	doman "${FILESDIR}/git-summary.1"
 }

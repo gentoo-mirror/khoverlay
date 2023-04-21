@@ -65,9 +65,12 @@ src_prepare() {
 src_unpack() {
 	unpack "snkrx_0~pre20220611~dfsg.orig.tar.gz"
 	tar --strip-components=1 \
-		-C "${S}/assets/sounds" \
+		-C "${WORKDIR}" \
 		-xf "${DISTDIR}/snkrx_0~pre20220611~dfsg-0kh12.1.debian.tar.xz" \
-		debian/null.ogg || die "Couldn't extract null.ogg."
+		debian/null.ogg \
+		debian/snkrx.6 \
+		|| die "Couldn't extract files from Debian tarball."
+	mv "${WORKDIR}/null.ogg" "${S}/assets/sounds" || die "Couldn't move null.ogg into place."
 }
 
 src_install() {
@@ -84,4 +87,6 @@ src_install() {
 	doins "${FILESDIR}/${PN}.desktop"
 
 	newbin "${FILESDIR}/${PN}-0_pre20210523-launcher.sh" snkrx
+
+	doman "${WORKDIR}/snkrx.6"
 }
