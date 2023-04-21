@@ -7,4 +7,4 @@ LICENSE=MIT
 RDEPEND=sys-apps/gawk
 SLOT=0
 SRC_URI=https://github.com/MirkoLedda/git-summary/archive/b8d8e1a3fec106058d1cf74d35e9aa47ae64ae71.tar.gz -> git-summary-0_pre20211222.tar.gz
-_md5_=9eabb0eb1829949d20791f12076429ec
+_md5_=c4dbc4dd7f16401a772f7d7c01177b9d

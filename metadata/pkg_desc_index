@@ -13,12 +13,12 @@ dev-haskell/qtah-cpp-qt5 0.1.2 0.2.0 0.3.0 0.3.1 0.4.0 0.5.0 0.5.1 0.6.0 0.7.0 0
 dev-haskell/qtah-examples 0.1.1 0.2.1 0.3.0 0.4.0 0.5.0 0.6.0 0.7.0 0.8.0 9999: Example programs for Qtah Qt bindings
 dev-haskell/qtah-generator 0.1.2 0.2.1 0.3.0 0.4.0 0.5.0 0.6.0 0.7.0 0.7.1 0.8.0 9999: Generator for Qtah Qt bindings
 dev-haskell/qtah-qt5 0.1.1 0.2.0 0.3.0 0.4.0 0.5.0 0.5.1 0.6.0 0.7.0 0.8.0: Qt bindings for Haskell
-dev-vcs/git-summary 0_pre20211222: Summarizes statuses of multiple local repositories
+dev-vcs/git-summary 0_pre20211222-r1: Summarizes statuses of multiple local repositories
 games-action/bugdom 1.3.2 1.3.3-r1: Save the Bugdom from the evil Fire Ants
 games-action/hyperlightdrifter-deps 1: Metapackage for HyperLightDrift dependencies (game not included)
 games-action/nanosaur 1.4.3 1.4.4: Battle dinosaurs and rescue their eggs before the asteroid hits
 games-arcade/bytepath 0_pre20200814-r3: Replayable arcade shooter with a focus on build theorycrafting
-games-arcade/snkrx 0_pre20220611-r3: Arcade shooter where you control a snake of heroes
+games-arcade/snkrx 0_pre20220611-r4: Arcade shooter where you control a snake of heroes
 games-board/goatee-gtk 0.3.1.1 0.3.1.3: A monadic take on a 2,500-year-old board game - GTK+ UI
 games-engines/love 0.10.2-r3: A framework for 2D games in Lua
 games-puzzle/enigma 1.30_alpha 1.30: Puzzle game similar to Oxyd
