@@ -1,7 +1,18 @@
-Remove Pentagonal Dreams, which is not under a libre license.
+From ad3f4d1df38782693cb005bee305ae85c95dba24 Mon Sep 17 00:00:00 2001
+From: Bryan Gardiner <bog@khumba.net>
+Date: Fri, 21 Apr 2023 19:20:27 -0700
+Subject: [PATCH] Disable Pentagonal Dreams, which is not under a libre
+ license.
 
---- a/data/music/menu/Makefile.am	2021-06-18 13:04:14.000000000 -0700
-+++ b/data/music/menu/Makefile.am	2023-04-16 13:11:58.923334537 -0700
+---
+ data/music/menu/Makefile.am | 3 +--
+ src/MusicManager.cc         | 6 ------
+ 2 files changed, 1 insertion(+), 8 deletions(-)
+
+diff --git a/data/music/menu/Makefile.am b/data/music/menu/Makefile.am
+index 35e46af0..9c4e34a2 100644
+--- a/data/music/menu/Makefile.am
++++ b/data/music/menu/Makefile.am
 @@ -1,6 +1,5 @@
  pkgdatadir = $(datadir)/@PACKAGE@/music/menu
  pkgdata_DATA = esprit.ogg \
@@ -10,3 +21,37 @@ Remove Pentagonal Dreams, which is not under a libre license.
 +               enigma_rag.ogg
  
  EXTRA_DIST = $(pkgdata_DATA)
+diff --git a/src/MusicManager.cc b/src/MusicManager.cc
+index fb9e83aa..1131997a 100644
+--- a/src/MusicManager.cc
++++ b/src/MusicManager.cc
+@@ -218,8 +218,6 @@ void MusicManager::init()
+     // Menu Music
+     music_singles["Esprit"] =
+         MusicSingle("Esprit", "music/menu/esprit.ogg");
+-    music_singles["Pentagonal Dreams"] =
+-        MusicSingle("Pentagonal Dreams", "music/menu/pentagonal_dreams.s3m");
+     
+     // Level Music
+     music_singles["Across The Ice"] =
+@@ -247,7 +245,6 @@ void MusicManager::init()
+     music_queues["Default"].appendSingle("Esprit", false);
+     music_queues["Default"].appendSingleThenWait("Esprit", true, 8.0);
+     music_queues["Default"].appendSingleThenWait("Enigma Rag", true, 8.0);
+-    music_queues["Default"].appendSingleThenWait("Pentagonal Dreams", true, 8.0);
+ 
+     music_queues["Esprit"] = MusicQueue("Esprit", MUSICQUEUE_NEXT, 1);
+     music_queues["Esprit"].appendSingle("Esprit", false);
+@@ -255,9 +252,6 @@ void MusicManager::init()
+     music_queues["Enigma Rag"] = MusicQueue("Enigma Rag", MUSICQUEUE_NEXT, 2);
+     music_queues["Enigma Rag"].appendSingleThenWait("Enigma Rag", false, 8.0);
+ 
+-    music_queues["Pentagonal Dreams"] = MusicQueue("Pentagonal Dreams", MUSICQUEUE_NEXT, 3);
+-    music_queues["Pentagonal Dreams"].appendSingle("Pentagonal Dreams", true);
+-
+     active_music_queue_title = app.state->getString("MenuMusicQueue");
+     // Set the default menu music queue, if saved queue doesn't exist.
+     if(music_queues.find(active_music_queue_title) == music_queues.end())
+-- 
+2.39.2
+
