@@ -2,7 +2,7 @@
 # Copyright 2023 Bryan Gardiner <bog@khumba.net>
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 inherit autotools xdg-utils
 
 MY_PV="${PV/_/-}"
@@ -51,6 +51,7 @@ src_prepare() {
 	default
 	if ! use non-free; then
 		eapply "${FILESDIR}/${PN}-1.30-remove-menu-music.patch"
+		rm data/music/menu/pentagonal_dreams.s3m || die "Couldn't remove non-free music."
 	fi
 	sed -i \
 		-e "s:DOCDIR:\"/usr/share/doc/${MY_P_SHORT}/html\":" \
