@@ -1,7 +1,7 @@
-app-i18n/tagainijisho 1.2.1 1.2.2: Open-source Japanese dictionary and kanji lookup tool
-app-laptop/system76-acpi-module 1.0.1-r1 1.0.2 1.0.2_p20230306: System76 ACPI Driver
-app-laptop/system76-io-module 1.0.1-r1 1.0.2: System76 I/O Board Driver
-app-laptop/system76-module 1.0.9 1.0.12 1.0.13: System76 Driver
+app-i18n/tagainijisho 1.2.2: Open-source Japanese dictionary and kanji lookup tool
+app-laptop/system76-acpi-module 1.0.2_p20230306: System76 ACPI Driver
+app-laptop/system76-io-module 1.0.2: System76 I/O Board Driver
+app-laptop/system76-module 1.0.13: System76 Driver
 dev-games/goatee 0.3.1.1 0.3.1.3: A monadic take on a 2,500-year-old board game - library
 dev-haskell/hoppy-docs 0.2.0 0.3.0 0.3.1 0.3.2 0.4.0 0.5.0 0.7.0 0.8.0 9999: C++ FFI generator - Documentation
 dev-haskell/hoppy-generator 0.1.0 0.2.0 0.3.0 0.3.2 0.3.3 0.4.0 0.5.0 0.5.1 0.5.2 0.7.0 0.7.1 0.8.0 9999: C++ FFI generator - Code generator
@@ -14,9 +14,9 @@ dev-haskell/qtah-examples 0.1.1 0.2.1 0.3.0 0.4.0 0.5.0 0.6.0 0.7.0 0.8.0 9999: 
 dev-haskell/qtah-generator 0.1.2 0.2.1 0.3.0 0.4.0 0.5.0 0.6.0 0.7.0 0.7.1 0.8.0 9999: Generator for Qtah Qt bindings
 dev-haskell/qtah-qt5 0.1.1 0.2.0 0.3.0 0.4.0 0.5.0 0.5.1 0.6.0 0.7.0 0.8.0: Qt bindings for Haskell
 dev-vcs/git-summary 0_pre20211222-r1: Summarizes statuses of multiple local repositories
-games-action/bugdom 1.3.2 1.3.3-r1: Save the Bugdom from the evil Fire Ants
+games-action/bugdom 1.3.3-r1: Save the Bugdom from the evil Fire Ants
 games-action/hyperlightdrifter-deps 1: Metapackage for HyperLightDrift dependencies (game not included)
-games-action/nanosaur 1.4.3 1.4.4: Battle dinosaurs and rescue their eggs before the asteroid hits
+games-action/nanosaur 1.4.4: Battle dinosaurs and rescue their eggs before the asteroid hits
 games-arcade/bytepath 0_pre20200814-r3: Replayable arcade shooter with a focus on build theorycrafting
 games-arcade/snkrx 0_pre20220611-r4: Arcade shooter where you control a snake of heroes
 games-board/goatee-gtk 0.3.1.1 0.3.1.3: A monadic take on a 2,500-year-old board game - GTK+ UI
@@ -26,15 +26,15 @@ games-util/xwiimote 9999: Nintendo Wii Remote Linux Device Driver Tools
 kde-plasma/kwin-geometry-info-script 0_pre20220620: Display window geometry when moving & resizing in KWin 5.24+
 media-gfx/color-picker 1.0.1 1.0.2 1.0.3: A powerful screen color picker
 net-misc/openssh-agent-user-service 1-r1: systemd user service file for ssh-agent
-sci-calculators/qalculate-qt 4.3.0 4.5.1: Multi-purpose cross-platform desktop calculator
+sci-calculators/qalculate-qt 4.5.1: Multi-purpose cross-platform desktop calculator
 sys-apps/khph 0.1.0 9999: Command-line file tagging and organization tool
-sys-apps/system76-driver 20.04.75 20.04.78: Universal driver for System76 computers
+sys-apps/system76-driver 20.04.78: Universal driver for System76 computers
 sys-boot/catppuccin-grub 0_p20220217: Catppuccin theme for GRUB
 sys-fs/fedora-media-writer 4.2.2: GUI for writing Fedora (and other OS) images to portable drives
-sys-kernel/hid-nintendo-dkms 3.2-r2 3.2_p20220512 3.2_p20220722: Nintendo HID kernel module for Linux <5.16
+sys-kernel/hid-nintendo-dkms 3.2_p20220722: Nintendo HID kernel module for Linux <5.16
 x11-base/xorg-x11 7.4-r5: An X11 implementation maintained by the X.Org Foundation (meta package)
 x11-drivers/xf86-input-xwiimote 9999: X.Org Wii Remote Input Driver
-x11-libs/gtk3-classic-patches 3.24.34-r2 3.24.34.2 3.24.35 3.24.36 3.24.37.2: gtk3-classic patches for /etc/portage/patches
+x11-libs/gtk3-classic-patches 3.24.35 3.24.36 3.24.37.2: gtk3-classic patches for /etc/portage/patches
 x11-themes/catppuccin-cursors-bin 0_p20220228: Catppuccin mouse cursors (based on Volantes cursors)
 x11-themes/catppuccin-kde-theme 0_p20220202: Catppuccin theme for KDE Plasma
 x11-themes/catppuccin-konsole-theme 0_p20220201: Catppuccin theme for Konsole
