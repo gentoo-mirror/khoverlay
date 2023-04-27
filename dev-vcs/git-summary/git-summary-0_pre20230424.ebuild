@@ -3,7 +3,7 @@
 
 EAPI=8
 
-GIT_REV=b8d8e1a3fec106058d1cf74d35e9aa47ae64ae71
+GIT_REV=9f043a0bb8609c940549939d0d20fe0c796fe74c
 
 DESCRIPTION="Summarizes statuses of multiple local repositories"
 HOMEPAGE="https://github.com/MirkoLedda/${PN}"
@@ -23,5 +23,5 @@ DOCS=(README.md)
 src_install() {
 	einstalldocs
 	dobin git-summary
-	doman "${FILESDIR}/git-summary.1"
+	doman git-summary.1
 }
