@@ -6,5 +6,5 @@ KEYWORDS=~amd64 ~x86
 LICENSE=MIT
 RDEPEND=sys-apps/gawk
 SLOT=0
-SRC_URI=https://github.com/MirkoLedda/git-summary/archive/b8d8e1a3fec106058d1cf74d35e9aa47ae64ae71.tar.gz -> git-summary-0_pre20211222.tar.gz
-_md5_=c4dbc4dd7f16401a772f7d7c01177b9d
+SRC_URI=https://github.com/MirkoLedda/git-summary/archive/9f043a0bb8609c940549939d0d20fe0c796fe74c.tar.gz -> git-summary-0_pre20230424.tar.gz
+_md5_=e45771dea7c92a97e0ac4855baceffd1
