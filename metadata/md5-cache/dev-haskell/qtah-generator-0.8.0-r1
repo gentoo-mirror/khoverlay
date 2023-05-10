@@ -11,5 +11,5 @@ LICENSE=LGPL-3+
 RDEPEND=>=dev-haskell/haskell-src-1.0:=[profile?] <dev-haskell/haskell-src-1.1:=[profile?] >=dev-haskell/hoppy-generator-0.8:=[profile?] <dev-haskell/hoppy-generator-0.9:=[profile?] >=dev-haskell/hoppy-std-0.8:=[profile?] <dev-haskell/hoppy-std-0.9:=[profile?] >=dev-haskell/mtl-2.2.1:=[profile?] <dev-haskell/mtl-2.3:=[profile?] >=dev-lang/ghc-7.10.1:=
 SLOT=0/0.8.0
 SRC_URI=https://hackage.haskell.org/package/qtah-generator-0.8.0/qtah-generator-0.8.0.tar.gz
-_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	dbe1a8d17cacb390a3df7bbba6617679	multilib	d1408425c7c4a7669b9b17735404b693	toolchain-funcs	14a8ae365191b518fad51caad7a08f3e	haskell-cabal	13a2f21e4152733139de87f74c2f99dd
+_eclasses_=multiprocessing	b4e253ab22cef7b1085e9b67c7a3b730	ghc-package	dbe1a8d17cacb390a3df7bbba6617679	multilib	104e1332efb829e2f7cbf89307a474f1	toolchain-funcs	14a8ae365191b518fad51caad7a08f3e	haskell-cabal	13a2f21e4152733139de87f74c2f99dd
 _md5_=18061c3350def9b9bff4f172fcff0d9e
