@@ -24,6 +24,7 @@ games-engines/love 0.10.2-r3: A framework for 2D games in Lua
 games-puzzle/enigma 1.30_alpha 1.30-r1: Puzzle game similar to Oxyd
 games-util/xwiimote 9999: Nintendo Wii Remote Linux Device Driver Tools
 kde-plasma/kwin-geometry-info-script 0_pre20220620: Display window geometry when moving & resizing in KWin 5.24+
+media-fonts/divide-by-zero 20050114: Tom7's collection of fun TrueType fonts
 media-gfx/color-picker 1.0.1 1.0.2 1.0.3: A powerful screen color picker
 net-misc/openssh-agent-user-service 1-r1: systemd user service file for ssh-agent
 sci-calculators/qalculate-qt 4.5.1 4.6.1: Multi-purpose cross-platform desktop calculator
