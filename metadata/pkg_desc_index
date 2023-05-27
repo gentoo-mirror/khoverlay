@@ -35,7 +35,7 @@ sys-fs/fedora-media-writer 4.2.2: GUI for writing Fedora (and other OS) images t
 sys-kernel/hid-nintendo-dkms 3.2_p20220722: Nintendo HID kernel module for Linux <5.16
 x11-base/xorg-x11 7.4-r5: An X11 implementation maintained by the X.Org Foundation (meta package)
 x11-drivers/xf86-input-xwiimote 9999: X.Org Wii Remote Input Driver
-x11-libs/gtk3-classic-patches 3.24.35 3.24.36 3.24.37.2: gtk3-classic patches for /etc/portage/patches
+x11-libs/gtk3-classic-patches 3.24.35 3.24.36 3.24.37.2 3.24.38: gtk3-classic patches for /etc/portage/patches
 x11-themes/catppuccin-cursors-bin 0_p20220228: Catppuccin mouse cursors (based on Volantes cursors)
 x11-themes/catppuccin-kde-theme 0_p20220202: Catppuccin theme for KDE Plasma
 x11-themes/catppuccin-konsole-theme 0_p20220201: Catppuccin theme for Konsole
