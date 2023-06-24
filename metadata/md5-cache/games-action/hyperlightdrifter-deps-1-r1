@@ -1,0 +1,9 @@
+DEFINED_PHASES=-
+DESCRIPTION=Metapackage for HyperLightDrift dependencies (game not included)
+EAPI=8
+HOMEPAGE=https://www.heartmachine.com/hyper-light-drifter
+KEYWORDS=~amd64
+LICENSE=metapackage
+RDEPEND=dev-libs/libunistring:0/2[abi_x86_32] dev-libs/openssl-compat:1.0.0[abi_x86_32] dev-libs/openssl-compat:1.1.1[abi_x86_32] media-libs/glu[abi_x86_32] media-libs/libglvnd[abi_x86_32] media-libs/openal[abi_x86_32] net-dns/libidn2:0/2[abi_x86_32] net-libs/nghttp2:0/1.14[abi_x86_32] net-misc/curl[abi_x86_32] sys-devel/gcc[multilib] sys-libs/glibc[multilib] sys-libs/zlib:0/1[abi_x86_32] x11-libs/libX11[abi_x86_32] x11-libs/libXau[abi_x86_32] x11-libs/libXdmcp[abi_x86_32] x11-libs/libXext[abi_x86_32] x11-libs/libXrandr[abi_x86_32] x11-libs/libXrender[abi_x86_32] x11-libs/libXxf86vm[abi_x86_32] x11-libs/libxcb[abi_x86_32]
+SLOT=0
+_md5_=85fa03078027c36104fd934152a61879
