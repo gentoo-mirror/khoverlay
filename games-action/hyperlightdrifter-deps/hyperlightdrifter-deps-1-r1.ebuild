@@ -16,8 +16,8 @@ KEYWORDS="~amd64"
 DEPEND=""
 RDEPEND="
 	dev-libs/libunistring:0/2[abi_x86_32]
-	dev-libs/openssl:0/1.1[abi_x86_32]
 	dev-libs/openssl-compat:1.0.0[abi_x86_32]
+	dev-libs/openssl-compat:1.1.1[abi_x86_32]
 	media-libs/glu[abi_x86_32]
 	media-libs/libglvnd[abi_x86_32]
 	media-libs/openal[abi_x86_32]
