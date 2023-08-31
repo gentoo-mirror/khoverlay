@@ -1,10 +1,10 @@
 # Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
 EGIT_REPO_URI="https://github.com/dvdhrm/xwiimote.git"
-inherit eutils git-r3 autotools
+inherit autotools git-r3 libtool
 
 DESCRIPTION="Nintendo Wii Remote Linux Device Driver Tools"
 HOMEPAGE="https://github.com/dvdhrm/xwiimote"
