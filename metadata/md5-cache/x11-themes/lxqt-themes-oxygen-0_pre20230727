@@ -1,0 +1,9 @@
+DEFINED_PHASES=install
+DESCRIPTION=LXQt port of KDE 4.x's Oxygen style
+EAPI=8
+HOMEPAGE=https://github.com/AzumaHazuki/lxqt-themes-oxygen
+KEYWORDS=~amd64 ~x86
+LICENSE=GPL-3
+SLOT=0
+SRC_URI=https://github.com/AzumaHazuki/lxqt-themes-oxygen/archive/5c9edca8e952b76f5c8c74e67280fbe83f4ff015.tar.gz -> lxqt-themes-oxygen-0_pre20230727.tar.gz
+_md5_=016d4a440b23dced84c749a9bcd21a96

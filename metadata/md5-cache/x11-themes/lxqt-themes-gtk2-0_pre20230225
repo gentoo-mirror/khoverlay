@@ -1,0 +1,9 @@
+DEFINED_PHASES=install
+DESCRIPTION=LXQt ports of the old-school default GTK Engines themes
+EAPI=8
+HOMEPAGE=https://github.com/AzumaHazuki/lxqt-themes-gtk2
+KEYWORDS=~amd64 ~x86
+LICENSE=GPL-3
+SLOT=0
+SRC_URI=https://github.com/AzumaHazuki/lxqt-themes-gtk2/archive/2015450177e3021a750526d09f2534b2d426f208.tar.gz -> lxqt-themes-gtk2-0_pre20230225.tar.gz
+_md5_=c2ff99bcd3bb6ae9a3b14f8bb8b13199
