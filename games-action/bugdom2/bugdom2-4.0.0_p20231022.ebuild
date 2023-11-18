@@ -12,7 +12,7 @@ MY_PN=Bugdom2
 GIT_REV=d56b8e7ce0f71b02c1b83ce0d70008df153db2a8
 POMME_GIT_REV=c6a38eab19a11847024a13f9b3e2af0c2d908c3e
 
-DESCRIPTION="Pangea Softwares Bugdom 2 for modern systems"
+DESCRIPTION="Pangea Software's Bugdom 2 for modern systems"
 HOMEPAGE="https://github.com/jorio/Bugdom2"
 SRC_URI="
 	https://github.com/jorio/Bugdom2/archive/${GIT_REV}.tar.gz -> ${P}.tar.gz
