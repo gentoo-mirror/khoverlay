@@ -1,0 +1,66 @@
+From fb01232da3c9b4497021dcba3971ded3b596ae09 Mon Sep 17 00:00:00 2001
+From: Bryan Gardiner <bog@khumba.net>
+Date: Sat, 18 Nov 2023 02:15:28 -0800
+Subject: [PATCH] Patch to find the data directory under /usr/share.
+
+---
+ Source/Boot.cpp | 36 ++----------------------------------
+ 1 file changed, 2 insertions(+), 34 deletions(-)
+
+diff --git a/Source/Boot.cpp b/Source/Boot.cpp
+index cacca54..eef7af1 100644
+--- a/Source/Boot.cpp
++++ b/Source/Boot.cpp
+@@ -29,39 +29,7 @@ extern "C"
+ 
+ static fs::path FindGameData(const char* executablePath)
+ {
+-	fs::path dataPath;
+-
+-	int attemptNum = 0;
+-
+-#if !(__APPLE__)
+-	attemptNum++;		// skip macOS special case #0
+-#endif
+-
+-	if (!executablePath)
+-		attemptNum = 2;
+-
+-tryAgain:
+-	switch (attemptNum)
+-	{
+-		case 0:			// special case for macOS app bundles
+-			dataPath = executablePath;
+-			dataPath = dataPath.parent_path().parent_path() / "Resources";
+-			break;
+-
+-		case 1:
+-			dataPath = executablePath;
+-			dataPath = dataPath.parent_path() / "Data";
+-			break;
+-
+-		case 2:
+-			dataPath = "Data";
+-			break;
+-
+-		default:
+-			throw std::runtime_error("Couldn't find the Data folder.");
+-	}
+-
+-	attemptNum++;
++	fs::path dataPath("/usr/share/Bugdom2");
+ 
+ 	dataPath = dataPath.lexically_normal();
+ 
+@@ -72,7 +40,7 @@ tryAgain:
+ 	OSErr iErr = FSMakeFSSpec(gDataSpec.vRefNum, gDataSpec.parID, ":Skeletons:Grasshopper.bg3d", &someDataFileSpec);
+ 	if (iErr)
+ 	{
+-		goto tryAgain;
++		throw std::runtime_error("Error loading resources from the Data folder.");
+ 	}
+ 
+ 	return dataPath;
+-- 
+2.41.0
+
