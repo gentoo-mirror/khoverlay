@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 # This ebuild bundles the specific version of Pomme that is recommended
-# for this release of Nanosaur.  Nanosaur is incompatible with this
+# for this release of Bugdom.  Nanosaur is incompatible with this
 # version and requires a different version, and it's not worth the
 # trouble to slot Pomme.
 
@@ -10,38 +10,37 @@ EAPI=8
 
 inherit cmake xdg
 
-MY_PN=Nanosaur
-GIT_REV=c9753648996b09a17c8bd526d8309b73fb14c435
+MY_PN=Bugdom
+GIT_REV=0591da5b0c20021fe0c4c9aa85077af31809e889
 POMME_GIT_REV=d57c28e205462e51063e787f9ebddaadff592f1e
 
-DESCRIPTION="Battle dinosaurs and rescue their eggs before the asteroid hits"
-HOMEPAGE="https://github.com/jorio/Nanosaur/"
+DESCRIPTION="Save the Bugdom from the evil Fire Ants"
+HOMEPAGE="https://github.com/jorio/Bugdom/"
 SRC_URI="
-	https://github.com/jorio/Nanosaur/archive/${GIT_REV}.tar.gz -> ${P}.tar.gz
+	https://github.com/jorio/Bugdom/archive/${GIT_REV}.tar.gz -> ${P}.tar.gz
 	https://github.com/jorio/Pomme/archive/${POMME_GIT_REV}.tar.gz -> Pomme-${POMME_GIT_REV}.tar.gz
 "
 
-LICENSE="CC-BY-NC-SA-4.0"
+# Licenses other than CC-BY-NC-SA-4.0 are for Pomme.
+LICENSE="CC-BY-NC-SA-4.0 Boost-1.0 BSD CC0-1.0 LGPL-2.1+ MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
 RDEPEND="
+	dev-util/patchelf
 	media-libs/libsdl2
 	virtual/opengl
 "
-DEPEND="${RDEPEND}"
+DEPEND="
+	${RDEPEND}
+	dev-util/patchelf
+"
 
 PATCHES=(
-	"${FILESDIR}/${PN}-1.4.4-build.patch"
+	"${FILESDIR}/${PN}-1.3.3-build.patch"
 )
 
-DOCS=(
-	README.md
-	CHANGELOG.md
-	"docs/About Nanosaur Extreme.md"
-	"docs/Nanosaur Instructions.pdf"
-
-)
+DOCS=( README.md )
 
 S="${WORKDIR}/${MY_PN}-${GIT_REV}"
 
@@ -73,8 +72,8 @@ src_install() {
 	einstalldocs
 
 	insinto "/usr/share/pixmaps"
-	doins "${S}/packaging/io.jor.nanosaur.png"
+	doins "${S}/packaging/io.jor.bugdom.png"
 
 	insinto "/usr/share/applications"
-	doins "${S}/packaging/io.jor.nanosaur.desktop"
+	doins "${S}/packaging/io.jor.bugdom.desktop"
 }
