@@ -20,7 +20,8 @@ SRC_URI="
 "
 S="${WORKDIR}/${MY_PN}-${GIT_REV}"
 
-LICENSE="CC-BY-NC-SA-4.0"
+# Licenses other than CC-BY-NC-SA-4.0 are for Pomme.
+LICENSE="CC-BY-NC-SA-4.0 Boost-1.0 BSD CC0-1.0 LGPL-2.1+ MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE="l10n_de l10n_es l10n_fr l10n_it l10n_ja l10n_nl l10n_sv"
