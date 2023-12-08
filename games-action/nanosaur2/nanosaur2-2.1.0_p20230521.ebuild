@@ -8,36 +8,40 @@ EAPI=8
 
 inherit cmake xdg
 
-MY_PN=Bugdom2
-GIT_REV=d56b8e7ce0f71b02c1b83ce0d70008df153db2a8
-POMME_GIT_REV=c6a38eab19a11847024a13f9b3e2af0c2d908c3e
+MY_PN=Nanosaur2
+GIT_REV=72d93ed08148d81aa89bab511a9650d7b929d4c7
+POMME_GIT_REV=d57c28e205462e51063e787f9ebddaadff592f1e
 
-DESCRIPTION="Pangea Software's Bugdom 2 for modern systems"
-HOMEPAGE="https://github.com/jorio/Bugdom2"
+DESCRIPTION="Battle dinosaurs and rescue their eggs before the asteroid hits"
+HOMEPAGE="https://github.com/jorio/Nanosaur/"
 SRC_URI="
-	https://github.com/jorio/Bugdom2/archive/${GIT_REV}.tar.gz -> ${P}.tar.gz
+	https://github.com/jorio/Nanosaur2/archive/${GIT_REV}.tar.gz -> ${P}.tar.gz
 	https://github.com/jorio/Pomme/archive/${POMME_GIT_REV}.tar.gz -> Pomme-${POMME_GIT_REV}.tar.gz
 "
-S="${WORKDIR}/${MY_PN}-${GIT_REV}"
 
-# Licenses other than CC-BY-NC-SA-4.0 are for Pomme.
+# Licenses other than CC-BY-NC-SA-4.0 are for Pomme and AppStream metadata.
 LICENSE="CC-BY-NC-SA-4.0 Boost-1.0 BSD CC0-1.0 LGPL-2.1+ MIT"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="l10n_de l10n_es l10n_fr l10n_it l10n_ja l10n_nl l10n_sv"
+IUSE="l10n_de l10n_es l10n_fr l10n_it l10n_ja l10n_nl"
 
 RDEPEND="
 	media-libs/libsdl2
 	virtual/opengl
 "
 DEPEND="${RDEPEND}"
-BDEPEND="dev-util/patchelf"
 
 PATCHES=(
-	"${FILESDIR}/${PN}-4.0.0_p20231022-build.patch"
+	"${FILESDIR}/${PN}-2.1.0-build.patch"
 )
 
-DOCS=( CHANGELOG.md README.md SECRETS.md )
+DOCS=(
+	README.md
+	CHANGELOG.md
+	SECRETS.md
+)
+
+S="${WORKDIR}/${MY_PN}-${GIT_REV}"
 
 src_unpack() {
 	unpack "${P}.tar.gz"
@@ -65,18 +69,20 @@ src_install() {
 	doins -r "${BUILD_DIR}/Data"/*
 
 	einstalldocs
-	dodoc "${S}/Instructions/Instructions-EN.pdf"
-	use l10n_de && dodoc "${S}/Instructions/Instructions-DE.pdf"
-	use l10n_es && dodoc "${S}/Instructions/Instructions-ES.pdf"
-	use l10n_fr && dodoc "${S}/Instructions/Instructions-FR.pdf"
-	use l10n_it && dodoc "${S}/Instructions/Instructions-IT.pdf"
-	use l10n_ja && dodoc "${S}/Instructions/Instructions-JA.pdf"
-	use l10n_nl && dodoc "${S}/Instructions/Instructions-NL.pdf"
-	use l10n_sv && dodoc "${S}/Instructions/Instructions-SV.pdf"
-
-	insinto "/usr/share/pixmaps"
-	doins "${S}/packaging/io.jor.bugdom2.png"
+	dodoc "${S}/docs/Instructions-EN.pdf"
+	use l10n_de && dodoc "${S}/docs/Instructions-DE.pdf"
+	use l10n_es && dodoc "${S}/docs/Instructions-ES.pdf"
+	use l10n_fr && dodoc "${S}/docs/Instructions-FR.pdf"
+	use l10n_it && dodoc "${S}/docs/Instructions-IT.pdf"
+	use l10n_ja && dodoc "${S}/docs/Instructions-JA.pdf"
+	use l10n_nl && dodoc "${S}/docs/Instructions-NL.pdf"
 
 	insinto "/usr/share/applications"
-	doins "${S}/packaging/io.jor.bugdom2.desktop"
+	doins "${S}/packaging/io.jor.nanosaur2.desktop"
+
+	insinto "/usr/share/metainfo"
+	doins "${S}/packaging/io.jor.nanosaur2.appdata.xml"
+
+	insinto "/usr/share/pixmaps"
+	doins "${S}/packaging/io.jor.nanosaur2.png"
 }
