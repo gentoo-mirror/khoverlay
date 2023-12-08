@@ -16,9 +16,10 @@ dev-haskell/qtah-qt5 0.8.0-r1: Qt bindings for Haskell
 dev-lang/ispc 1.21.0: Intel SPMD Program Compiler
 dev-vcs/git-summary 0_pre20230424 0_pre20230730: Summarizes statuses of multiple local repositories
 games-action/bugdom 1.3.3_p20231008-r1: Save the Bugdom from the evil Fire Ants
-games-action/bugdom2 4.0.0_p20231022-r1: Pangea Software's Bugdom 2 for modern systems
+games-action/bugdom2 4.0.0_p20231022-r2: Pangea Software's Bugdom 2 for modern systems
 games-action/hyperlightdrifter-deps 1-r1: Metapackage for HyperLightDrift dependencies (game not included)
 games-action/nanosaur 1.4.4_p20230521-r1: Battle dinosaurs and rescue their eggs before the asteroid hits
+games-action/nanosaur2 2.1.0_p20230521: Battle dinosaurs and rescue their eggs before the asteroid hits
 games-arcade/bytepath 0_pre20200814-r3: Replayable arcade shooter with a focus on build theorycrafting
 games-arcade/snkrx 0_pre20220611-r4: Arcade shooter where you control a snake of heroes
 games-board/goatee-gtk 0.4.0: A monadic take on a 2,500-year-old board game - GTK+ UI
