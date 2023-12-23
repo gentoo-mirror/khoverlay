@@ -1,3 +1,8 @@
+# Bryan Gardiner <bog@khumba.net> (2023-12-22)
+# Tagaini Jisho is again up to date in ::gentoo, please switch back to the
+# official Gentoo ebuild.
+app-i18n/tagainijisho
+
 # Bryan Gardiner <bog@khumba.net> (2022-11-08)
 # Masked due to bug which breaks all GTK+ programs with >=glib-2.74.0.
 # Please upgrade to gtk3-classic-patches-3.24.34.2.
