@@ -29,6 +29,7 @@ games-util/xwiimote 9999: Nintendo Wii Remote Linux Device Driver Tools
 kde-plasma/kwin-geometry-info-script 0_pre20220620: Display window geometry when moving & resizing in KWin 5.24+
 media-fonts/divide-by-zero 20050114: Tom7's collection of fun TrueType fonts
 media-gfx/color-picker 1.0.3: A powerful screen color picker
+net-misc/networkmanager-no-modify-system-patch 1: Patch to stop letting all logged-in users modify NM system connections
 net-misc/openssh-agent-user-service 1-r1: systemd user service file for ssh-agent
 sci-calculators/qalculate-qt 4.5.1 4.6.1: Multi-purpose cross-platform desktop calculator
 sys-apps/system76-driver 20.04.79 20.04.80 20.04.81 20.04.83: Universal driver for System76 computers
