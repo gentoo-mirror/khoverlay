@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>bog@khumba.net</email>
+    <name>Bryan Gardiner</name>
+  </maintainer>
+
+  <longdescription>
+    READ THIS BEFORE USING THIS PACKAGE.
+
+    Official Gentoo packaging of NetworkManager >=1.42.6 unconditionally
+    sets a nondefault build-time option (-Dmodify_system=true) that
+    allows ALL logged in users to modify system connections, including
+    reading network credentials (https://bugs.gentoo.org/905668).  This
+    ebuild provides a patch to the configure script that disables the
+    logic behind this option, so that network settings are again
+    protected from untrusted users and programs.
+
+    This ebuild is package.masked by default as it has the potential to
+    break the build of NetworkManager, especially on ~arch when a new
+    version of NetworkManager is released and the patch no longer
+    applies cleanly.  My main focus is on keeping a healthy build for
+    stable, but pings are welcome if things break on unstable.
+
+    This ebuild will collect patches for multiple versions of
+    NetworkManager.  The current latest patch will be placed in the
+    unversioned /etc/portage/patches/net-misc/networkmanager directory.
+    Patches for versions of NetworkManager older than the latest patch
+    will be placed in versioned
+    /etc/portage/patches/net-misc/networkmanager-NNN directories.
+
+    After installing this package for the first time, rebuilding
+    net-misc/networkmanager is required.
+  </longdescription>
+</pkgmetadata>
