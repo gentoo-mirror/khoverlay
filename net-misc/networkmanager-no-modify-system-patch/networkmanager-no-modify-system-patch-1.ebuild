@@ -30,6 +30,9 @@ src_install() {
 }
 
 pkg_postinst() {
-	elog "Ensure that net-misc/networkmanager is rebuilt after this package,"
-	elog "for the patch to take effect."
+	if [[ -z "${REPLACING_VERSIONS}" ]]; then
+		elog "Ensure that net-misc/networkmanager is rebuilt after this package,"
+		elog "for the patch to take effect.  (This message is only printed the"
+		elog "first time this package is installed.)"
+	fi
 }
