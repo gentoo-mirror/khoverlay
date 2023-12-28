@@ -23,13 +23,6 @@
     applies cleanly.  Pings are welcome if things break on unstable and
     I haven't updated the patch yet.
 
-    This ebuild will collect patches for multiple versions of
-    NetworkManager.  The current latest patch will be placed in the
-    unversioned /etc/portage/patches/net-misc/networkmanager directory.
-    Patches for versions of NetworkManager older than the latest patch
-    will be placed in versioned
-    /etc/portage/patches/net-misc/networkmanager-NNN directories.
-
     After installing this package for the first time, rebuilding
     net-misc/networkmanager is required.
   </longdescription>
