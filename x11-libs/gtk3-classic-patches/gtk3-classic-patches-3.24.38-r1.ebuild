@@ -1,4 +1,4 @@
-# Copyright 2022 Bryan Gardiner <bog@khumba.net>
+# Copyright 2022-2023 Bryan Gardiner <bog@khumba.net>
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -20,7 +20,11 @@ PDEPEND="gtk? ( ~x11-libs/gtk+-${GTK_VER} )"
 
 S="${WORKDIR}/gtk3-classic-${CLASSIC_VER}"
 
+DOCS=( README.md )
+
 src_install() {
+	einstalldocs
+
 	insinto /etc/portage/patches/x11-libs/gtk+-"${GTK_VER}"
 
 	local index=0 file
