@@ -1,4 +1,4 @@
-# Copyright 2022-2023 Bryan Gardiner <bog@khumba.net>
+# Copyright 2022-2024 Bryan Gardiner <bog@khumba.net>
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
