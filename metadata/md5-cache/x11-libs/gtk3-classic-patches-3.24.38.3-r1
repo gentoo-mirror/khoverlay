@@ -7,5 +7,5 @@ KEYWORDS=~amd64 ~x86
 LICENSE=LGPL-2+
 PDEPEND=gtk? ( ~x11-libs/gtk+-3.24.38 )
 SLOT=0
-SRC_URI=https://github.com/lah7/gtk3-classic/archive/refs/tags/3.24.38.tar.gz -> gtk3-classic-3.24.38.tar.gz
-_md5_=a6d2ba8a8c93764b11befb6129ab76a3
+SRC_URI=https://github.com/lah7/gtk3-classic/archive/refs/tags/3.24.38-3.tar.gz -> gtk3-classic-3.24.38-3.tar.gz
+_md5_=494cf420043ae9cbd5930b6bec9727b6
