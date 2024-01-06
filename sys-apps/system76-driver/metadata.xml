@@ -27,7 +27,7 @@
   <use>
     <flag name="modules">Pull in packages for System76 kernel modules</flag>
     <flag name="suspend-workarounds">
-      Restart various hardware (Bluetooth, Thunderbolt, wireless) after
+      Restart various hardware (Bluetooth, Thunderbolt, network) after
       suspending, to work around hardware bugs, as System76 recommends
       (requires systemd)
     </flag>
