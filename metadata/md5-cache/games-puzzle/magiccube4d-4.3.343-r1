@@ -10,4 +10,4 @@ RDEPEND=>=virtual/jdk-1.8:* >=dev-java/java-config-2.2.0-r3
 SLOT=java
 SRC_URI=https://github.com/cutelyaware/magiccube4d/archive/refs/tags/v4.3.343.tar.gz -> magiccube4d-4.3.343.tar.gz
 _eclasses_=desktop	021728fdc1b03b36357dbc89489e0f0d	java-utils-2	7c4c66a18e7b619373f3a3bcff542907	java-pkg-2	b6d755b4f6afabfd933932be28b46368	java-pkg-simple	4ab397252045e0aeb290efb05ea956c7
-_md5_=b1688f5d8431cf91f8fde5e63a9c21b9
+_md5_=d548f838bc760031e7400db98ce310b2

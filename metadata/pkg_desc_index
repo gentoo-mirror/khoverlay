@@ -25,7 +25,7 @@ games-arcade/snkrx 0_pre20220611-r4: Arcade shooter where you control a snake of
 games-board/goatee-gtk 0.4.0: A monadic take on a 2,500-year-old board game - GTK+ UI
 games-engines/love 0.10.2-r3: A framework for 2D games in Lua
 games-puzzle/enigma 1.30-r1: Puzzle game similar to Oxyd
-games-puzzle/magiccube4d 4.3.343: 4D Rubik's Cube and other twisty puzzles
+games-puzzle/magiccube4d 4.3.343-r1: 4D Rubik's Cube and other twisty puzzles
 games-util/xwiimote 9999: Nintendo Wii Remote Linux Device Driver Tools
 kde-plasma/kwin-geometry-info-script 0_pre20220620: Display window geometry when moving & resizing in KWin 5.24+
 media-fonts/divide-by-zero 20050114: Tom7's collection of fun TrueType fonts
