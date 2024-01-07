@@ -20,6 +20,8 @@ BDEPEND=""
 
 S="${WORKDIR}/${P}"
 
+DOCS=( README.md )
+
 JAVA_SRC_DIR=( src/java )
 JAVA_RESOURCE_DIRS=( src/resources )
 JAVA_MAIN_CLASS=com.superliminal.magiccube4d.MC4DLauncher
