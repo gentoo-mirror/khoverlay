@@ -1,7 +1,7 @@
 # Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=6
+EAPI=8
 
 DESCRIPTION="An X11 implementation maintained by the X.Org Foundation (meta package)"
 HOMEPAGE="https://www.x.org/wiki/"
