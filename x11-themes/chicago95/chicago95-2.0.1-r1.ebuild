@@ -1,14 +1,14 @@
-# Copyright 2021 Bryan Gardiner <bog@khumba.net>
+# Copyright 2021-2024 Bryan Gardiner <bog@khumba.net>
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
 inherit font xdg
 
 REPO_NAME="Chicago95"
 
 DESCRIPTION="Linux rendition of everyone's favourite 1995 Microsoft OS"
-HOMEPAGE="https://github.com/grassmunk/${REPO_NAME}"
+HOMEPAGE="https://github.com/grassmunk/Chicago95"
 SRC_URI="https://github.com/grassmunk/${REPO_NAME}/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-3+ MIT"
