@@ -1,7 +1,7 @@
 app-i18n/tagainijisho 1.2.2: Open-source Japanese dictionary and kanji lookup tool
 app-laptop/system76-acpi-module 1.0.2_p20230306 1.0.2_p20230717: System76 ACPI Driver
-app-laptop/system76-io-module 1.0.2 1.0.3: System76 I/O Board Driver
-app-laptop/system76-module 1.0.13 1.0.13-r1: System76 Driver
+app-laptop/system76-io-module 1.0.3: System76 I/O Board Driver
+app-laptop/system76-module 1.0.13-r1: System76 Driver
 dev-games/goatee 0.4.0: A monadic take on a 2,500-year-old board game - library
 dev-haskell/hoppy-docs 0.8.0-r1 9999: C++ FFI generator - Documentation
 dev-haskell/hoppy-generator 0.8.0-r1 9999: C++ FFI generator - Code generator
@@ -44,7 +44,7 @@ x11-themes/catppuccin-cursors-bin 0_p20220228: Catppuccin mouse cursors (based o
 x11-themes/catppuccin-kde-theme 0_p20220202: Catppuccin theme for KDE Plasma
 x11-themes/catppuccin-konsole-theme 0_p20220201: Catppuccin theme for Konsole
 x11-themes/catppuccin-wallpapers 0_p20220310: Catppuccin wallpapers
-x11-themes/chicago95 2.0.1: Linux rendition of everyone's favourite 1995 Microsoft OS
+x11-themes/chicago95 2.0.1-r1: Linux rendition of everyone's favourite 1995 Microsoft OS
 x11-themes/lxqt-themes-gtk2 0_pre20230225: LXQt ports of the old-school default GTK Engines themes
 x11-themes/lxqt-themes-oxygen 0_pre20230727: LXQt port of KDE 4.x's Oxygen style
 x11-themes/lxqt-themes-xfce 0_pre20230827: LXQt ports of old-school (GTK2) Xfce themes
