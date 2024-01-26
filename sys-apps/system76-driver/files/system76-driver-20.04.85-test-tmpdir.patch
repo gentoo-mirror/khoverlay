@@ -1,0 +1,21 @@
+From: Bryan Gardiner <bog@khumba.net>
+Date: 2024-01-25
+
+Portage builds packages with a custom TMPDIR.  The tests need updating not to
+expect /tmp.
+
+diff --git a/system76driver/tests/test_util.py b/system76driver/tests/test_util.py
+index c2be570..7689e25 100644
+--- a/system76driver/tests/test_util.py
++++ b/system76driver/tests/test_util.py
+@@ -36,7 +36,9 @@ class TestFunctions(TestCase):
+         SubProcess.reset(mocking=False)
+         (tmp, tgz) = util.create_tmp_logs(func=None)
+         self.assertTrue(path.isdir(tmp))
+-        self.assertTrue(tmp.startswith('/tmp/logs.'))
++        self.assertTrue(tmp.startswith(
++            (os.environ.get('TMPDIR') or '/tmp') + '/logs.'
++        ))
+         self.assertEqual(
+             sorted(os.listdir(tmp)),
+             ['system76-logs', 'system76-logs.tgz'],
