@@ -1,4 +1,4 @@
-# Copyright 2020-2023 Bryan Gardiner <bog@khumba.net>
+# Copyright 2020-2024 Bryan Gardiner <bog@khumba.net>
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -41,7 +41,7 @@ REQUIRED_USE="
 RDEPEND="
 	${PYTHON_DEPS}
 	$(python_gen_cond_dep 'dev-python/dbus-python[${PYTHON_USEDEP}]')
-	$(python_gen_cond_dep 'dev-python/python-evdev[${PYTHON_USEDEP}]')
+	$(python_gen_cond_dep 'dev-python/evdev[${PYTHON_USEDEP}]')
 	$(python_gen_cond_dep 'dev-python/pygobject:3[${PYTHON_USEDEP}]')
 	$(python_gen_cond_dep 'dev-python/distro[${PYTHON_USEDEP}]')
 	net-wireless/wireless-tools

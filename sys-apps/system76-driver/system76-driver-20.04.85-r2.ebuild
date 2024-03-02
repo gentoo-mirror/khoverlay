@@ -6,7 +6,7 @@ EAPI=8
 PYTHON_COMPAT=( python3_{10..11} )
 DISTUTILS_SINGLE_IMPL=1
 DISTUTILS_USE_SETUPTOOLS=no
-inherit distutils-r1 systemd
+inherit distutils-r1 systemd virtualx
 
 DESCRIPTION="Universal driver for System76 computers"
 HOMEPAGE="https://github.com/pop-os/system76-driver"
@@ -41,7 +41,7 @@ REQUIRED_USE="
 RDEPEND="
 	${PYTHON_DEPS}
 	$(python_gen_cond_dep 'dev-python/dbus-python[${PYTHON_USEDEP}]')
-	$(python_gen_cond_dep 'dev-python/python-evdev[${PYTHON_USEDEP}]')
+	$(python_gen_cond_dep 'dev-python/evdev[${PYTHON_USEDEP}]')
 	$(python_gen_cond_dep 'dev-python/pygobject:3[${PYTHON_USEDEP}]')
 	$(python_gen_cond_dep 'dev-python/distro[${PYTHON_USEDEP}]')
 	net-wireless/wireless-tools
@@ -64,7 +64,14 @@ DEPEND="${RDEPEND}"
 
 PATCHES=(
 	"${FILESDIR}/system76-driver-20.04.69-gentoo.patch"
+	"${FILESDIR}/system76-driver-20.04.85-test-tmpdir.patch"
 )
+
+distutils_enable_tests setup.py
+
+src_test() {
+	virtx distutils-r1_src_test
+}
 
 src_install() {
 	distutils-r1_src_install
