@@ -1,4 +1,4 @@
-# Copyright 2022 Bryan Gardiner <bog@khumba.net>
+# Copyright 2022-2024 Bryan Gardiner <bog@khumba.net>
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -14,7 +14,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
 DEPEND=""
-RDEPEND="kde-plasma/kwin"
+RDEPEND="kde-plasma/kwin:5"
 
 S="${WORKDIR}/kwin-scripts-${GIT_REV}"
 
