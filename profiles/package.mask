@@ -5,9 +5,3 @@
 #
 #     equery meta -d net-misc/networkmanager-no-modify-system-patch
 net-misc/networkmanager-no-modify-system-patch
-
-# Bryan Gardiner <bog@khumba.net> (2022-11-08)
-# Masked due to bug which breaks all GTK+ programs with >=glib-2.74.0.
-# Please upgrade to gtk3-classic-patches-3.24.34.2.
-# See https://github.com/lah7/gtk3-classic/issues/79.
-<x11-libs/gtk3-classic-patches-3.24.34.2
