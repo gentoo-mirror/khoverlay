@@ -8,6 +8,10 @@ sys-apps/system76-driver:suspend-workarounds - Restart various hardware (Bluetoo
 sys-kernel/hid-nintendo-dkms:joycond - Pull in games-util/joycond daemon for Joy-Con pairing
 x11-base/xorg-x11:fonts - Install fonts from X.Org
 x11-libs/gtk3-classic-patches:gtk - Adds a dependency on the matching version of GTK, ensuring that the correct version of gtk3-classic is installed.
+x11-themes/catppuccin-cursors-bin:frappe - Install the Frappé cursor themes (dark grey border and line colour).
+x11-themes/catppuccin-cursors-bin:latte - Install the Latte cursor themes (light grey border and line colour).
+x11-themes/catppuccin-cursors-bin:macchiato - Install the Macchiato cursor themes (navy border and line colour).
+x11-themes/catppuccin-cursors-bin:mocha - Install the Mocha cursor themes (near-black border and line colour).
 x11-themes/chicago95:gtk - Install themes for GTK+ 2 and 3, plus various desktop environments (GNOME, Cinnamon, XFCE4)
 x11-themes/chicago95:login-sound - Install an XDG autostart script for playing a sound on login
 x11-themes/chicago95:plymouth - Install a Plymouth theme
