@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>bog@khumba.net</email>
+    <name>Bryan Gardiner</name>
+  </maintainer>
+
+  <longdescription>
+    Mouse cursors for the Catppuccin project.  Based on Volantes cursors
+    and adapted to use Catppuccin colours.  Themes of all colours are
+    available, in each of four flavours with varying border and line
+    colour.  From lightest to darkest, the flavours are Latte, Frappé,
+    Macchiato, and Mocha.
+  </longdescription>
+
+  <use>
+    <flag name="latte">
+      Install the Latte cursor themes (light grey border and line colour).
+    </flag>
+    <flag name="frappe">
+      Install the Frappé cursor themes (dark grey border and line colour).
+    </flag>
+    <flag name="macchiato">
+      Install the Macchiato cursor themes (navy border and line colour).
+    </flag>
+    <flag name="mocha">
+      Install the Mocha cursor themes (near-black border and line colour).
+    </flag>
+  </use>
+</pkgmetadata>
