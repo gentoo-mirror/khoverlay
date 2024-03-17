@@ -22,7 +22,7 @@ DEPEND="${RDEPEND}"
 
 S="${WORKDIR}/cursors-${PV}"
 
-STYLES=(
+FLAVOURS=(
 	Frappe
 	Latte
 	Macchiato
@@ -49,11 +49,11 @@ src_unpack() {
 	default
 
 	cd "${S}/cursors" || die "Couldn't change to cursors directory."
-	local style color tarball
-	for style in "${STYLES[@]}"; do
-		if use "${style,}"; then
+	local flavour color tarball
+	for flavour in "${FLAVOURS[@]}"; do
+		if use "${flavour,}"; then
 			for color in "${COLORS[@]}"; do
-				archive="Catppuccin-${style}-${color}-Cursors.zip"
+				archive="Catppuccin-${flavour}-${color}-Cursors.zip"
 				unzip -q "${archive}" || die "Couldn't unpack ${archive}."
 			done
 		fi
@@ -68,11 +68,11 @@ src_install() {
 	insinto /usr/share/icons
 
 	cd "${S}/cursors" || die "Couldn't change to cursors directory."
-	local color
-	for style in "${STYLES[@]}"; do
-		if use "${style,}"; then
+	local flavour color
+	for flavour in "${FLAVOURS[@]}"; do
+		if use "${flavour,}"; then
 			for color in "${COLORS[@]}"; do
-				doins -r "Catppuccin-${style}-${color}-Cursors"
+				doins -r "Catppuccin-${flavour}-${color}-Cursors"
 			done
 		fi
 	done

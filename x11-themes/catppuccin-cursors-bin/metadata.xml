@@ -8,7 +8,10 @@
 
   <longdescription>
     Mouse cursors for the Catppuccin project.  Based on Volantes cursors
-    and adapted to use Catppuccin colours.
+    and adapted to use Catppuccin colours.  Themes of all colours are
+    available, in each of four flavours with varying border and line
+    colour.  From lightest to darkest, the flavours are Latte, Frappé,
+    Macchiato, and Mocha.
   </longdescription>
 
   <use>
