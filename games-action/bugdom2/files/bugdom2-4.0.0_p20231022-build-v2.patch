@@ -1,0 +1,97 @@
+From 11d75f385d4094a124d40ce4ba169d9b01f3bbe6 Mon Sep 17 00:00:00 2001
+From: Bryan Gardiner <bog@khumba.net>
+Date: Fri, 22 Mar 2024 18:55:27 -0700
+Subject: [PATCH] Patch to find the data directory under /usr/share.
+
+---
+ CMakeLists.txt  |  5 ++---
+ Source/Boot.cpp | 36 ++----------------------------------
+ 2 files changed, 4 insertions(+), 37 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index ac1bef2..b644a3c 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -63,8 +63,6 @@ add_compile_definitions(POMME_CASE_SENSITIVE_FSSPEC=1)
+ # DEPENDENCIES
+ #------------------------------------------------------------------------------
+ 
+-add_subdirectory(extern/Pomme)
+-
+ find_package(SDL2 REQUIRED COMPONENTS main)
+ find_package(OpenGL REQUIRED)
+ 
+@@ -124,7 +122,7 @@ endif()
+ target_include_directories(${GAME_TARGET} PRIVATE
+ 	${SDL2_INCLUDE_DIRS}
+ 	${OPENGL_INCLUDE_DIR}
+-	extern/Pomme/src
++	/usr/include/Pomme-@POMME_VER@
+ 	${GAME_SRCDIR}/Headers
+ )
+ 
+@@ -196,6 +194,7 @@ else()
+ 	set_target_properties(${GAME_TARGET} PROPERTIES COMPILE_DEFINITIONS_DEBUG "_CONSOLE")
+ endif()
+ 
++target_link_directories(${GAME_TARGET} PRIVATE @POMME_LIBDIR@)
+ target_link_libraries(${GAME_TARGET} ${GAME_LIBRARIES})
+ 
+ #------------------------------------------------------------------------------
+diff --git a/Source/Boot.cpp b/Source/Boot.cpp
+index cacca54..eef7af1 100644
+--- a/Source/Boot.cpp
++++ b/Source/Boot.cpp
+@@ -29,39 +29,7 @@ extern "C"
+ 
+ static fs::path FindGameData(const char* executablePath)
+ {
+-	fs::path dataPath;
+-
+-	int attemptNum = 0;
+-
+-#if !(__APPLE__)
+-	attemptNum++;		// skip macOS special case #0
+-#endif
+-
+-	if (!executablePath)
+-		attemptNum = 2;
+-
+-tryAgain:
+-	switch (attemptNum)
+-	{
+-		case 0:			// special case for macOS app bundles
+-			dataPath = executablePath;
+-			dataPath = dataPath.parent_path().parent_path() / "Resources";
+-			break;
+-
+-		case 1:
+-			dataPath = executablePath;
+-			dataPath = dataPath.parent_path() / "Data";
+-			break;
+-
+-		case 2:
+-			dataPath = "Data";
+-			break;
+-
+-		default:
+-			throw std::runtime_error("Couldn't find the Data folder.");
+-	}
+-
+-	attemptNum++;
++	fs::path dataPath("/usr/share/Bugdom2");
+ 
+ 	dataPath = dataPath.lexically_normal();
+ 
+@@ -72,7 +40,7 @@ tryAgain:
+ 	OSErr iErr = FSMakeFSSpec(gDataSpec.vRefNum, gDataSpec.parID, ":Skeletons:Grasshopper.bg3d", &someDataFileSpec);
+ 	if (iErr)
+ 	{
+-		goto tryAgain;
++		throw std::runtime_error("Error loading resources from the Data folder.");
+ 	}
+ 
+ 	return dataPath;
+-- 
+2.43.2
+
