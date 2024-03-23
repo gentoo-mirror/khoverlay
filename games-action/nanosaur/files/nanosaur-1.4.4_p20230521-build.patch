@@ -1,0 +1,74 @@
+From ea6028bd9fc4fbf7314389c243d59ec05468750b Mon Sep 17 00:00:00 2001
+From: Bryan Gardiner <bog@khumba.net>
+Date: Fri, 11 Jun 2021 17:49:09 -0700
+Subject: [PATCH] Patch to use system-wide directories.
+
+---
+ CMakeLists.txt |  7 +++----
+ src/Boot.cpp   | 18 +-----------------
+ 2 files changed, 4 insertions(+), 21 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index fe1163f..d195dd2 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -58,8 +58,6 @@ set(POMME_NO_MP3 true)
+ # DEPENDENCIES
+ #------------------------------------------------------------------------------
+ 
+-add_subdirectory(extern/Pomme)
+-
+ find_package(SDL2 REQUIRED COMPONENTS main)
+ find_package(OpenGL REQUIRED)
+ 
+@@ -119,8 +117,8 @@ endif()
+ target_include_directories(${GAME_TARGET} PRIVATE
+ 	${SDL2_INCLUDE_DIRS}
+ 	${OPENGL_INCLUDE_DIR}
+-	extern/Pomme/src
+-	extern/Pomme/src/QD3D
++	/usr/include/Pomme-@POMME_VER@
++	/usr/include/Pomme-@POMME_VER@/QD3D
+ 	${GAME_SRCDIR}/Headers
+ )
+ 
+@@ -191,6 +189,7 @@ else()
+ 	set_target_properties(${GAME_TARGET} PROPERTIES COMPILE_DEFINITIONS_DEBUG "_CONSOLE")
+ endif()
+ 
++target_link_directories(${GAME_TARGET} PRIVATE @POMME_LIBDIR@)
+ target_link_libraries(${GAME_TARGET} ${GAME_LIBRARIES})
+ 
+ #------------------------------------------------------------------------------
+diff --git a/src/Boot.cpp b/src/Boot.cpp
+index fc1d228..a384cb1 100644
+--- a/src/Boot.cpp
++++ b/src/Boot.cpp
+@@ -33,23 +33,7 @@ extern "C"
+ 
+ static fs::path FindGameData()
+ {
+-	fs::path dataPath;
+-
+-#if __APPLE__
+-	char pathbuf[PROC_PIDPATHINFO_MAXSIZE];
+-
+-	pid_t pid = getpid();
+-	int ret = proc_pidpath(pid, pathbuf, sizeof(pathbuf));
+-	if (ret <= 0)
+-	{
+-		throw std::runtime_error(std::string(__func__) + ": proc_pidpath failed: " + std::string(strerror(errno)));
+-	}
+-
+-	dataPath = pathbuf;
+-	dataPath = dataPath.parent_path().parent_path() / "Resources";
+-#else
+-	dataPath = "Data";
+-#endif
++	fs::path dataPath("/usr/share/Nanosaur");
+ 
+ 	dataPath = dataPath.lexically_normal();
+ 
+-- 
+2.43.2
+
