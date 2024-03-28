@@ -1,0 +1,10 @@
+DEFINED_PHASES=install
+DESCRIPTION=Soothing pastel theme for Plymouth
+EAPI=8
+HOMEPAGE=https://github.com/catppuccin/plymouth
+KEYWORDS=~amd64 ~x86
+LICENSE=MIT
+RDEPEND=sys-boot/plymouth
+SLOT=0
+SRC_URI=https://github.com/catppuccin/plymouth/archive/67759fbe15eb9490d096ef8014d9f92fc5748fe7.tar.gz -> catppuccin-plymouth-0_pre20230827.tar.gz
+_md5_=ecc41d08149f83594001b6a9d111fa00
