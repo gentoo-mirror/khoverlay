@@ -1,0 +1,56 @@
+From e71c84eac0059cde4f669adfea8e9f69a517fba2 Mon Sep 17 00:00:00 2001
+From: Bryan Gardiner <bog@khumba.net>
+Date: Fri, 22 Mar 2024 19:06:18 -0700
+Subject: [PATCH] Patch to find the data directory under /usr/share.
+
+---
+ CMakeLists.txt  | 5 ++---
+ Source/Boot.cpp | 2 +-
+ 2 files changed, 3 insertions(+), 4 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index fe6f06f..ec4172c 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -60,8 +60,6 @@ set(POMME_NO_QD3D true)
+ # DEPENDENCIES
+ #------------------------------------------------------------------------------
+ 
+-add_subdirectory(extern/Pomme)
+-
+ find_package(SDL2 REQUIRED COMPONENTS main)
+ find_package(OpenGL REQUIRED)
+ 
+@@ -121,7 +119,7 @@ endif()
+ target_include_directories(${GAME_TARGET} PRIVATE
+ 	${SDL2_INCLUDE_DIRS}
+ 	${OPENGL_INCLUDE_DIR}
+-	extern/Pomme/src
++	/usr/include/Pomme-@POMME_VER@
+ 	${GAME_SRCDIR}/Headers
+ )
+ 
+@@ -197,6 +195,7 @@ else()
+ 	set_target_properties(${GAME_TARGET} PROPERTIES COMPILE_DEFINITIONS_DEBUG "_CONSOLE")
+ endif()
+ 
++target_link_directories(${GAME_TARGET} PRIVATE @POMME_LIBDIR@)
+ target_link_libraries(${GAME_TARGET} ${GAME_LIBRARIES})
+ 
+ #------------------------------------------------------------------------------
+diff --git a/Source/Boot.cpp b/Source/Boot.cpp
+index 58e3990..5b7bdff 100644
+--- a/Source/Boot.cpp
++++ b/Source/Boot.cpp
+@@ -50,7 +50,7 @@ static fs::path FindGameData()
+ 	dataPath = pathbuf;
+ 	dataPath = dataPath.parent_path().parent_path() / "Resources";
+ #else
+-	dataPath = "Data";
++	dataPath = "/usr/share/Nanosaur2";
+ #endif
+ 
+ 	dataPath = dataPath.lexically_normal();
+-- 
+2.43.2
+
