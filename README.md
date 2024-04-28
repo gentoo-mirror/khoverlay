@@ -7,7 +7,7 @@ In here you'll find:
 
 - Ebuilds for some System76 programs and drivers for support of their hardware.
   I personally have a Darter Pro (darp6).  I am interested in having packages
-  for System76's other daemons, especially `system76-firwmare` and
+  for System76's other daemons, especially `system76-firmware` and
   `system76-power`, but I haven't figured out the Rust packaging yet.
 
 - Other miscellaneous packages or fixes not in the main tree.
