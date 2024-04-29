@@ -1,14 +1,21 @@
 # Khumba's Overlay
 
-This repository is my personal [Gentoo overlay](https://wiki.gentoo.org/wiki/Overlay).
-In here you'll find:
+Homepage: https://khumba.net/gentoo/
 
-- Ebuilds for the software I maintain.
+This repository is my personal Gentoo overlay.  In here you'll find:
+
+- Ebuilds for my own software projects.
+
+- Various games, including many of @jorio's ports of Pangea Software's old
+  Macintosh games, and the seriously addicting SNKRX and BYTEPATH arcade games
+  from @adn/a327ex.
 
 - Ebuilds for some System76 programs and drivers for support of their hardware.
   I personally have a Darter Pro (darp6).  I am interested in having packages
   for System76's other daemons, especially `system76-firmware` and
   `system76-power`, but I haven't figured out the Rust packaging yet.
+
+- The gtk3-classic patches for a more traditional desktop experience.
 
 - Other miscellaneous packages or fixes not in the main tree.
 
