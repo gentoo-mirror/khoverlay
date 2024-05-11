@@ -3,9 +3,9 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{10..11} )
+PYTHON_COMPAT=( python3_{10..12} )
 DISTUTILS_SINGLE_IMPL=1
-DISTUTILS_USE_SETUPTOOLS=no
+DISTUTILS_USE_PEP517=setuptools
 inherit distutils-r1 systemd virtualx
 
 DESCRIPTION="Universal driver for System76 computers"
@@ -17,6 +17,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="
 	bluetooth
+	elogind
 	lm-sensors
 	+modules
 	networkmanager
@@ -26,7 +27,7 @@ IUSE="
 "
 REQUIRED_USE="
 	${PYTHON_REQUIRED_USE}
-	suspend-workarounds? ( systemd )
+	suspend-workarounds? ( ^^ ( systemd elogind ) )
 "
 
 # We skip the Debian package's hard dependency on system76-wallpapers.
@@ -54,7 +55,8 @@ RDEPEND="
 		app-laptop/system76-module
 	)
 	suspend-workarounds? (
-		sys-apps/systemd
+		elogind? ( sys-auth/elogind )
+		systemd? ( sys-apps/systemd )
 		bluetooth? ( sys-apps/util-linux )
 		networkmanager? ( net-misc/networkmanager )
 	)
@@ -87,7 +89,13 @@ src_install() {
 
 	if use suspend-workarounds; then
 		local utildir
-		utildir=$(systemd_get_utildir) || die "Couldn't read systemd utildir."
+		if use systemd; then
+			utildir=$(systemd_get_utildir) || die "Couldn't read systemd utildir."
+		elif use elogind; then
+			utildir=$(get_libdir)/elogind || die "Couldn't read system libdir."
+		else
+			die "Unknown configuration for suspend-workarounds."
+		fi
 		exeinto "${utildir}/system-sleep"
 
 		doexe "${S}/system76-atlantic-reload"
@@ -106,20 +114,35 @@ src_install() {
 }
 
 pkg_postinst() {
-	elog "Run system76-driver or system76-driver-cli as root to apply settings for"
-	elog "your specific System76 hardware.  system76-driver launches a GTK+ UI where"
-	elog "you can see which actions will be taken.  system76-driver-cli runs entirely"
-	elog "from the command line and prints out actions taken, but does not ask for"
-	elog "confirmation."
-	elog ""
-	elog "    # system76-driver-cli"
-	elog ""
-	elog "You may want to enable the System76 daemon to enable further hardware"
-	elog "support and fixes.  For systemd users:"
-	elog ""
-	elog "    # systemctl enable --now system76-driver.service"
-	elog ""
-	elog "An experimental OpenRC runscript is also provided:"
-	elog ""
-	elog "    # rc-update add system76-driver default"
+	if [[ -z ${REPLACING_VERSIONS} ]]; then
+		elog "Run system76-driver or system76-driver-cli as root to apply settings for"
+		elog "your specific System76 hardware.  system76-driver launches a GTK+ UI where"
+		elog "you can see which actions will be taken.  system76-driver-cli runs entirely"
+		elog "from the command line and prints out actions taken, but does not ask for"
+		elog "confirmation."
+		elog ""
+		elog "    # system76-driver-cli"
+		elog ""
+		elog "You may want to enable the System76 daemon to enable further hardware"
+		elog "support and fixes.  For systemd users:"
+		elog ""
+		elog "    # systemctl enable --now system76-driver.service"
+		elog ""
+		elog "An experimental OpenRC runscript is also provided:"
+		elog ""
+		elog "    # rc-update add system76-driver default"
+		elog ""
+		elog "This message is only displayed the first time system76-driver is installed."
+	else
+		local ver
+		for ver in ${REPLACING_VERSIONS}; do
+			if ver_test "${ver}" -lt 20.04.90; then
+				elog "Starting with version 20.04.90, the system76-driver ebuild supports"
+				elog "USE=suspend-workarounds via elogind, not only systemd.  If you are an"
+				elog "elogind user, please consider enabling the suspend workarounds for"
+				elog "better support of your System76 hardware."
+				break
+			fi
+		done
+	fi
 }
