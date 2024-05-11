@@ -29,7 +29,7 @@
     <flag name="suspend-workarounds">
       Restart various hardware (Bluetooth, Thunderbolt, network) after
       suspending, to work around hardware bugs, as System76 recommends
-      (requires systemd)
+      (requires elogind or systemd)
     </flag>
   </use>
 </pkgmetadata>
