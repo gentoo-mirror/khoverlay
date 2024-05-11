@@ -32,7 +32,7 @@ media-fonts/divide-by-zero 20050114: Tom7's collection of fun TrueType fonts
 media-gfx/color-picker 1.0.3: A powerful screen color picker
 net-misc/networkmanager-no-modify-system-patch 1: Patch to stop letting all logged-in users modify NM system connections
 net-misc/openssh-agent-user-service 1-r1: systemd user service file for ssh-agent
-sys-apps/system76-driver 20.04.86 20.04.87 20.04.88-r1 20.04.88-r2: Universal driver for System76 computers
+sys-apps/system76-driver 20.04.88-r1 20.04.88-r2 20.04.90: Universal driver for System76 computers
 sys-boot/catppuccin-grub 0_p20220217 1.0.0: Soothing pastel theme for GRUB
 sys-boot/catppuccin-plymouth 0_pre20230827: Soothing pastel theme for Plymouth
 sys-fs/fedora-media-writer 4.2.2: GUI for writing Fedora (and other OS) images to portable drives

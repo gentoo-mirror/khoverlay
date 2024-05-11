@@ -4,7 +4,7 @@
 
 games-puzzle/enigma:non-free - Install non-free menu music
 sys-apps/system76-driver:modules - Pull in packages for System76 kernel modules
-sys-apps/system76-driver:suspend-workarounds - Restart various hardware (Bluetooth, Thunderbolt, network) after suspending, to work around hardware bugs, as System76 recommends (requires systemd)
+sys-apps/system76-driver:suspend-workarounds - Restart various hardware (Bluetooth, Thunderbolt, network) after suspending, to work around hardware bugs, as System76 recommends (requires elogind or systemd)
 sys-kernel/hid-nintendo-dkms:joycond - Pull in games-util/joycond daemon for Joy-Con pairing
 x11-base/xorg-x11:fonts - Install fonts from X.Org
 x11-libs/gtk3-classic-patches:gtk - Adds a dependency on the matching version of GTK, ensuring that the correct version of gtk3-classic is installed.
