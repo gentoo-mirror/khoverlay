@@ -123,24 +123,21 @@ pkg_postinst() {
 		elog ""
 		elog "    # system76-driver-cli"
 		elog ""
-		elog "You may want to enable the System76 daemon to enable further hardware"
-		elog "support and fixes.  For systemd users:"
+		elog "You may want to run the System76 daemon to enable further hardware support"
+		elog "and fixes:"
 		elog ""
-		elog "    # systemctl enable --now system76-driver.service"
-		elog ""
-		elog "An experimental OpenRC runscript is also provided:"
-		elog ""
-		elog "    # rc-update add system76-driver default"
+		elog "    # systemctl enable --now system76-driver.service  (systemd)"
+		elog "    # rc-update add system76-driver default           (OpenRC)"
 		elog ""
 		elog "This message is only displayed the first time system76-driver is installed."
-	else
+	elif ! use suspend-workarounds && ! use systemd; then
 		local ver
 		for ver in ${REPLACING_VERSIONS}; do
 			if ver_test "${ver}" -lt 20.04.90; then
 				elog "Starting with version 20.04.90, the system76-driver ebuild supports"
 				elog "USE=suspend-workarounds via elogind, not only systemd.  If you are an"
-				elog "elogind user, please consider enabling the suspend workarounds for"
-				elog "better support of your System76 hardware."
+				elog "elogind user, consider enabling the suspend workarounds for better"
+				elog "support of your System76 hardware."
 				break
 			fi
 		done
