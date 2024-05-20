@@ -1,0 +1,23 @@
+Title: Khoverlay moved to Sourcehut
+Author: Bryan Gardiner <bog@khumba.net>
+Posted: 2024-05-19
+Revision: 1
+News-Item-Format: 2.0
+
+The upstream source repository for khoverlay has moved from Gitlab to
+Sourcehut.
+
+No action is required for users that enabled khoverlay via
+'eselect repository enable khoverlay'.  If you set up your own
+configuration in /etc/portage/repos.conf and are pulling directly from
+Gitlab, then please update sync-uri as follows.  On the next sync,
+Portage will pull from the new location.
+
+    old) sync-uri = https://gitlab.com/khumba/khoverlay.git
+
+    new) sync-uri = https://git.sr.ht/~khumba/khoverlay
+
+No change is required if you are using the gentoo-mirror copy of the
+repository:
+
+    also fine) https://github.com/gentoo-mirror/khoverlay.git
