@@ -2,8 +2,9 @@
 
 Homepage: https://khumba.net/gentoo/
 
+Sourcehut project: https://sr.ht/~khumba/hoppy/
+
 **Notice: As of May 2024, khoverlay has moved from Gitlab to Sourcehut.**
-Development will continue [here](https://sr.ht/~khumba/hoppy/).
 
 This repository is my personal Gentoo overlay.  In here you'll find:
 
