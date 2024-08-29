@@ -79,7 +79,6 @@ src_install() {
 	distutils-r1_src_install
 
 	# See system76-driver.git/debian/system76-driver.install.
-	dobin "${S}/system76-driver-pkexec"
 	python_doscript "${S}/system76-daemon"
 	python_doscript "${S}/system76-user-daemon"
 	insinto /usr/share/polkit-1/actions
@@ -98,8 +97,8 @@ src_install() {
 		fi
 		exeinto "${utildir}/system-sleep"
 
-		doexe "${S}/system76-atlantic-reload"
 		doexe "${S}/system76-thunderbolt-reload"
+		doexe "${S}/system76-virtual-hub"
 		if use bluetooth; then
 			doexe "${S}/lib/systemd/system-sleep/system76-driver_bluetooth-suspend"
 		fi
