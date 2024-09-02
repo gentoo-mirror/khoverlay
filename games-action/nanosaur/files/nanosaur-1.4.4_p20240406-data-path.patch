@@ -1,0 +1,66 @@
+From 23f876b9bcab4b9d428e5c14beaab97cb32031fc Mon Sep 17 00:00:00 2001
+From: Bryan Gardiner <bog@khumba.net>
+Date: Thu, 1 Aug 2024 21:24:27 -0700
+Subject: [PATCH 1/2] Find the data directory under /usr/share.
+
+---
+ src/Boot.cpp | 36 ++----------------------------------
+ 1 file changed, 2 insertions(+), 34 deletions(-)
+
+diff --git a/src/Boot.cpp b/src/Boot.cpp
+index 0dd5c38..2dd6408 100644
+--- a/src/Boot.cpp
++++ b/src/Boot.cpp
+@@ -28,39 +28,7 @@ extern "C"
+ 
+ static fs::path FindGameData(const char* executablePath)
+ {
+-	fs::path dataPath;
+-
+-	int attemptNum = 0;
+-
+-#if !(__APPLE__)
+-	attemptNum++;		// skip macOS special case #0
+-#endif
+-
+-	if (!executablePath)
+-		attemptNum = 2;
+-
+-tryAgain:
+-	switch (attemptNum)
+-	{
+-		case 0:			// special case for macOS app bundles
+-			dataPath = executablePath;
+-			dataPath = dataPath.parent_path().parent_path() / "Resources";
+-			break;
+-
+-		case 1:
+-			dataPath = executablePath;
+-			dataPath = dataPath.parent_path() / "Data";
+-			break;
+-
+-		case 2:
+-			dataPath = "Data";
+-			break;
+-
+-		default:
+-			throw std::runtime_error("Couldn't find the Data folder.");
+-	}
+-
+-	attemptNum++;
++	fs::path dataPath("/usr/share/Nanosaur");
+ 
+ 	dataPath = dataPath.lexically_normal();
+ 
+@@ -70,7 +38,7 @@ tryAgain:
+ 	FSSpec dummySpec;
+ 	if (noErr != FSMakeFSSpec(gDataSpec.vRefNum, gDataSpec.parID, ":Skeletons:Diloph.3dmf", &dummySpec))
+ 	{
+-		goto tryAgain;
++		throw std::runtime_error("Error loading resources from the Data folder.");
+ 	}
+ 
+ 	return dataPath;
+-- 
+2.43.0
+
