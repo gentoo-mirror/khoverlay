@@ -1,0 +1,10 @@
+DEFINED_PHASES=install
+DESCRIPTION=Display window geometry when moving & resizing in KWin 5.24+
+EAPI=8
+HOMEPAGE=https://www.pling.com/p/1833846/ https://gitlab.com/Worldblender/kwin-scripts
+KEYWORDS=~amd64 ~x86
+LICENSE=GPL-2+
+RDEPEND=kde-plasma/kwin:6
+SLOT=0
+SRC_URI=https://gitlab.com/Worldblender/kwin-scripts/-/archive/35afa497bdb73dd2559e644872b464ea878f426a/kwin-scripts-35afa497bdb73dd2559e644872b464ea878f426a.tar.bz2 -> kwin-geometry-info-script-0_pre20240309.tar.bz2
+_md5_=a116e6a7712b7a7b3a91cb569264d628
