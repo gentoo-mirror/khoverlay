@@ -9,3 +9,9 @@ x11-themes/catppuccin-wallpapers
 #
 #     equery meta -d net-misc/networkmanager-no-modify-system-patch
 net-misc/networkmanager-no-modify-system-patch
+
+# Bryan Gardiner <bog@khumba.net> (2024-09-15)
+# This ebuild is a couple years out of date and I don't use this package
+# anymore.  Masked for removal after 2024-10-15.  For a Qt replacement,
+# consider KDE's app-cdr/isoimagewriter.
+sys-fs/fedora-media-writer
