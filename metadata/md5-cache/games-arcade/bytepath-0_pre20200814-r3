@@ -9,5 +9,5 @@ LICENSE=MIT CC0-1.0 CC-BY-3.0 ZLIB
 RDEPEND=games-engines/love:0.10[lua_single_target_luajit]
 SLOT=0
 SRC_URI=https://github.com/a327ex/BYTEPATH/archive/51ee3086ae3369a2c80e4e47d4b62d480af4fe89.tar.gz -> bytepath-0_pre20200814.tar.gz
-_eclasses_=xdg-utils	5465aed08f1dfc2a75f14cbea4272961	xdg	854eae304447322625df5991e20ed18f
+_eclasses_=xdg-utils	42869b3c8d86a70ef3cf75165a395e09	xdg	3ef49a87c52c8b77c476351195dfe575
 _md5_=575983c2786852c5e7e272977cb4732c
