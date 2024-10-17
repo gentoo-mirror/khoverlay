@@ -1,6 +1,6 @@
 app-laptop/system76-acpi-module 1.0.2_p20230306 1.0.2_p20230717: System76 ACPI Driver
 app-laptop/system76-io-module 1.0.3: System76 I/O Board Driver
-app-laptop/system76-module 1.0.13-r1: System76 Driver
+app-laptop/system76-module 1.0.13-r1 1.0.16: System76 Driver
 dev-games/goatee 0.4.0: A monadic take on a 2,500-year-old board game - library
 dev-games/pomme 0_pre20230516 0_pre20230928 0_pre20231019: Portable implementation of the Macintosh Toolbox API
 dev-haskell/hoppy-docs 0.8.0-r1 9999: C++ FFI generator - Documentation
@@ -36,7 +36,6 @@ net-misc/openssh-agent-user-service 1-r1: systemd user service file for ssh-agen
 sys-apps/system76-driver 20.04.91 20.04.95: Universal driver for System76 computers
 sys-boot/catppuccin-grub 0_p20220217 1.0.0: Soothing pastel theme for GRUB
 sys-boot/catppuccin-plymouth 0_pre20230827: Soothing pastel theme for Plymouth
-sys-fs/fedora-media-writer 4.2.2: GUI for writing Fedora (and other OS) images to portable drives
 sys-kernel/hid-nintendo-dkms 3.2_p20220722: Nintendo HID kernel module for Linux <5.16
 x11-base/xorg-x11 7.4-r6: An X11 implementation maintained by the X.Org Foundation (meta package)
 x11-drivers/xf86-input-xwiimote 9999: X.Org Wii Remote Input Driver
