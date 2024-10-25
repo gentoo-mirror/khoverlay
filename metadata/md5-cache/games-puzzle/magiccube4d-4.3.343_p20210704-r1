@@ -1,0 +1,14 @@
+DEFINED_PHASES=compile install postinst postrm preinst prepare setup test
+DEPEND=>=virtual/jdk-1.8:* >=dev-java/java-config-2.2.0-r3
+DESCRIPTION=Four-dimensional analog of Rubik's cube
+EAPI=8
+HOMEPAGE=https://www.superliminal.com/cube/cube.htm
+IDEPEND=dev-util/desktop-file-utils x11-misc/shared-mime-info
+INHERIT=desktop java-pkg-2 java-pkg-simple xdg
+KEYWORDS=~amd64
+LICENSE=magiccube4d
+RDEPEND=>=virtual/jre-1.8:* !games-puzzle/magiccube4d:java >=dev-java/java-config-2.2.0-r3
+SLOT=0
+SRC_URI=https://pub.khumba.net/distfiles/magiccube4d-4.3.343_p20210704.tar.gz
+_eclasses_=desktop	3a72ffe0d8e1dd73af3a1c8c15a59fed	java-utils-2	4b88d12e899778ff681b67d7bcbb54f0	java-pkg-2	6e6478d8b78f18251c008bad32994df9	java-pkg-simple	8221818a4df90800de803a44fd0875b4	xdg-utils	42869b3c8d86a70ef3cf75165a395e09	xdg	3ef49a87c52c8b77c476351195dfe575
+_md5_=6328034c169e0fe14dbbca031012ea2c

@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile install prepare
+DEPEND=x11-libs/libXaw
+DESCRIPTION=Four-dimensional analog of Rubik's cube
+EAPI=8
+HOMEPAGE=https://superliminal.com/cube/cube.htm
+INHERIT=desktop
+KEYWORDS=~amd64 ~x86
+LICENSE=free-noncomm
+RDEPEND=x11-libs/libXaw !<games-puzzle/magiccube4d-2.2-r2:0
+SLOT=2
+SRC_URI=https://superliminal.com/cube/mc4d-src-2_2.tgz https://superliminal.com/cube/cube_transp.gif -> magiccube4d.gif
+_eclasses_=desktop	3a72ffe0d8e1dd73af3a1c8c15a59fed
+_md5_=3d7bac6aaee97479d8393116ac25f2e2
