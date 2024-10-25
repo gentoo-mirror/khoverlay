@@ -9,3 +9,16 @@ x11-themes/catppuccin-wallpapers
 #
 #     equery meta -d net-misc/networkmanager-no-modify-system-patch
 net-misc/networkmanager-no-modify-system-patch
+
+# Bryan Gardiner <bog@khumba.net> (2024-10-24)
+# Previously magiccube4d-2.2:0 from Gentoo was an ancient C version of
+# this program, and khoverlay included the up-to-date 4.3.343 Java
+# version under SLOT=java.  Gentoo has now packaged the Java version
+# under SLOT=0, and I want to preserve the ebuild for the C version
+# since it still runs.  To follow Gentoo, I have imported the SLOT=0
+# Java version (bumped to the snapshot already in khoverlay) and the old
+# C version is available under SLOT=2.  Please migrate away from
+# SLOT=java.
+#
+# Removal of SLOT=java ebuilds on or after 2024-11-24.
+games-puzzle/magiccube4d:java
