@@ -1,5 +1,5 @@
 app-laptop/system76-acpi-module 1.0.2_p20230306 1.0.2_p20230717: System76 ACPI Driver
-app-laptop/system76-io-module 1.0.3: System76 I/O Board Driver
+app-laptop/system76-io-module 1.0.4: System76 I/O Board Driver
 app-laptop/system76-module 1.0.13-r1 1.0.16: System76 Driver
 dev-games/goatee 0.4.0: A monadic take on a 2,500-year-old board game - library
 dev-games/pomme 0_pre20230516 0_pre20230928 0_pre20231019: Portable implementation of the Macintosh Toolbox API
