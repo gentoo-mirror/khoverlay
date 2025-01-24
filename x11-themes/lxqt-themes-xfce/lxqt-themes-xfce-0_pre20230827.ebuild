@@ -1,4 +1,4 @@
-# Copyright 2023 Bryan Gardiner <bog@khumba.net>
+# Copyright 2023-2024 Bryan Gardiner <bog@khumba.net>
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -7,7 +7,7 @@ GIT_REV=23257f09873a504985f3f7394510f3e9d2e4d5a7
 
 DESCRIPTION="LXQt ports of old-school (GTK2) Xfce themes"
 HOMEPAGE="https://github.com/AzumaHazuki/lxqt-themes-xfce"
-SRC_URI="https://github.com/AzumaHazuki/lxqt-themes-xfce/archive/${GIT_REV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://pub.khumba.net/distfiles/${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
