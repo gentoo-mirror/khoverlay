@@ -5,5 +5,5 @@ HOMEPAGE=https://github.com/AzumaHazuki/lxqt-themes-xfce
 KEYWORDS=~amd64 ~x86
 LICENSE=GPL-3
 SLOT=0
-SRC_URI=https://github.com/AzumaHazuki/lxqt-themes-xfce/archive/23257f09873a504985f3f7394510f3e9d2e4d5a7.tar.gz -> lxqt-themes-xfce-0_pre20230827.tar.gz
-_md5_=61cfccaf6ba844a0da4796b51c8e8757
+SRC_URI=https://pub.khumba.net/distfiles/lxqt-themes-xfce-0_pre20230827.tar.gz
+_md5_=ac9e7c0c47279d4e379adb1afb576277
