@@ -31,7 +31,7 @@ games-puzzle/magiccube4d 2.2-r2 4.3.343_p20210704 4.3.343_p20210704-r1: Four-dim
 games-util/xwiimote 9999: Nintendo Wii Remote Linux Device Driver Tools
 kde-plasma/kwin-geometry-info-script 0_pre20220620-r1 0_pre20240309: Display window geometry when moving & resizing in KWin 5.24+
 media-fonts/divide-by-zero 20050114: Tom7's collection of fun TrueType fonts
-media-gfx/color-picker 1.0.3: A powerful screen color picker
+media-gfx/color-picker 1.0.3 1.0.3-r1: A powerful screen color picker
 net-misc/networkmanager-no-modify-system-patch 1: Patch to stop letting all logged-in users modify NM system connections
 net-misc/openssh-agent-user-service 1-r1: systemd user service file for ssh-agent
 sys-apps/system76-driver 20.04.95 20.04.99 20.04.110: Universal driver for System76 computers
