@@ -45,7 +45,6 @@ x11-libs/gtk3-classic-patches 3.24.35-r1 3.24.41 3.24.42 3.24.43.2: gtk3-classic
 x11-themes/catppuccin-cursors-bin 0_p20220228 0.2.0-r1: Soothing pastel mouse cursors
 x11-themes/catppuccin-kde-theme 0_p20220202: Catppuccin theme for KDE Plasma
 x11-themes/catppuccin-konsole-theme 0_p20220201: Catppuccin theme for Konsole
-x11-themes/catppuccin-wallpapers 0_p20220310: Catppuccin wallpapers
 x11-themes/chicago95 2.0.1-r1: Linux rendition of everyone's favourite 1995 Microsoft OS
 x11-themes/lxqt-themes-gtk2 0_pre20230225: LXQt ports of the old-school default GTK Engines themes
 x11-themes/lxqt-themes-oxygen 0_pre20230727: LXQt port of KDE 4.x's Oxygen style

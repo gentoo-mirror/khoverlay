@@ -1,9 +1,0 @@
-DEFINED_PHASES=install
-DESCRIPTION=Catppuccin wallpapers
-EAPI=8
-HOMEPAGE=https://github.com/catppuccin/wallpapers
-KEYWORDS=~amd64 ~x86
-LICENSE=MIT
-SLOT=0
-SRC_URI=https://github.com/catppuccin/wallpapers/archive/4760c0cca4460b80fa5de024846e57ab621cb5eb.tar.gz -> catppuccin-wallpapers-0_p20220310.tar.gz
-_md5_=b594ee3e01bc2e28e57353a853567522
