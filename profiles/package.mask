@@ -1,7 +1,3 @@
-# Bryan Gardiner <bog@khumba.net> (2024-03-21)
-# Upstream repository is gone without a trace.  Masked for removal.
-x11-themes/catppuccin-wallpapers
-
 # Bryan Gardiner <bog@khumba.net> (2023-12-25)
 # This ebuild provides a general patch for NetworkManager under
 # /etc/portage/patches.  Please read the long description in
