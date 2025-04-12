@@ -10,5 +10,5 @@ LICENSE=LGPL-3+
 PROPERTIES=live
 RDEPEND=>=dev-haskell/qtah-generator-9999:=[profile?] >=dev-lang/ghc-8.2.1:= dev-qt/qtcore:5 dev-qt/qtgui:5 dev-qt/qtwidgets:5 !dev-haskell/qtah-cpp-qt5 dev-lang/ghc:=[profile?]
 SLOT=0/9999
-_eclasses_=git-r3	875eb471682d3e1f18da124be97dcc81	multiprocessing	1e32df7deee68372153dca65f4a7c21f	ghc-package	8e4f6eb2d0e798049f6fcaf3b84c0d4a	multilib	b2a329026f2e404e9e371097dda47f96	toolchain-funcs	6afdb6107430c1832ca7e16aacbf8fa1	haskell-cabal	7a05e05c4a785428f7c2f31e22667fea
+_eclasses_=git-r3	875eb471682d3e1f18da124be97dcc81	multiprocessing	1e32df7deee68372153dca65f4a7c21f	ghc-package	8e4f6eb2d0e798049f6fcaf3b84c0d4a	toolchain-funcs	f9d71a6efe9d083aec750dd13968e169	multilib	b2a329026f2e404e9e371097dda47f96	haskell-cabal	7a05e05c4a785428f7c2f31e22667fea
 _md5_=058846702ce80ec1aa749a3053f327f6
