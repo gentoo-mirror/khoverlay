@@ -2,7 +2,7 @@
 
 Homepage: https://khumba.net/gentoo/
 
-Sourcehut project: https://sr.ht/~khumba/hoppy/
+Sourcehut project: https://sr.ht/~khumba/khoverlay/
 
 **Notice: As of May 2024, khoverlay has moved from Gitlab to Sourcehut.**
 
