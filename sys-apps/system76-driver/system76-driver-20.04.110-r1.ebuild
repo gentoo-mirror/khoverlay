@@ -1,4 +1,4 @@
-# Copyright 2020-2024 Bryan Gardiner <bog@khumba.net>
+# Copyright 2020-2025 Bryan Gardiner <bog@khumba.net>
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -69,10 +69,12 @@ PATCHES=(
 	"${FILESDIR}/system76-driver-20.04.85-test-tmpdir.patch"
 )
 
-distutils_enable_tests setup.py
-
 src_test() {
 	virtx distutils-r1_src_test
+}
+
+python_test() {
+	esetup.py test --verbose
 }
 
 src_install() {
