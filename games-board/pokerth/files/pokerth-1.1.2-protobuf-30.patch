@@ -1,0 +1,63 @@
+From 9c8940fe92fd2546c48ad70b084b5457a3c11198 Mon Sep 17 00:00:00 2001
+From: Stefan Strogin <stefan@steils.org>
+Date: Tue, 10 Oct 2023 00:30:29 +0000
+Subject: [PATCH] Fix linking with protobuf 30
+
+Updated from protobuf 23 to 30 on 2025-05-31 by Bryan Gardiner,
+-labsl_log_internal_nullguard is needed now.
+
+---
+ chatcleaner.pro    | 3 +++
+ pokerth_game.pro   | 5 ++++-
+ pokerth_server.pro | 5 ++++-
+ 3 files changed, 11 insertions(+), 2 deletions(-)
+
+diff --git a/chatcleaner.pro b/chatcleaner.pro
+index 6d63b4a9..3ca02e2a 100644
+--- a/chatcleaner.pro
++++ b/chatcleaner.pro
+@@ -38,6 +38,9 @@ LIBPATH += lib
+ LIBS += -lpokerth_lib \
+ 	-lpokerth_protocol \
+ 	-lprotobuf \
++	-labsl_log_internal_check_op \
++	-labsl_log_internal_message \
++	-labsl_log_internal_nullguard \
+ 	-ltinyxml
+ 
+ win32 {
+diff --git a/pokerth_game.pro b/pokerth_game.pro
+index 2e37d586..7aa2293e 100644
+--- a/pokerth_game.pro
++++ b/pokerth_game.pro
+@@ -524,7 +524,10 @@ unix:!mac {
+ 		kFreeBSD = $$find(UNAME, "kFreeBSD")
+ 		LIBS += -lsqlite3 \
+ 				-ltinyxml \
+-				-lprotobuf
++				-lprotobuf \
++				-labsl_log_internal_check_op \
++				-labsl_log_internal_message \
++				-labsl_log_internal_nullguard
+ 		LIBS += $$BOOST_LIBS
+ 		LIBS += -lSDL \
+ 				-lSDL_mixer \
+diff --git a/pokerth_server.pro b/pokerth_server.pro
+index a42634b3..034aabd8 100644
+--- a/pokerth_server.pro
++++ b/pokerth_server.pro
+@@ -285,7 +285,10 @@ unix : !mac {
+ 	LIBS += $$BOOST_LIBS
+ 	LIBS += -lsqlite3 \
+ 			-ltinyxml \
+-			-lprotobuf
++			-lprotobuf \
++			-labsl_log_internal_check_op \
++			-labsl_log_internal_message \
++			-labsl_log_internal_nullguard
+ 	LIBS += -lgsasl
+ 	!isEmpty( BSD ): isEmpty( kFreeBSD ){
+ 		LIBS += -lcrypto -liconv
+-- 
+2.47.2
+
