@@ -54,7 +54,7 @@ src_prepare() {
 }
 
 src_configure() {
-	eqmake5 pokerth.pro \
+	eqmake6 pokerth.pro \
 			QMAKE_CFLAGS_ISYSTEM= \
 			CONFIG+="$(use dedicated || echo client)"
 }
