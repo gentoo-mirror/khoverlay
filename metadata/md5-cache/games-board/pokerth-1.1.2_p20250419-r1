@@ -12,4 +12,4 @@ RDEPEND=dev-db/sqlite:3 dev-libs/boost:=[zlib] dev-libs/libgcrypt:0 dev-libs/pro
 SLOT=0
 SRC_URI=https://github.com/pokerth/pokerth/archive/b2835a19f472c858a4d8cdfd5f34b7f2ae6d6256.tar.gz -> pokerth-1.1.2_p20250419.tar.gz
 _eclasses_=desktop	3a72ffe0d8e1dd73af3a1c8c15a59fed	toolchain-funcs	f9d71a6efe9d083aec750dd13968e169	qmake-utils	a8dd17b1d94586164f5e3fc12b1c6b81	xdg-utils	42869b3c8d86a70ef3cf75165a395e09	xdg	3ef49a87c52c8b77c476351195dfe575
-_md5_=73e2242712ace9d52b4c1db3abad3410
+_md5_=64e78bbe147eb5f70ef1ea41ec6bde59
