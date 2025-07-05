@@ -11,5 +11,5 @@ LICENSE=CC-BY-NC-SA-4.0 Boost-1.0 BSD CC0-1.0 LGPL-2.1+ MIT
 RDEPEND=media-libs/libsdl2 virtual/opengl
 SLOT=0
 SRC_URI=https://github.com/jorio/Nanosaur/archive/c9753648996b09a17c8bd526d8309b73fb14c435.tar.gz -> nanosaur-1.4.4_p20230521.tar.gz https://github.com/jorio/Pomme/archive/d57c28e205462e51063e787f9ebddaadff592f1e.tar.gz -> Pomme-d57c28e205462e51063e787f9ebddaadff592f1e.tar.gz
-_eclasses_=toolchain-funcs	f9d71a6efe9d083aec750dd13968e169	flag-o-matic	b892042b2667b8ac69ec8a2571dc290a	multiprocessing	1e32df7deee68372153dca65f4a7c21f	ninja-utils	2df4e452cea39a9ec8fb543ce059f8d6	xdg-utils	42869b3c8d86a70ef3cf75165a395e09	cmake	460729dc36f68cf03b044bc1d367e34a	xdg	3ef49a87c52c8b77c476351195dfe575
+_eclasses_=toolchain-funcs	a6df79c1e9bc84369dbf3d44206ac772	flag-o-matic	a7afe42e95fb46ce9691605acfb24672	multiprocessing	1e32df7deee68372153dca65f4a7c21f	ninja-utils	2df4e452cea39a9ec8fb543ce059f8d6	xdg-utils	42869b3c8d86a70ef3cf75165a395e09	cmake	460729dc36f68cf03b044bc1d367e34a	xdg	3ef49a87c52c8b77c476351195dfe575
 _md5_=b6c590943e9f441b98573d3451417d9b
