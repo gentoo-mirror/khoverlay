@@ -1,0 +1,9 @@
+DEFINED_PHASES=install
+DESCRIPTION=LXQt port of LXColors-Revival GTK theme
+EAPI=8
+HOMEPAGE=https://github.com/AzumaHazuki/lxqt-themes-lxcolors
+KEYWORDS=~amd64 ~x86
+LICENSE=GPL-3
+SLOT=0
+SRC_URI=https://pub.khumba.net/distfiles/lxqt-themes-lxcolors-0_pre20250713.tar.gz
+_md5_=baabf8060dc03c102ff399a03868883d

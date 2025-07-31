@@ -48,6 +48,7 @@ x11-themes/catppuccin-kde-theme 0_p20220202: Catppuccin theme for KDE Plasma
 x11-themes/catppuccin-konsole-theme 0_p20220201: Catppuccin theme for Konsole
 x11-themes/chicago95 2.0.1-r1: Linux rendition of everyone's favourite 1995 Microsoft OS
 x11-themes/lxqt-themes-gtk2 0_pre20230225: LXQt ports of the old-school default GTK Engines themes
+x11-themes/lxqt-themes-lxcolors 0_pre20250713: LXQt port of LXColors-Revival GTK theme
 x11-themes/lxqt-themes-oxygen 0_pre20230727: LXQt port of KDE 4.x's Oxygen style
-x11-themes/lxqt-themes-xfce 0_pre20230827: LXQt ports of old-school (GTK2) Xfce themes
+x11-themes/lxqt-themes-xfce 0_pre20230827 0_pre20250713: LXQt ports of old-school (GTK2) Xfce themes
 x11-themes/system76-wallpapers 20180509: Wallpaper collection shipped with System76 products
