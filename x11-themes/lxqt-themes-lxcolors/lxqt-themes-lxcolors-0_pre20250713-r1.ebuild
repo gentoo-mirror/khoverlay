@@ -20,30 +20,9 @@ S="${WORKDIR}/${PN}-${GIT_REV}"
 
 DOCS=( README.md )
 
-THEMES_WITH_PALLETTES=(
-	LXQt-Brave
-	LXQt-Carbonite
-	LXQt-Dust
-	LXQt-Human
-	LXQt-Illustrious
-	LXQt-Noble
-	LXQt-Tribute
-	LXQt-Wine
-)
-
-THEMES=(
-	LXQt-Wise
-)
-
 src_install() {
 	einstalldocs
 
-	cd "${S}/palettes"
-	insinto /usr/share/lxqt/palettes
-	doins -r "${THEMES_WITH_PALLETTES[@]}"
-
-	cd "${S}/themes"
-	insinto /usr/share/lxqt/themes
-	doins -r "${THEMES_WITH_PALLETTES[@]}"
-	doins -r "${THEMES[@]}"
+	insinto /usr/share/lxqt
+	doins -r palettes themes
 }
