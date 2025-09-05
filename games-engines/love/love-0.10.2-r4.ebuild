@@ -28,7 +28,7 @@ RDEPEND="${LUA_DEPS}
 	media-libs/libmodplug
 	media-libs/libsdl2[joystick,opengl]
 	media-libs/libogg
-	media-libs/libtheora
+	media-libs/libtheora:0=
 	media-libs/libvorbis
 	media-libs/openal
 	media-sound/mpg123
