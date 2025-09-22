@@ -1,0 +1,46 @@
+From 7387d4842aa53e199c0c9ff265fec6065f7b00e1 Mon Sep 17 00:00:00 2001
+From: Bryan Gardiner <bog@khumba.net>
+Date: Mon, 4 Mar 2024 06:03:00 -0800
+Subject: [PATCH] Use Pomme build externally.
+
+---
+ CMakeLists.txt | 9 ++++++---
+ 1 file changed, 6 insertions(+), 3 deletions(-)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 81a7585..c9ec9f2 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -93,8 +93,6 @@ endif()
+ # DEPENDENCIES
+ #------------------------------------------------------------------------------
+ 
+-add_subdirectory(extern/Pomme)
+-
+ find_package(OpenGL REQUIRED)
+ 
+ #------------------------------------------------------------------------------
+@@ -121,7 +119,11 @@ endif()
+ 
+ add_executable(${GAME_TARGET} ${GAME_SOURCES})
+ 
+-target_include_directories(${GAME_TARGET} PRIVATE ${GAME_SRCDIR}/Headers)
++target_include_directories(${GAME_TARGET} PRIVATE
++	${GAME_SRCDIR}/Headers
++	/usr/include/Pomme-@POMME_VER@
++	/usr/include/Pomme-@POMME_VER@/QD3D
++)
+ 
+ #------------------------------------------------------------------------------
+ # COMPILER/LINKER OPTIONS
+@@ -209,6 +211,7 @@ else()
+ endif()
+ 
+ # Link core dependencies
++target_link_directories(${GAME_TARGET} PRIVATE @POMME_LIBDIR@)
+ target_link_libraries(${GAME_TARGET} PRIVATE Pomme OpenGL::GL)
+ 
+ # Add required frameworks for KillMacMouseAcceleration
+-- 
+2.47.2
+
