@@ -3,7 +3,7 @@ app-laptop/system76-io-module 1.0.4: System76 I/O Board Driver
 app-laptop/system76-module 1.0.13-r1 1.0.16 1.0.16_p20241212: System76 Driver
 app-office/texmacs 2.1-r100: Wysiwyg text processor with high-quality maths
 dev-games/goatee 0.4.0: A monadic take on a 2,500-year-old board game - library
-dev-games/pomme 0_pre20230516 0_pre20230928 0_pre20231019: Portable implementation of the Macintosh Toolbox API
+dev-games/pomme 0_pre20230516 0_pre20230928 0_pre20231019 0_pre20250201: Portable implementation of the Macintosh Toolbox API
 dev-haskell/hoppy-docs 0.8.0-r1 9999: C++ FFI generator - Documentation
 dev-haskell/hoppy-generator 0.8.0-r1 9999: C++ FFI generator - Code generator
 dev-haskell/hoppy-runtime 0.8.0-r1 9999: C++ FFI generator - Runtime support
@@ -17,7 +17,7 @@ dev-haskell/qtah-qt5 0.8.0-r1: Qt bindings for Haskell
 dev-qt/qtstyleplugins 5.0.0_p20170311-r1: Additional style plugins for Qt5 (gtk2, cleanlook, plastic, motif)
 dev-vcs/git-summary 0_pre20230730: Summarizes statuses of multiple local repositories
 dev-vcs/gitstats 0_pre20201124-r1: Statistics generator for git
-games-action/bugdom 1.3.3_p20231008-r1 1.3.4: Save the Bugdom from the evil Fire Ants
+games-action/bugdom 1.3.3_p20231008-r1 1.3.4 1.3.5_pre20250308: Save the Bugdom from the evil Fire Ants
 games-action/bugdom2 4.0.0_p20231022-r2 4.0.0_p20231022-r3: Pangea Software's Bugdom 2 for modern systems
 games-action/hyperlightdrifter-deps 1-r1: Metapackage for HyperLightDrift dependencies (game not included)
 games-action/mightymike 3.0.2_p20240310: High-Powered Action Rescue in a Toy Store Gone Mad!
