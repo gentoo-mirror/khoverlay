@@ -42,7 +42,7 @@ sys-kernel/hid-nintendo-dkms 3.2_p20220722: Nintendo HID kernel module for Linux
 x11-base/xorg-x11 7.4-r6: An X11 implementation maintained by the X.Org Foundation (meta package)
 x11-drivers/xf86-input-xwiimote 9999: X.Org Wii Remote Input Driver
 x11-libs/gtk+ 3.24.43: Gimp ToolKit +
-x11-libs/gtk3-classic-patches 3.24.42 3.24.43.2 3.24.48.2 3.24.49 3.24.49.2 3.24.50: gtk3-classic patches for /etc/portage/patches
+x11-libs/gtk3-classic-patches 3.24.42 3.24.43.2 3.24.48.2 3.24.49 3.24.49.2 3.24.50 3.24.51: gtk3-classic patches for /etc/portage/patches
 x11-themes/catppuccin-cursors-bin 0_p20220228 0.2.0-r1: Soothing pastel mouse cursors
 x11-themes/catppuccin-kde-theme 0_p20220202: Catppuccin theme for KDE Plasma
 x11-themes/catppuccin-konsole-theme 0_p20220201: Catppuccin theme for Konsole
