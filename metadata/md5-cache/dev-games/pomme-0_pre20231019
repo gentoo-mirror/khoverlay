@@ -10,5 +10,5 @@ LICENSE=MIT CC0-1.0 LGPL-2.1+ BSD Boost-1.0
 RDEPEND=media-libs/libsdl2
 SLOT=20231019
 SRC_URI=https://github.com/jorio/Pomme/archive/ef94150e2dcec522e3099f4d03a4e8f2639f7232.tar.gz -> pomme-0_pre20231019.tar.gz
-_eclasses_=toolchain-funcs	98d9f464d912ae6b7316fb8a3721f5db	flag-o-matic	a7afe42e95fb46ce9691605acfb24672	multiprocessing	1e32df7deee68372153dca65f4a7c21f	ninja-utils	2df4e452cea39a9ec8fb543ce059f8d6	xdg-utils	42869b3c8d86a70ef3cf75165a395e09	cmake	c34c4b7abe27f71d1e7770f36cc51eed
+_eclasses_=toolchain-funcs	98d9f464d912ae6b7316fb8a3721f5db	flag-o-matic	a7afe42e95fb46ce9691605acfb24672	multiprocessing	1e32df7deee68372153dca65f4a7c21f	ninja-utils	2df4e452cea39a9ec8fb543ce059f8d6	xdg-utils	42869b3c8d86a70ef3cf75165a395e09	cmake	2d36accef058c00889b1f93ea4bc4061
 _md5_=5d5223a888e058295346f1acd255e941
