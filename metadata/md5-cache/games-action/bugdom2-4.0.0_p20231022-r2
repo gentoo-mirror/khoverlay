@@ -12,5 +12,5 @@ LICENSE=CC-BY-NC-SA-4.0 Boost-1.0 BSD CC0-1.0 LGPL-2.1+ MIT
 RDEPEND=media-libs/libsdl2 virtual/opengl
 SLOT=0
 SRC_URI=https://github.com/jorio/Bugdom2/archive/d56b8e7ce0f71b02c1b83ce0d70008df153db2a8.tar.gz -> bugdom2-4.0.0_p20231022.tar.gz https://github.com/jorio/Pomme/archive/c6a38eab19a11847024a13f9b3e2af0c2d908c3e.tar.gz -> Pomme-c6a38eab19a11847024a13f9b3e2af0c2d908c3e.tar.gz
-_eclasses_=toolchain-funcs	98d9f464d912ae6b7316fb8a3721f5db	flag-o-matic	a7afe42e95fb46ce9691605acfb24672	multiprocessing	1e32df7deee68372153dca65f4a7c21f	ninja-utils	2df4e452cea39a9ec8fb543ce059f8d6	xdg-utils	42869b3c8d86a70ef3cf75165a395e09	cmake	2d36accef058c00889b1f93ea4bc4061	xdg	3ef49a87c52c8b77c476351195dfe575
+_eclasses_=toolchain-funcs	98d9f464d912ae6b7316fb8a3721f5db	flag-o-matic	a7afe42e95fb46ce9691605acfb24672	multiprocessing	1e32df7deee68372153dca65f4a7c21f	ninja-utils	2df4e452cea39a9ec8fb543ce059f8d6	xdg-utils	42869b3c8d86a70ef3cf75165a395e09	cmake	29a000891e576f0392730bb6834b67f5	xdg	3ef49a87c52c8b77c476351195dfe575
 _md5_=b68326db30e410b92b8f04949308102f
